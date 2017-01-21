@@ -8,9 +8,14 @@ class PlacesController < ApplicationController
   end
 
   def new
+    @place = Place.new
   end
 
   def create
+    @place = Place.new(places_params)
+      if @place.save 
+        redirect_back(fallback_location: new_place_path)
+      end
   end
 
   def edit
@@ -21,4 +26,10 @@ class PlacesController < ApplicationController
 
   def destroy
   end
+end
+
+private 
+
+def places_params
+    params.require(:place).permit(:name, :city, :country, :closest_city, :website)
 end

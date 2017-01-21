@@ -1,2 +1,23 @@
-<h1>Places#new</h1>
-<p>Find me in app/views/places/new.html.erb</p>
+<h1>Share Your Beautiful Place</h1>
+<%= form_for Place.new do |f| %>
+<div class="places_form">
+		<p><%= flash[:placeerror] if flash[:placeerror] %></p>
+		<%= f.label :name, value: 'Your Favorite Place' %>
+		<%= f.text_field :name %>
+
+		<%= f.label "City or Town, Etc." %>
+		<%= f.text_field :city %>
+
+		<%= f.label :country, value: "Country" %>
+		<%= f.text_field :country %>
+
+
+		<%= f.label :closest_city, value: 'Closest_City' %>
+		<%= f.text_field :closest_city %>
+
+		<%= f.label :website, value: 'Webstie' %>
+		<%= f.text_field :website %>
+
+		<%= f.submit class: 'submit_button' %>
+</div>
+	<% end %>
