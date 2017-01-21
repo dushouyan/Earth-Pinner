@@ -4,9 +4,12 @@
 </div>
 
 <div class="place_content_bar">
-	<h3>Location</h3><p><%= @place.city %>, <%= @place.country %></p>
-	<h3>Closest City</h3><p><%= @place.closest_city %></p>
-	<h3>Website</h3><p><%= @place.website %></p>
+	<p>Location: <%= @place.city %>, <%= @place.country %></p>
+	<p>Closest City: <%= @place.closest_city %></p>
+	<p>Website: <%= @place.website %></p>
+	<h4>About <%= @place.country %></h4>
+	<h4>How To Get To <%= @place.name %> Without Car or Tour</h4>
+
 </div>
 
 
