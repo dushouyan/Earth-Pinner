@@ -3,6 +3,46 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.place_display {
+	width: 200px;
+	height: 200px;
+	border: 1px solid black;
+	float: left;
+}
+
+.place_color {
+	height: 100%;
+	width: 100%;
+	color: transparent;
+	padding-top: 1px;
+	margin-top: -1px;
+}	
+
+.place_color a {
+	color: transparent;
+}
+
+.place_color p {
+	margin-top: 70px;
+	text-align: center;
+	padding: 5px;
+}
+
+
+.place_color:hover {
+	background-color: rgba(52, 165, 111, .5);
+	color: white;
+	a {
+		color: white;
+	}
+}
+
+.place_info {
+	text-shadow: 1px 1px solid red;
+	position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
 h1 {
 	font-size: 4em;
 	text-align: center;
