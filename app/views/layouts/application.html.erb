@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TravelBug</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+          <ul>
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Create A Place", new_place_path %></li>
+            <h1 id="logo">Travel Bug</h1>
+       <% if current_user %>
+              <li><%= link_to "Welcome #{current_user.name}", user_path(current_user) %> </li>
+              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+      <% else %>
+              <li></li>
+              <li><%= button_to "f" + " LOG IN WITH FACEBOOK", "/auth/facebook", class: 'facebook'%></li>
+      <% end %>
+          </ul>
+      </div>
+    </div>
+   <div class="main"> 
+    <%= yield %>
+    </div>
+  </body>
+</html>
