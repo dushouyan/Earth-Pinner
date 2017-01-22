@@ -28,6 +28,12 @@ class PlacesController < ApplicationController
 
   def destroy
   end
+
+  def add_dreams 
+  @place = Place.find(params[:place_id])
+  @user = User.find(params[:user_id])
+  @user.dream.places.push(@place)
+  end
 end
 
 private 

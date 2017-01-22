@@ -1,8 +1,8 @@
-<h1>Share Your Beautiful Place</h1>
+<h1>Share Your Escape</h1>
 <%= form_for Place.new do |f| %>
 <div class="places_form">
 		<p><%= flash[:placeerror] if flash[:placeerror] %></p>
-		<%= f.label :name, value: 'Your Favorite Place' %>
+		<%= f.label :name, value: 'Place' %>
 		<%= f.text_field :name %>
 
 		<%= f.label "City or Town, Etc." %>
@@ -15,9 +15,9 @@
 		<%= f.label :closest_city, value: 'Closest_City' %>
 		<%= f.text_field :closest_city %>
 
-		<%= f.label :website, value: 'Webstie' %>
+		<%= f.label :website, value: 'Website' %>
 		<%= f.text_field :website %>
 
-		<%= f.submit class: 'submit_button' %>
+		<%= f.submit class: 'submit_button', value: 'Share' %>
 </div>
 	<% end %>

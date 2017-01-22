@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
     get '/about', to: 'pages#about'
 
+    post '/places/add_dreams', to: 'places#add_dreams'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

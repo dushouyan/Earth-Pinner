@@ -1,2 +1,0 @@
-class Dreamplace < ApplicationRecord
-end
