@@ -11,6 +11,9 @@ class User < ApplicationRecord
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
+        if user.save
+          Dream.create(user_id: user.id)
+        end
     end
   end
 
