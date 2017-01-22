@@ -6,7 +6,6 @@
 $color-one: rgb(52, 165, 111); 
 
 body {
-	padding-top: 70px;
 	font-size: 1.7em;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 900;
@@ -25,6 +24,10 @@ a {
 	font-family: 'Dr Sugiyama', cursive;
 	text-align: center;
 	margin: 0;
+}
+
+.navbar-fixed-top {
+	position: static;
 }
 
 .navbar-fixed-top ul {

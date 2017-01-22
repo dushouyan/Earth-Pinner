@@ -15,6 +15,8 @@ class PlacesController < ApplicationController
     @place = Place.new(places_params)
       if @place.save 
         redirect_back(fallback_location: new_place_path)
+      else 
+        flash[:placeerror] = "Error Saving"
       end
   end
 

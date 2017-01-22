@@ -1,0 +1,2 @@
+class Dreamplace < ApplicationRecord
+end

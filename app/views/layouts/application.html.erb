@@ -12,7 +12,7 @@
     <div class="navbar navbar-fixed-top">
           <ul>
             <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Create A Place", new_place_path %></li>
+            <li><%= link_to "Places", places_path %></li>
             <h1 id="logo">Travel Bug</h1>
        <% if current_user %>
               <li><%= link_to "Welcome #{current_user.name}", user_path(current_user) %> </li>

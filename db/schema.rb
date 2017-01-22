@@ -10,13 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170119040755) do
+ActiveRecord::Schema.define(version: 20170122002133) do
 
   create_table "dreams", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "dreams_places", id: false, force: :cascade do |t|
+    t.integer "place_id", null: false
+    t.integer "dream_id", null: false
+    t.index ["dream_id", "place_id"], name: "index_dreams_places_on_dream_id_and_place_id"
+    t.index ["place_id", "dream_id"], name: "index_dreams_places_on_place_id_and_dream_id"
   end
 
   create_table "place_reviews", force: :cascade do |t|
