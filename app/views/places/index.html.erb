@@ -1,6 +1,6 @@
 <% @places.all.each do |place| %>
 	<div class="place_display">
-			<%= link_to place_path(place.id) do %>
+			<%= link_to place_path(place.url) do %>
 				<div class="place_color">
 					<p><%= place.name %></p>
 				</div>
