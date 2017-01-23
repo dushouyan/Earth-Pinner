@@ -1,7 +1,20 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="users_nav">
+	<ul>
+		<li><%= link_to 'Share Your Escape', new_place_path %></li>
+		<li><%= link_to 'Update Your Profile' %></li>
+	</ul>	
+</div>
+
+<h2>My Profile</h2>
 
 
+<h2>My Dream Places</h2>
 <% @dream.places.each do |place| %>
-	<%= place.name %>
+<div class="place_display">
+			<%= link_to place_path(place.url) do %>
+				<div class="place_color">
+					<p><%= place.name %></p>
+				</div>
+			<% end %> 
+	</div>
 <% end %>
