@@ -18,17 +18,21 @@
 	<p>Location: <%= @place.city %>, <%= @place.country %></p>
 	<p>Closest City: <%= @place.closest_city %></p>
 	<p>Website: <%= @place.website %></p>
+	<p><%= @place.latitude %></p>
+	<p><%= @place.longitude %><p>
 	<h4>About <%= @place.country %></h4>
 	<h4>How To Get To <%= @place.name %> Without Car or Tour</h4>
+
 
 </div>
 
 <div class="map">
 </div>
 
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_MAPS_API_KEY %>&callback=initMap">
-    </script>
-
+<% if false %>
+<script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_MAPS_API_KEY %>&callback=initMap">
+</script>
+<% end %>
 
 
