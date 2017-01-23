@@ -2,6 +2,8 @@ class Place < ApplicationRecord
 	has_and_belongs_to_many :dreams 
 	has_many :reviews
 
+	validates :name, presence: true, uniqueness: true
+
 	before_validation :pretty_url
 
 	def pretty_url
