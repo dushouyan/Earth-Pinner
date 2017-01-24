@@ -24,12 +24,17 @@
 </div>
 
 
+<h2>Latest Experiences At <%= @place.name %></h2>
+<% @place.experiences.each do |experience| %>
+<div class="experiences">
+	<%= experience.reviews %>
+</div>
+<% end %>
+
+
 <div id="map">
 <p class="latitude"><%= @place.latitude %></p><p class="longitude"><%= @place.longitude %></p>
 </div>
-
-
-
 
 <script async defer
    src="https://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_MAPS_API_KEY %>&callback=initMap">
