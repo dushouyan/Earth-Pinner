@@ -7,7 +7,7 @@
 	<% if current_user %>
 		<%= form_tag 'add_dreams' do %>
 
-		<%= hidden_field_tag  :user_id, current_user.id %>
+		<%= hidden_field_tag :user_id, current_user.id %>
 		<%= hidden_field_tag :place_id, @place.id %>
 		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 		<%= button_tag "", type: 'submit', class: "glyphicon glyphicon-plus-sign" %>
@@ -15,24 +15,25 @@
 		<% end %>
 	<% else %>	
 	<% end %>
-	<p>Location: <%= @place.city %>, <%= @place.country %></p>
+	<p><%= @place.city %>,<%= @place.state %> <%= @place.country %></p>
 	<p>Closest City: <%= @place.closest_city %></p>
-	<p>Website: <%= @place.website %></p>
-	<p><%= @place.latitude %></p>
-	<p><%= @place.longitude %><p>
+	<p><%= @place.website %></p>
+	<p class="latitude"><%= @place.latitude %></p>
+	<p class="longitude"><%= @place.longitude %><p>
 	<h4>About <%= @place.country %></h4>
 	<h4>How To Get To <%= @place.name %> Without Car or Tour</h4>
 
 
 </div>
 
-<div class="map">
+<div id="map">
 </div>
 
-<% if false %>
+
+
 <script async defer
    src="https://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_MAPS_API_KEY %>&callback=initMap">
 </script>
-<% end %>
+
 
 

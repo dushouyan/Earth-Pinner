@@ -5,7 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# Turn Address Into Long Lat
+
+gem 'exifr'
+gem "paperclip", "~> 5.0.0"
+# Turn Lat/Long Into Address
 gem 'geocoder'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'

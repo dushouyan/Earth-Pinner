@@ -9,14 +9,6 @@ var longitude = document.getElementsByClassName('longitude')[0].innerHTML;
 var latitude = parseFloat(latitude)
 var longitude = parseFloat(longitude)
 
-
-console.log(latitude)
-console.log(longitude)
-
-
-})
-
-
  window.initMap = function () {
         var uluru = {lat: latitude, lng: longitude };
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -26,6 +18,11 @@ console.log(longitude)
         var marker = new google.maps.Marker({
           position: uluru,
           map: map
+          styles:
         });
       }
+
+
+})
+
 
