@@ -3,6 +3,10 @@ class Place < ApplicationRecord
 	has_many :reviews
 
 	validates :name, presence: true, uniqueness: true
+	validates :address, presence: true
+	validates :country, presence: true
+	has_attached_file :avatar, styles: { thumb: "200x200>" }
+	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 	before_validation :pretty_url
 
@@ -10,11 +14,8 @@ class Place < ApplicationRecord
 		self.url = self.name.strip.downcase.gsub(' ','-')
 	end
 
-	def full_street_address
-		[address, city, state, country].compact.join(', ')
-	end
  
-	geocoded_by :full_street_address
+	geocoded_by :address	
 	after_validation :geocode   
 
 end

@@ -39,5 +39,5 @@ end
 private 
 
 def places_params
-    params.require(:place).permit(:name, :address, :city, :state, :country, :closest_city, :website)
+    params.require(:place).permit(:name, :address, :country, :avatar, :created_by)
 end

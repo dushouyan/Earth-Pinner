@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170124015256) do
+ActiveRecord::Schema.define(version: 20170124021902) do
 
   create_table "dreams", force: :cascade do |t|
     t.integer  "user_id"
@@ -37,13 +37,17 @@ ActiveRecord::Schema.define(version: 20170124015256) do
     t.string   "name"
     t.string   "country"
     t.string   "website"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "url"
     t.string   "address"
     t.string   "created_by"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

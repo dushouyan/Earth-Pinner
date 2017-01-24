@@ -1,7 +1,9 @@
 <h1><%= @place.name %></h1>
 
-<div class="place_image">
+<div class="place_image" style="background-image: url('<%= @place.avatar.url %>')">
+
 </div>
+
 
 <div class="place_content_bar">
 	<% if current_user %>
@@ -15,11 +17,7 @@
 		<% end %>
 	<% else %>	
 	<% end %>
-	<p><%= @place.city %>,<%= @place.state %> <%= @place.country %></p>
-	<p>Closest City: <%= @place.closest_city %></p>
 	<p><%= @place.website %></p>
-	<p class="latitude"><%= @place.latitude %></p>
-	<p class="longitude"><%= @place.longitude %><p>
 	<h4>About <%= @place.country %></h4>
 	<h4>How To Get To <%= @place.name %> Without Car or Tour</h4>
 
@@ -27,7 +25,9 @@
 </div>
 
 <div id="map">
+<p class="latitude"><%= @place.latitude %></p><p class="longitude"><%= @place.longitude %></p>
 </div>
+
 
 
 

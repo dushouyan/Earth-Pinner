@@ -4,9 +4,10 @@
 $color-one: rgb(52, 165, 111); 
 
 .place_display {
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 	width: 200px;
 	height: 200px;
-	border: 1px solid black;
 	float: left;
 }
 
@@ -61,20 +62,17 @@ h1 {
 
 
 .place_image {
-	background-image: url('');
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	width: 70%;
 	height: 500px;
 	float: left;
-	border: 1px solid black;
 }
 
 .place_content_bar {
 	width: 30%;
 	height: 500px;
 	float: left; 
-	border: 1px solid black;
 }
 
 .place_content_bar p {
@@ -93,6 +91,14 @@ h1 {
 #map {
 	width: 75%;
 	height: 400px;
+}
+
+.longitude {
+	display: none;
+}
+
+.latitude {
+	display: none;
 }
 
 .places_form {
@@ -114,3 +120,5 @@ input.submit_button {
 	margin-top: 20px;
 	background-color: $color-one;
 }
+
+
