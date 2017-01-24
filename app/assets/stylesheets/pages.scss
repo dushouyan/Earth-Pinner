@@ -1,8 +1,7 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
+$color-one: rgb(52, 165, 111); 
 
 .home_image {
 	background-image: url('frontpage.jpg');
@@ -21,5 +20,21 @@
 	margin-top: 50px;
 }
 
+form#search-form {
+	text-align: center;
+}
 
+input#search {
+	width: 50%;
+	height: 50px;
+	margin: 0 auto;
+	margin-top: 20px;
+	outline-color: $color-one;
+}
 
+input.search_button {
+	margin-left: 20px;
+	height: 50px;
+	background-color: $color-one;
+	outline-color: $color-one;
+}
