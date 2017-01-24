@@ -15,6 +15,16 @@ window.initMap = function () {
           zoom: 13,
           center: uluru,
           styles: [
+            { 
+              featureType: 'administrative.country',
+              elementType: 'geometry.fill',
+              stylers: [{color: '#FFFFFF'}]
+            },
+            { 
+              featureType: 'administrative.country',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#FFFFFF'}]
+            },
             {
               featureType: 'landscape.natural.landcover',
               elementType: 'geometry.fill',
@@ -33,7 +43,7 @@ window.initMap = function () {
             {
               featureType: 'road.local',
               elementType: 'geometry.stroke',
-              stylers: [{color: '#191919'}]
+              stylers: [{color: '#D3D3D3'}]
             },
             {
               featureType: 'road.highway',
@@ -43,7 +53,7 @@ window.initMap = function () {
             {
               featureType: 'road.highway',
               elementType: 'geometry.stroke',
-              stylers: [{color: '#191919'}]
+              stylers: [{color: '#D3D3D3'}]
             },
             { 
               featureType: 'poi.park',
