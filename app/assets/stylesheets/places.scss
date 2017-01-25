@@ -2,13 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $color-one: rgb(52, 165, 111); 
+.place_flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 
 .place_display {
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
-	width: 200px;
+	width: 20%;
 	height: 200px;
-	float: left;
 }
 
 .place_color {

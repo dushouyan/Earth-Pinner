@@ -1,3 +1,4 @@
+<div class="place_flex">
 <% @places.all.each do |place| %>
 	<div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
 			<%= link_to place_path(place.url) do %>
@@ -7,3 +8,4 @@
 			<% end %> 
 	</div>
 <% end %>
+</div>
