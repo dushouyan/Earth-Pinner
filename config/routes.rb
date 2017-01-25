@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     root to: 'pages#home'
 
     get '/about', to: 'pages#about'
+    get '/plan-your-trip', to: 'pages#help', as: 'help'
 
     post '/places/add_dreams', to: 'places#add_dreams'
 

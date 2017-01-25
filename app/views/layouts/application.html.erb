@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+<body>
     <div class="navbar navbar-fixed-top">
           <ul>
             <li><%= link_to "Home", root_path %></li>
@@ -22,10 +22,17 @@
               <li><%= button_to "f" + " Log In With Facebook", "/auth/facebook", class: 'facebook'%></li>
       <% end %>
           </ul>
-      </div>
     </div>
-   <div class="main"> 
+  <div class="container"> 
     <%= yield %>
-    </div>
-  </body>
+
+
+  </div>
+  <div class="main_footer">
+    <ul>
+      <li><%= link_to "About", about_path %>
+      <li><%= link_to "Plan Your Trip", help_path %>
+    </ul>
+  </div>
+</body>
 </html>
