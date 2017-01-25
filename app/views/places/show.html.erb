@@ -5,7 +5,7 @@
 </div>
 
 
-<div class="place_content_bar">
+<div class="row place_content_bar">
 	<% if current_user %>
 		<%= form_tag 'add_dreams' do %>
 
@@ -17,17 +17,19 @@
 		<% end %>
 	<% else %>	
 	<% end %>
+	<%= button_to 'Share Your Experience At @place.name', place_experiences_path %>
 	<p><%= @place.website %></p>
 	<h4>About <%= @place.country %></h4>
 	<h4>How To Get To <%= @place.name %> Without Car or Tour</h4>
 
 </div>
 
-
+<div class="row experience div">
 <h2>Latest Experiences At <%= @place.name %></h2>
 <% @place.experiences.each do |experience| %>
 <div class="experiences">
 	<%= experience.reviews %>
+</div>
 </div>
 <% end %>
 

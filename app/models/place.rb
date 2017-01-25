@@ -14,7 +14,6 @@ class Place < ApplicationRecord
 		self.url = self.name.strip.downcase.gsub(' ','-')
 	end
 
- 
 	geocoded_by :address	
 	after_validation :geocode   
 

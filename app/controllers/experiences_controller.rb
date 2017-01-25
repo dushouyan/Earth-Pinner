@@ -1,5 +1,8 @@
-class ExperienceController < ApplicationController
+class ExperiencesController < ApplicationController
   def index
+  end
+
+  def new
   end
 
   def new
@@ -7,9 +10,10 @@ class ExperienceController < ApplicationController
   end
 
   def create
-  	@experience = Experience.new(experience_params)
+  	@experience = Experience.new
   	@experience.save
   end
+  
 
   def destroy
   end
