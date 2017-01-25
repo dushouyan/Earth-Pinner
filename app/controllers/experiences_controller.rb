@@ -1,8 +1,6 @@
 class ExperiencesController < ApplicationController
-  def index
-  end
 
-  def new
+  def index
   end
 
   def new
@@ -10,7 +8,7 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-  	@experience = Experience.new
+  	@experience = Experience.new(experiences_params)
   	@experience.save
   end
   
@@ -18,3 +16,11 @@ class ExperiencesController < ApplicationController
   def destroy
   end
 end
+
+
+private 
+
+def experiences_params
+    params.require(:experience).permit(:user_id, :place_id, :review)
+end
+

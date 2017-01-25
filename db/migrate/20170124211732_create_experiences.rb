@@ -3,7 +3,7 @@ class CreateExperiences < ActiveRecord::Migration[5.0]
     create_table :experiences do |t|
       t.integer :user_id
       t.integer :place_id
-      t.string  :review
+      t.text  :review
 
       t.timestamps
     end

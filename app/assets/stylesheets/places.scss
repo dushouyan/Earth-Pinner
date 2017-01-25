@@ -66,10 +66,29 @@ h1 {
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 500px;
-	float: left;
 	border-bottom: 1px solid black;
 }
 
+.place_content_bar {
+	margin: 30px;
+	font-size: .80em;
+	font-weight: 400;
+	text-align: center;
+}
+
+.place_info_bar {
+	@extend .place_content_bar
+}
+
+.experience_div {
+	@extend .place_content_bar
+}
+
+.place_buttons {
+	background-color: $color-one;
+	color: white;
+	outline-color: $color-one;
+}
 
 #map {
 	width: 100%;
@@ -101,12 +120,13 @@ h1 {
 .places_form label {
 	margin-top: 10px;
 }
-
 input.submit_button {
 	width: 10%;
 	margin-top: 20px;
 	background-color: $color-one;
 	outline-color: $color-one;
+	color: white;
+	font-weight: 400;
 }
 
 .places_form_content {

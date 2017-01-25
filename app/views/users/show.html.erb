@@ -10,7 +10,7 @@
 
 <h2>My Dream Places</h2>
 <% @dream.places.each do |place| %>
-<div class="place_display">
+<div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
 			<%= link_to place_path(place.url) do %>
 				<div class="place_color">
 					<p><%= place.name %></p>

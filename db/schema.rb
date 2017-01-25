@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170124211732) do
   create_table "experiences", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "place_id"
-    t.string   "review"
+    t.text     "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
