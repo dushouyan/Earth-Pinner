@@ -5,84 +5,23 @@
 $(document).ready(function () { 
 
 
-var colorsArray = ["rgba(52, 165, 111, .5)", "rgba(236, 43, 43, .5)", "rgba(28, 28, 241, .5)", "rgba(0, 0, 0, .5)"]
-var thumbsGet = document.getElementsByClassName('place_color')[0];
+var colorsArray = ["rgba(52, 165, 111, .5)", "rgba(236, 43, 43, .5)", "rgba(28, 28, 241, .5)", "rgba(0, 0, 0, .5)", "rgba(245, 249, 5, .5)"]
 
-
-        thumbsGet.addEventListener('mouseenter', function () {
+function changeColor() {
+  var thumbsGet = document.getElementsByClassName('place_color');
+      for (var i = 0; i < thumbsGet.length; i++) {
+        thumbsGet[i].addEventListener('mouseenter', function () {
           colorNumber = [Math.floor(Math.random() * colorsArray.length)];
-            thumbsGet.style.backgroundColor = colorsArray[colorNumber];
-})
-        thumbsGet.addEventListener('mouseleave', function () {
-            thumbsGet.style.backgroundColor = 'transparent';
+            this.style.backgroundColor = colorsArray[colorNumber];
 })
 
+        thumbsGet[i].addEventListener('mouseleave', function () {
+            this.style.backgroundColor = 'transparent';
+})
+}
+}
 
-window.initMap = function () {
-        var uluru = {lat: latitude, lng: longitude };
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
-          center: uluru,
-          styles: [
-            { 
-              featureType: 'administrative.country',
-              elementType: 'geometry.fill',
-              stylers: [{color: '#FFFFFF'}]
-            },
-            { 
-              featureType: 'administrative.country',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#FFFFFF'}]
-            },
-            {
-              featureType: 'landscape.natural.landcover',
-              elementType: 'geometry.fill',
-              stylers: [{color: '#34A56F'}]
-            },
-               {
-              featureType: 'landscape.natural.terrain',
-              elementType: 'geometry.fill',
-              stylers: [{color: '#FFFAFA'}]
-            },
-            {
-              featureType: 'road.local',
-              elementType: 'geometry.fill',
-              stylers: [{color: '#D3D3D3'}]
-            },
-            {
-              featureType: 'road.local',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#D3D3D3'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'geometry.fill',
-              stylers: [{color: '#D3D3D3'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#D3D3D3'}]
-            },
-            { 
-              featureType: 'poi.park',
-              elementType: 'geometry.fill',
-              stylers: [{color: '#7CFC00'}]
-            },
-            {
-              featureType: 'water',
-              elementType: 'geometry',
-              stylers: [{color: '#00E5EE'}]
-            },
-          
-          ]
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-
+changeColor()
 
 })
 
