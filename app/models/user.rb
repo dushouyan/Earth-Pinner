@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	has_one :dream 
+  has_one :make 
 	has_many :experiences
 
  def self.from_omniauth(auth)
@@ -12,6 +13,7 @@ class User < ApplicationRecord
       user.save!
         if user.save
           Dream.create(user_id: user.id)
+          Make.create(user_id: user.id)
         end
     end
   end

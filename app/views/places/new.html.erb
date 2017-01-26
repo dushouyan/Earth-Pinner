@@ -1,7 +1,8 @@
 <h1>Share Your Escape</h1>
 <%= form_for Place.new do |f| %>
 <div class="places_form">
-		<p><%= flash[:placeerror] if flash[:placeerror] %></p>
+		<p class="place_flash"><%= flash[:placesuccess] if flash[:placesuccess] %></p>
+		<p class="place_flash"><%= flash[:placeerror] if flash[:placeerror] %></p>
 
 		<%= f.label "Add Photo" %>
 		<%= f.file_field :avatar %>
@@ -18,7 +19,9 @@
 		<%= f.label "Shared By" %>
 		<%= f.text_field :created_by %>
 
-		<%= f.submit class: 'submit_button', value: 'Share' %>
+		<%= hidden_field_tag :makes_id, current_user.make.id %>
+
+		<%= f.submit value: 'Share', class: 'submit_button' %>
 </div>
 	<% end %>
 

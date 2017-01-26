@@ -20,7 +20,9 @@ class PlacesController < ApplicationController
     @place = Place.new(places_params)
       if @place.save 
         redirect_back(fallback_location: new_place_path)
+        flash[:placesuccess] = "Thanks"
       else 
+        redirect_back(fallback_location: new_place_path)
         flash[:placeerror] = "Error Saving"
       end
   end
@@ -44,5 +46,5 @@ end
 private 
 
 def places_params
-    params.require(:place).permit(:name, :address, :country, :avatar, :created_by)
+    params.require(:place).permit(:name, :address, :country, :avatar, :created_by, :make_id)
 end

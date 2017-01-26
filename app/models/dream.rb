@@ -1,4 +1,4 @@
 class Dream < ApplicationRecord
 	belongs_to :user 
-	has_and_belongs_to_many :places, -> { uniq }
+	has_and_belongs_to_many :places, -> { distinct } #uniq
 end

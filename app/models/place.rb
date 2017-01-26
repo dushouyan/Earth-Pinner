@@ -1,5 +1,6 @@
 class Place < ApplicationRecord 
-	has_and_belongs_to_many :dreams 
+	has_and_belongs_to_many :dreams
+	belongs_to :make  
 	has_many :experiences
 
 	validates :name, presence: true, uniqueness: true
