@@ -13,7 +13,7 @@
 		<%= f.text_field :address %>
 
 		<%= f.label :country, value: "Country" %>
-		<%= f.text_field :country %>
+		<%= f.select(:country, options_for_select(countries)) %>
 
 		<%= f.label "Shared By" %>
 		<%= f.text_field :created_by %>
