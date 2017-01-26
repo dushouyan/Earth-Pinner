@@ -14,6 +14,42 @@
 
 
 
+ <div id="amap"></div>
+    <script>
 
+      function initMap() {
 
+        var map = new google.maps.Map(document.getElementById('amap'), {
+          zoom: 2,
+          center: {lat: 41.2524, lng: 95.9980}
+        });
 
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+      <% @places.each do |place| %>
+        {lat: <%= place.latitude %> , lng: <%= place.longitude %>},
+      <% end %>  
+      ]
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_MAPS_API_KEY %>&callback=initMap">
+    </script>
