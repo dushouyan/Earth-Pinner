@@ -19,7 +19,7 @@
 		<%= f.label "Shared By" %>
 		<%= f.text_field :created_by %>
 
-		<%= hidden_field_tag :makes_id, current_user.make.id %>
+		<%= f.hidden_field :make_id, :value => current_user.make.id %>
 
 		<%= f.submit value: 'Share', class: 'submit_button' %>
 </div>
