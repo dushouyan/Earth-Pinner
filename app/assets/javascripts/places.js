@@ -4,6 +4,20 @@
 
 $(document).ready(function () { 
 
+
+var colors = ["rgba(52, 165, 111, .5)", "rgba(236, 43, 43, .5)", "rgba(28, 28, 241, .5)", "rgba(0, 0, 0, .5)"]
+var placeColor = document.getElementsByClassName('place_color');
+
+
+        placeColor.addEventListener('mouseenter', function () {
+          colorNumber = [Math.floor(Math.random() * colors.length)];
+            placeColor.style.backgroundColor = colors[colorNumber];
+})
+        placeColor.addEventListener('mouseleave', function () {
+            placeColor.style.backgroundColor = 'transparent';
+})
+
+
 var latitude = document.getElementsByClassName('latitude')[0].innerHTML;
 var longitude = document.getElementsByClassName('longitude')[0].innerHTML;
 var latitude = parseFloat(latitude)

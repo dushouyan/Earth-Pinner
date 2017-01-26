@@ -41,7 +41,8 @@
 	<h2>Latest Experiences At <%= @place.name %></h2>
 			<% @place.experiences.last(5).each do |experience| %>
 				<div class="experiences">
-				<%= experience.created_at.strftime("%b %d, %Y") %><br><br>
+				<%= experience.created_at.strftime("%b %d, %Y") %><br>
+				<strong>By <%= experience.user_name %></strong><br><br>
 				<%= experience.review %>
 				</div>
 			<% end %>
