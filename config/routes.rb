@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     get '/plan-your-trip', to: 'pages#help', as: 'help'
 
     post '/places/add_dreams', to: 'places#add_dreams'
+    post 'users/delete_dreams', to: 'users#delete_dreams'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

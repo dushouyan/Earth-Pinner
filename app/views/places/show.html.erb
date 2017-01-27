@@ -13,8 +13,7 @@
 		<%= hidden_field_tag :user_id, current_user.id %>
 		<%= hidden_field_tag :place_id, @place.id %>
 		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-		<%= button_tag "", type: 'submit', class: "glyphicon glyphicon-plus-sign" %>
-		Add To Dreams
+		<%= button_tag "Add To Dreams", type: 'submit', class: "place_buttons" %>
 		<% end %>
 	<% end %>
 	</div>
@@ -55,12 +54,13 @@
 
 <script>
 
-function initMap () {
-        var uluru = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %> };
+     function initMap() {
+        var uluru = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 13,
           center: uluru,
-          styles: [
+          mapTypeId: 'terrain',
+           styles: [
             { 
               featureType: 'administrative.country',
               elementType: 'geometry.fill',
@@ -76,7 +76,7 @@ function initMap () {
               elementType: 'geometry.fill',
               stylers: [{color: '#34A56F'}]
             },
-               {
+            {
               featureType: 'landscape.natural.terrain',
               elementType: 'geometry.fill',
               stylers: [{color: '#FFFAFA'}]
@@ -111,7 +111,6 @@ function initMap () {
               elementType: 'geometry',
               stylers: [{color: '#00E5EE'}]
             },
-          
           ]
         });
         var marker = new google.maps.Marker({
@@ -119,7 +118,7 @@ function initMap () {
           map: map
         });
       }
-
+       
 </script>
 
 <script async defer

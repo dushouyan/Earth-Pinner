@@ -13,6 +13,13 @@
 			<%= link_to place_path(place.url) do %>
 				<div class="place_color">
 					<p><%= place.name %></p>
+						<%= form_tag 'delete_dreams' do %>
+
+						<%= hidden_field_tag :place_id, @user.dream.places.ids %>
+						<%= hidden_field_tag :user_id, @user.id %>
+						<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+						<%= submit_tag 'X' %>
+						<% end %>
 				</div>
 			<% end %> 
 		</div>
