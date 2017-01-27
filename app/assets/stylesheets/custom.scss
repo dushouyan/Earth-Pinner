@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@import url('https://fonts.googleapis.com/css?family=Dr+Sugiyama');
+@import url('https://fonts.googleapis.com/css?family=Rouge+Script');
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,900');
 @import url('https://fonts.googleapis.com/css?family=Seaweed+Script');
 $color-one: rgb(52, 165, 111); 
@@ -25,9 +25,10 @@ a {
 }
 
 #logo {
-	font-family: 'Dr Sugiyama', cursive;
+	font-family: 'Rouge Script', cursive;
 	text-align: center;
 	margin: 0;
+	color: $color-one;
 }
 
 .navbar-fixed-top {

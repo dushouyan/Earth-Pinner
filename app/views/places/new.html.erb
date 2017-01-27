@@ -17,7 +17,7 @@
 		<%= f.select(:country, options_for_select(countries)) %>
 
 		<%= f.label "Shared By" %>
-		<%= f.text_field :created_by %>
+		<%= f.text_field :created_by, :value => current_user.name, :readonly => true %>
 
 		<%= f.hidden_field :make_id, :value => current_user.make.id %>
 
