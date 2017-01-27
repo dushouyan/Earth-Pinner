@@ -54,7 +54,7 @@
 
 <script>
 
-     function initMap() {
+     function initMap () {
         var uluru = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 13,
@@ -106,12 +106,23 @@
               elementType: 'geometry.fill',
               stylers: [{color: '#7CFC00'}]
             },
+            { 
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#FFFFFF'}]
+            },
+            { 
+              featureType: 'poi.park',
+              elementType: 'labels.text.stroke',
+              stylers: [{color: '#000000'}]
+            },
             {
               featureType: 'water',
               elementType: 'geometry',
               stylers: [{color: '#00E5EE'}]
             },
           ]
+           
         });
         var marker = new google.maps.Marker({
           position: uluru,

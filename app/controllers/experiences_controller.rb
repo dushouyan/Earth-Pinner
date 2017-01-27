@@ -5,14 +5,13 @@ class ExperiencesController < ApplicationController
 
   def new
   	@experience = Experience.new
+    @place = Place.where(url: params[:url]).first
   end
 
   def create
-  	@experience = Experience.new(experiences_params)
-  	@experience.save
+  	@experience = Experience.create!(experiences_params)
   end
   
-
   def destroy
   end
 end
@@ -21,6 +20,6 @@ end
 private 
 
 def experiences_params
-    params.require(:experience).permit(:user_id, :place_id, :review)
+    params.require(:experience).permit(:user_id, :place_id, :user_name, :review)
 end
 

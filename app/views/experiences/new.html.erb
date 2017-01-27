@@ -5,9 +5,10 @@
 
 <%= form_for @experience, url: 'create', :method => 'post' do |f| %> 
 
-	<%= hidden_field_tag :user_id, current_user.id %>
-	<%= hidden_field_tag :place_id, @place.url %>
-	<%= hidden_field_tag :user_name, current_user.name %>
+	<%= f.hidden_field :user_id, :value => current_user.id %>
+	<%= f.hidden_field :place_id, :value => @place.id %>
+	<%= f.hidden_field :user_name, :value => current_user.name %>
+
 	<%= f.label :review %> 
 	<%= f.text_field :review %>
 
