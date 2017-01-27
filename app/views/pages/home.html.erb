@@ -7,7 +7,7 @@
 
 <div class="row search_bar">
 <%= form_tag(places_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Find Your Place" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search The Earth" %>
     <%= submit_tag "Search", :name => nil, class: 'search_button' %>
 <% end %>
 </div>

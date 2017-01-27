@@ -9,11 +9,15 @@ class Place < ApplicationRecord
 	has_attached_file :avatar, styles: { thumb: "200x200>" }
 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-	before_validation :pretty_url
+	before_validation :pretty_url, :name_title
 
 	def pretty_url
 		self.url = self.name.strip.downcase.gsub(' ','-')
 	end
+
+	def name_title 
+		self.name = self.name.titleize
+	end 
 
 	geocoded_by :address	
 	after_validation :geocode   
