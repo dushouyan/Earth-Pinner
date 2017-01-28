@@ -1,16 +1,19 @@
-<h1>Experiences#new</h1>
-<p>Find me in app/views/experiences/new.html.erb</p>
-
-
+<h3>Share Your Experience At <%= @place.name %></h3>
 
 <%= form_for @experience, url: 'create', :method => 'post' do |f| %> 
+	
+	<% current_user.experiences.each do |experience| %>	
+	<% if experience.user_id == current_user.id && experience.place.id == @place.id %>
+		<p>You Have Already Submitted Your Review</p>
+	<% end %>	
+<% end %>
+				<%= f.hidden_field :user_id, :value => current_user.id %>
+				<%= f.hidden_field :place_id, :value => @place.id %>
+				<%= f.hidden_field :user_name, :value => current_user.name %>
 
-	<%= f.hidden_field :user_id, :value => current_user.id %>
-	<%= f.hidden_field :place_id, :value => @place.id %>
-	<%= f.hidden_field :user_name, :value => current_user.name %>
+				<%= f.label :review %> 
+				<%= f.text_field :review %>
 
-	<%= f.label :review %> 
-	<%= f.text_field :review %>
-
-	<%= submit_tag "Review" %>
+				<%= submit_tag "Review" %>
+		
 <% end %>

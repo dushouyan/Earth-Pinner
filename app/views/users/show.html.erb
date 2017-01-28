@@ -1,12 +1,13 @@
+<h2><%= @user.name.split.first %>'s Profile</h2>
+
 <div class="users_nav">
 	<ul>
-		<li><%= link_to 'Share Your Escape', new_place_path %></li>
+		<li><%= link_to 'Pin Your Escape', new_place_path %></li>
 		<li><%= link_to 'Update Your Profile' %></li>
 	</ul>	
 </div>
 
-<h2>My Profile</h2>
-<h2><%= @user.name.split.first %>'s' Dream Places</h2>
+<div class="place_flex_title"><h2><%= @user.name.split.first %>'s' Dream Places</h2><p>(Places You Want To Visit)</p></div>
 <div class="place_flex">
 	<% @user.dream.places.each do |place| %>
 		<div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
@@ -15,7 +16,7 @@
 					<p><%= place.name %></p>
 						<%= form_tag 'delete_dreams' do %>
 
-						<%= hidden_field_tag :place_id, @user.dream.places.ids %>
+						<%= hidden_field_tag :place_id, place.id %>
 						<%= hidden_field_tag :user_id, @user.id %>
 						<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 						<%= submit_tag 'X' %>
@@ -25,8 +26,7 @@
 		</div>
 	<% end %>
 </div>
-
-<h2><%= @user.name.split.first %>'s' Shared Escapes</h2>
+<div class="place_flex_title"><h2><%= @user.name.split.first %>'s' Shared Escapes</h2><p>(Places Pinned On Our Travel Map)</p></div>
 <div class="place_flex">
 	<% @user.make.places.each do |place| %>
 		<div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">

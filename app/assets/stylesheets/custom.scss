@@ -79,15 +79,18 @@ a {
     width: 100%;
     min-height: 40px;
     margin-bottom: -15px;
+    background-color: #F0FFF0;
 }
 
 .main_footer ul {
 	list-style-type: none;
 	margin-left: 15px;
+	margin-bottom: 0;
 	padding: 0;
 	display: flex;
-	align-items: flex-end;
-	justify-content: space-around;
+	height: 40px;
+    align-items: flex-end;
+    justify-content: space-around;
 }
 
 .main_footer li a {

@@ -1,4 +1,4 @@
-<h1>Share Your Escape</h1>
+<h1>Pin Your Escape</h1>
 <%= form_for Place.new do |f| %>
 <div class="places_form">
 		<p class="place_flash"><%= flash[:placesuccess] if flash[:placesuccess] %></p>
@@ -21,7 +21,7 @@
 
 		<%= f.hidden_field :make_id, :value => current_user.make.id %>
 
-		<%= f.submit value: 'Share', class: 'submit_button' %>
+		<%= f.submit 'Share', class: 'submit_button' %>
 </div>
 	<% end %>
 

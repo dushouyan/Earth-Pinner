@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 	has_one :dream 
   has_one :make 
-	has_many :experiences
+	has_many :experiences, -> { distinct } #uniq 
 
  def self.from_omniauth(auth)
   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

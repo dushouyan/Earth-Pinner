@@ -18,8 +18,9 @@
 	<% end %>
 	</div>
 	<div class="col-xs-4 info">
-	<%= button_to 'Share Your Experience', new_place_experience_path, :method => "get", class: 'place_buttons' %>
+	       <%= button_to 'Share Your Experience', new_place_experience_path, :method => "get", class: 'place_buttons' %>
 	</div>
+  
 	<div class="col-xs-4 info">
 	<%= button_to "Plan Your Trip", help_path, :method => "get", class: 'place_buttons' %>
 	</div>
@@ -38,11 +39,11 @@
 
 <div class="row experience_div">
 	<h2>Latest Experiences At <%= @place.name %></h2>
-			<% @place.experiences.last(5).each do |experience| %>
+			<% @place.experiences.last(5).reverse_each do |experience| %>
 				<div class="experiences">
 				<%= experience.created_at.strftime("%b %d, %Y") %><br>
 				<strong>By <%= experience.user_name %></strong><br><br>
-				<%= experience.review %>
+				<%= experience.review %><br><br>
 				</div>
 			<% end %>
 </div>
