@@ -121,7 +121,7 @@ h1 {
 .places_form {
 	text-align: center;
 	float: left;
-	width: 65%;
+	width: 55%;
 	clear: left;
 }
 
@@ -153,8 +153,11 @@ input.submit_button {
 }
 
 .places_form_content {
-	width: 35%;
+	width: 45%;
 	float: right;
+	font-size: .85em;
+	font-weight: 400;
+	padding: 30px;
 }
 
 

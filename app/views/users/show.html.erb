@@ -7,7 +7,7 @@
 	</ul>	
 </div>
 
-<div class="place_flex_title"><h2><%= @user.name.split.first %>'s' Dream Places</h2><p>(Places You Want To Visit)</p></div>
+<div class="place_flex_title"><h2><%= @user.name.split.first %>'s' Dream Places</h2><%= @user.dream.places.length %><p>(Places You Want To Visit)</p></div>
 <div class="place_flex">
 	<% @user.dream.places.each do |place| %>
 		<div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
@@ -26,7 +26,7 @@
 		</div>
 	<% end %>
 </div>
-<div class="place_flex_title"><h2><%= @user.name.split.first %>'s' Shared Escapes</h2><p>(Places Pinned On Our Travel Map)</p></div>
+<div class="place_flex_title"><h2><%= @user.name.split.first %>'s' Shared Escapes</h2><%= @user.make.places.length %></span><p>(Places Pinned On Our Travel Map)</p></div>
 <div class="place_flex">
 	<% @user.make.places.each do |place| %>
 		<div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
