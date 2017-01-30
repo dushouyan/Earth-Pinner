@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170126213431) do
     t.string   "address"
     t.string   "created_by"
     t.integer  "make_id"
+    t.boolean  "approved"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "avatar_file_name"

@@ -21,11 +21,14 @@
 
 		<%= f.hidden_field :make_id, :value => current_user.make.id %>
 
+		<%= f.hidden_field :approved, :value => false %>
+
 		<%= f.submit 'Pin', class: 'submit_button' %>
 </div>
 	<% end %>
 
 <div class="places_form_content">
 <h3>Submiting A Pin For Approval</h3>
+<p>What is a place, heavly photoshopped</p>
 <p>Do Not Leave Anything Blank.</p><p>Please use A GPS Address as "Address".</p><p> All images must be yours. The main image is meant to give an accurate represention of the place, please do not use photoshop, these images will eventually be deleted.</p><p>Your name will be listed on the bottom right hand corner of the image when displayed on our website.</p><p> Our team will approve images within 24 hours of submission.</p><p>Thanks for helping pin "The World's Greatest Travel Map."</p>
 </div>
