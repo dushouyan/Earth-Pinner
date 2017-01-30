@@ -1,14 +1,15 @@
 class PlacesController < ApplicationController
+
   def index
     @places = Place.all
-  if params[:search]
-    @places = Place.search(params[:search]).order("created_at DESC")
-  else
-    @places = Place.all.order("created_at DESC")
-  end
+    if params[:search]
+      @places = Place.search(params[:search]).order("created_at DESC")
+    else
+      @places = Place.all.order("created_at DESC")
+    end 
   end
 
-  def show
+  def show 
     @place = Place.find_by_url(params[:url])
   end
 
@@ -41,9 +42,16 @@ class PlacesController < ApplicationController
   @user = User.find(params[:user_id])
   @user.dream.places.push(@place)
   end
-end
+
+end 
 
 private 
+
+def approve_places
+  @place = Place.find(params[:id])
+  @place.approved = true
+  @place.save
+end 
 
 def places_params
     params.require(:place).permit(:name, :address, :country, :avatar, :created_by, :make_id, :approved)

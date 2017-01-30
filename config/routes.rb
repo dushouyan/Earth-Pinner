@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
     post '/places/add_dreams', to: 'places#add_dreams'
     post 'users/delete_dreams', to: 'users#delete_dreams'
-
+    put 'places/approve_places', to: 'places#approve_places'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

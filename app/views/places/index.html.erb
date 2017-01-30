@@ -117,12 +117,17 @@
 
 <div class="place_flex">
 <% @places.all.each do |place| %>
-	<div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
+	   <div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
 			<%= link_to place_path(place.url) do %>
 				<div class="place_color">
 					<p><%= place.name %></p>
 				</div>
-			<% end %> 
-	</div>
+      <% end %>  
+    </div>
+       <% if current_user.admin %>
+          <%= form_for 'approve_places' do %>
+            <%= button_tag "approve", type: 'submit' %>
+          <% end %>
+        <% end %> 
 <% end %>
 </div>
