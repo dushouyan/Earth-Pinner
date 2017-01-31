@@ -1,11 +1,15 @@
 class PlacesController < ApplicationController
 
   def index
-    @places = Place.all
-    if params[:search]
-      @places = Place.search(params[:search]).order("created_at DESC")
+    if current_user.admin
+      @places = Place.all
     else
-      @places = Place.all.order("created_at DESC")
+      @places = Place.where(approved: true)
+        if params[:search]
+          @places = Place.search(params[:search]).order("created_at DESC")
+        else
+         @places = Place.all.order("created_at DESC")
+        end
     end 
   end
 
@@ -32,6 +36,8 @@ class PlacesController < ApplicationController
   end
 
   def update
+    @place = Place.find(params[:id])
+    @place.update(approved: true)
   end
 
   def destroy
@@ -46,12 +52,6 @@ class PlacesController < ApplicationController
 end 
 
 private 
-
-def approve_places
-  @place = Place.find(params[:id])
-  @place.approved = true
-  @place.save
-end 
 
 def places_params
     params.require(:place).permit(:name, :address, :country, :avatar, :created_by, :make_id, :approved)

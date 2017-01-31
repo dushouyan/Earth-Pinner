@@ -124,10 +124,8 @@
 				</div>
       <% end %>  
     </div>
-       <% if current_user.admin %>
-          <%= form_for 'approve_places' do %>
-            <%= button_tag "approve", type: 'submit' %>
-          <% end %>
-        <% end %> 
+                  <% if current_user.admin? %>
+                        <%= link_to("Approve", places_update_path(place), :confirm => "Are you sure?", :method => :post) %>
+                  <% end %> 
 <% end %>
 </div>

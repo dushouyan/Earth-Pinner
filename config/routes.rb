@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get '/places/new', to: 'places#new', as: 'new_place'
     get '/places/:url', to: 'places#show', as: 'place' 
     post '/places', to: 'places#create'
+    post 'places/update', to: 'places#update'
 
     get '/places/:url/experiences/new', to: 'experiences#new', as: 'new_place_experience'
     post '/places/:url/experiences/create', to: 'experiences#create'
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
 
     post '/places/add_dreams', to: 'places#add_dreams'
     post 'users/delete_dreams', to: 'users#delete_dreams'
-    put 'places/approve_places', to: 'places#approve_places'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
