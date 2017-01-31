@@ -42,6 +42,6 @@
 </div>
 
   <%= form_for(@user, :method => 'delete') do |f| %>
-       <%= f.submit 'Delete Your Account' %> PLEASE NOOOOO!!!!!!
+       <%= f.submit 'Delete Your Account', data: { confirm: "Are you sure?" } %> PLEASE NOOOOO!!!!!!
   <% end %>
 

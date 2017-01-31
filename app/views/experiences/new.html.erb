@@ -1,13 +1,7 @@
 <h3>Share Your Experience At <%= @place.name %></h3>
 
 
-	<% current_user.experiences.each do |experience| %>	
-	<% if experience.user_id == current_user.id && experience.place.id == @place.id %>
-		<p>You Have Already Submitted Your Review</p>
-	<% end %>	
-<% end %>
-
-<%= form_for @experience, url: 'create', :method => 'post' do |f| %> 
+	<%= form_for @experience, url: 'create', :method => 'post' do |f| %> 
 	
 				<%= f.hidden_field :user_id, :value => current_user.id %>
 				<%= f.hidden_field :place_id, :value => @place.id %>
@@ -17,5 +11,5 @@
 				<%= f.text_field :review %>
 
 				<%= submit_tag "Review" %>
+	<% end %>			
 		
-<% end %>

@@ -9,7 +9,8 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-  	@experience = Experience.create!(experiences_params)
+  	@experience = Experience.create(experiences_params)
+    redirect_to place_path
   end
   
   def destroy
