@@ -125,7 +125,13 @@
       <% end %>  
     </div>
                   <% if current_user.try(:admin?) %>
-                        <%= link_to("Approve", places_update_path(place.id), :confirm => "Are you sure?", :method => :post) %>
+                      <%= form_for(place, :method => 'patch') do |f| %>
+                      <%= f.submit 'Approve' %>
+                      <% end %>
+
+                      <%= form_for(place, :method => 'delete') do |f| %>
+                      <%= f.submit 'Delete' %>
+                      <% end %>
                   <% end %> 
 <% end %>
 </div>

@@ -9,15 +9,15 @@ Rails.application.routes.draw do
     get '/places/new', to: 'places#new', as: 'new_place'
     get '/places/:url', to: 'places#show', as: 'place' 
     post '/places', to: 'places#create'
-    post 'places/update', to: 'places#update'
+    patch 'places/:id', to: 'places#update'
+    delete 'places/:id', to: 'places#destroy'
 
     get '/places/:url/experiences/new', to: 'experiences#new', as: 'new_place_experience'
     post '/places/:url/experiences/create', to: 'experiences#create'
  
     resources :sessions
     resources :users 
-
-   
+  
    
     root to: 'pages#home'
 

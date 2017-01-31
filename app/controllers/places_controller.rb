@@ -1,5 +1,7 @@
 class PlacesController < ApplicationController
 
+  before_action :set_place, only: [:edit, :update, :destroy]
+
   def index
     if current_user.try(:admin?)
       @places = Place.where(:approved => false)
@@ -36,11 +38,13 @@ class PlacesController < ApplicationController
   end
 
   def update
-    @place = Place.find(params[:id])
-    @place.update(approved: true)
+    @place.update(:approved => true)
+    redirect_back(fallback_location: places_path)
   end
 
   def destroy
+    @place.delete
+    redirect_back(fallback_location: places_path)
   end
 
   def add_dreams 
@@ -52,6 +56,10 @@ class PlacesController < ApplicationController
 end 
 
 private 
+
+def set_place 
+  @place = Place.find(params[:id])
+end
 
 def places_params
     params.require(:place).permit(:name, :address, :country, :avatar, :created_by, :make_id, :approved)
