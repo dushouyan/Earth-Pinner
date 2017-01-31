@@ -124,8 +124,8 @@
 				</div>
       <% end %>  
     </div>
-                  <% if current_user.admin? %>
-                        <%= link_to("Approve", places_update_path(place), :confirm => "Are you sure?", :method => :post) %>
+                  <% if current_user.try(:admin?) %>
+                        <%= link_to("Approve", places_update_path(place.id), :confirm => "Are you sure?", :method => :post) %>
                   <% end %> 
 <% end %>
 </div>

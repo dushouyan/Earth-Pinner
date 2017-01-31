@@ -1,20 +1,20 @@
 class PlacesController < ApplicationController
 
   def index
-    if current_user.admin
-      @places = Place.all
-    else
-      @places = Place.where(approved: true)
+    if current_user.try(:admin?)
+      @places = Place.where(:approved => false)
+    else  
+      @places = Place.where(:approved => true)
         if params[:search]
           @places = Place.search(params[:search]).order("created_at DESC")
         else
-         @places = Place.all.order("created_at DESC")
+          @places = Place.where(:approved => true).order("created_at DESC")
         end
     end 
   end
 
   def show 
-    @place = Place.find_by_url(params[:url])
+    @place = Place.where(:approved => true).find_by_url(params[:url])
   end
 
   def new
