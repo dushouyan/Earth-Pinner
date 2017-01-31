@@ -27,6 +27,7 @@ a {
 #logo {
 	font-family: 'Rouge Script', cursive;
 	color: $color-one;
+	font-size: 2.8em;
 }
 
 .mynavbar ul {
@@ -36,10 +37,6 @@ a {
 	align-items: flex-end;
 	margin-bottom: 10px;
 	padding: 0;
-}
-
-.mynavbar h1 {
-	font-size: 2.8em;
 }
 
 .mynavbar li a {
