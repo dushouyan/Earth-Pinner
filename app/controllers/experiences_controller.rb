@@ -22,6 +22,6 @@ end
 private 
 
 def experiences_params
-    params.require(:experience).permit(:user_id, :place_id, :user_name, :review)
+    params.require(:experience).permit(:user_id, :place_id, :user_name, :review, :rating)
 end
 

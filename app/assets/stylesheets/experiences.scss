@@ -1,3 +1,18 @@
 // Place all the styles related to the experiences controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.ratings label > input { /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+
+.ratings label > input + .five { /* IMAGE STYLES */
+  cursor:pointer;
+}
+
+.ratings label > input:checked + .five { /* (RADIO CHECKED) IMAGE STYLES */
+  fill: #ff0000;
+}
