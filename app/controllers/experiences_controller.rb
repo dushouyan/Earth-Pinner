@@ -1,6 +1,7 @@
 class ExperiencesController < ApplicationController
 
   def index
+    @place = Place.find_by_url(params[:url])
   end
 
   def new

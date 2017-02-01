@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     patch 'places/:id', to: 'places#update'
     delete 'places/:id', to: 'places#destroy'
 
+    get '/places/:url/experiences', to: 'experiences#index'
     get '/places/:url/experiences/new', to: 'experiences#new', as: 'new_place_experience'
     post '/places/:url/experiences/create', to: 'experiences#create'
  
