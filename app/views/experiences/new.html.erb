@@ -1,6 +1,9 @@
 <h3>Share Your Experience At <%= @place.name %></h3>
 
 
+<% if Experience.exists?(user_id: [current_user.id], place_id: @place.id) %>
+	Thanks for sharing !
+<% else %>
 	<%= form_for @experience, url: 'create', :method => 'post' do |f| %> 
 	
 				<%= f.hidden_field :user_id, :value => current_user.id %>
@@ -12,4 +15,4 @@
 
 				<%= submit_tag "Review" %>
 	<% end %>			
-		
+<% end %>
