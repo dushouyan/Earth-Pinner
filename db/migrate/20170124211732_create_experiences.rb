@@ -5,6 +5,7 @@ class CreateExperiences < ActiveRecord::Migration[5.0]
       t.integer :place_id
       t.string :user_name 
       t.text  :review
+      t.integer :rating
 
       t.timestamps
     end

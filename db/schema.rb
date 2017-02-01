@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170126213431) do
     t.integer  "place_id"
     t.string   "user_name"
     t.text     "review"
+    t.integer  "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
