@@ -40,27 +40,21 @@ $('.fillstar').eq(1).on('click', function() {
 $('.fillstar').eq(2).on('click', function() {
 	noStars()
 	$(this).addClass('filled')
-	$('.fillstar').eq(0).addClass('filled')
-	$('.fillstar').eq(1).addClass('filled')			
+	$('.fillstar').slice(0,2).addClass('filled')		
 })
 
 
 $('.fillstar').eq(3).on('click', function() {
 	noStars()
 	$(this).addClass('filled')
-	$('.fillstar').eq(0).addClass('filled')
-	$('.fillstar').eq(1).addClass('filled')
-	$('.fillstar').eq(2).addClass('filled')			
+	$('.fillstar').slice(0,3).addClass('filled')			
 })
 
 
 $('.fillstar').eq(4).on('click', function() {
 	noStars()
 	$(this).addClass('filled')
-	$('.fillstar').eq(0).addClass('filled')
-	$('.fillstar').eq(1).addClass('filled')
-	$('.fillstar').eq(2).addClass('filled')
-	$('.fillstar').eq(3).addClass('filled')					
+	$('.fillstar').slice(0,4).addClass('filled')
 })
 
 function noStars () {
