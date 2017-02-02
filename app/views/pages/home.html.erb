@@ -144,22 +144,26 @@
             position: location,
             label: labels[i % labels.length]
           });
+
         });
+
+ google.maps.event.addListener(markers, 'click', function () {
+  window.location.href = 'http://www.google.com';
+});
+
 
         // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-      
 }
 
-
-     
-
-         var locations = [
-  	<% @places.all.each do |place| %>
-  	{lat: <%= place.latitude %>, lng: <%= place.longitude %>}, 
-  	<% end %>
-]
+             var locations = [
+      <% @places.each do |place| %>
+      <% if place.latitude != nil && place.longitude != nil %>
+        {lat: <%= place.latitude %> , lng: <%= place.longitude %>},
+      <% end %>
+      <% end %>  
+      ]
    
 
        </script>

@@ -58,10 +58,10 @@ $('.fillstar').each(function() {
 });
 }
 
-counter = 100;
+placesCounter = 500;
 $('.place_display').each(function () {
-	counter = counter + 100;
-	$( this ).fadeIn(counter, function() {
+	placesCounter = placesCounter + 200;
+	$( this ).fadeIn(placesCounter, function() {
 })
 })
 
