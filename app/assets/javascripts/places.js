@@ -21,7 +21,87 @@ function changeColor() {
 }
 }
 
-changeColor()
+
+
+
+$('.fillstar').eq(0).on('click', function() {
+	noStars()
+	$(this).addClass('filled')	
+})
+
+
+$('.fillstar').eq(1).on('click', function() {
+	noStars()
+	$(this).addClass('filled')
+	$('.fillstar').eq(0).addClass('filled')	
+})
+
+
+$('.fillstar').eq(2).on('click', function() {
+	noStars()
+	$(this).addClass('filled')
+	$('.fillstar').eq(0).addClass('filled')
+	$('.fillstar').eq(1).addClass('filled')			
+})
+
+
+$('.fillstar').eq(3).on('click', function() {
+	noStars()
+	$(this).addClass('filled')
+	$('.fillstar').eq(0).addClass('filled')
+	$('.fillstar').eq(1).addClass('filled')
+	$('.fillstar').eq(2).addClass('filled')			
+})
+
+
+$('.fillstar').eq(4).on('click', function() {
+	noStars()
+	$(this).addClass('filled')
+	$('.fillstar').eq(0).addClass('filled')
+	$('.fillstar').eq(1).addClass('filled')
+	$('.fillstar').eq(2).addClass('filled')
+	$('.fillstar').eq(3).addClass('filled')					
+})
+
+function noStars () {
+$('.fillstar').each(function() {
+	$( this ).removeClass('filled')
+});
+}
+
+
+
+
+/*
+var stars = document.getElementsByClassName('fillstar');
+console.log(stars)
+
+function starSystem () {
+	for (var i = 0; i < stars.length; i++) {
+		stars[i].addEventListener('click', function() {
+			console.log(this)
+			unfilledStars();
+			filledStars();
+		})
+	};
+}
+
+starSystem()
+
+
+function filledStars () {
+	for (var i = 0; i < 2; i++) {
+		stars[i].classList.add('filled');
+	};
+}
+
+
+function unfilledStars() {
+	for (var i = 0; i < stars.length; i++) {
+		stars[i].classList.remove('filled')
+	}
+}*/
+
 
 })
 
