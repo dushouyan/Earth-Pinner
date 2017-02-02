@@ -21,8 +21,7 @@ function changeColor() {
 }
 }
 
-
-
+changeColor()
 
 $('.fillstar').eq(0).on('click', function() {
 	noStars()
@@ -32,29 +31,25 @@ $('.fillstar').eq(0).on('click', function() {
 
 $('.fillstar').eq(1).on('click', function() {
 	noStars()
-	$(this).addClass('filled')
-	$('.fillstar').eq(0).addClass('filled')	
+	$('.fillstar').slice(0,2).addClass('filled')	
 })
 
 
 $('.fillstar').eq(2).on('click', function() {
 	noStars()
-	$(this).addClass('filled')
-	$('.fillstar').slice(0,2).addClass('filled')		
+	$('.fillstar').slice(0,3).addClass('filled')		
 })
 
 
 $('.fillstar').eq(3).on('click', function() {
 	noStars()
-	$(this).addClass('filled')
-	$('.fillstar').slice(0,3).addClass('filled')			
+	$('.fillstar').slice(0,4).addClass('filled')			
 })
 
 
 $('.fillstar').eq(4).on('click', function() {
 	noStars()
-	$(this).addClass('filled')
-	$('.fillstar').slice(0,4).addClass('filled')
+	$('.fillstar').slice(0,5).addClass('filled')
 })
 
 function noStars () {
@@ -63,8 +58,12 @@ $('.fillstar').each(function() {
 });
 }
 
-
-
+counter = 100;
+$('.place_display').each(function () {
+	counter = counter + 100;
+	$( this ).fadeIn(counter, function() {
+})
+})
 
 /*
 var stars = document.getElementsByClassName('fillstar');
@@ -98,5 +97,4 @@ function unfilledStars() {
 
 
 })
-
 

@@ -98,6 +98,7 @@ $color-one: rgb(52, 165, 111);
 	background-repeat: no-repeat;
 	width: 20%;
 	height: 200px;
+	display: none;
 }
 
 .place_color {
@@ -240,4 +241,7 @@ input.submit_button {
 	padding: 30px;
 }
 
+.gmnoprint {
+	color: white;
+}
 

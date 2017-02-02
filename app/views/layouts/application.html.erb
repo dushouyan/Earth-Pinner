@@ -13,7 +13,13 @@
           <ul>
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Places", places_path %></li>
-            <li><h1 id="logo">Earth Pinner</h1></li>
+              
+            <li><h1 class="logo">Earth Pinner</h1></li>
+                <script>
+               <% if current_page?('/') %>
+                  document.getElementsByClassName('logo')[0].classList.add('endlogo')
+                  <% end %>
+                </script>
        <% if current_user %>
               <li><%= link_to "My Profile", user_path(current_user) %> </li>
               <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>

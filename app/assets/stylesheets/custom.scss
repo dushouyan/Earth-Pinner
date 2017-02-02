@@ -24,11 +24,25 @@ a {
 	min-height: 100vh;
 }
 
-#logo {
+.logo {
 	font-family: 'Rouge Script', cursive;
 	color: $color-one;
 	font-size: 2.8em;
 }
+
+.endlogo {
+	white-space: nowrap;
+  	overflow: hidden;
+	animation: write 3s steps(60, end); 
+	width: 100%;
+}
+
+
+@keyframes write{
+  0%{width: 0;}
+  50%{width: 50;}
+  100%{ width: 100;} 
+} 
 
 .mynavbar ul {
 	list-style-type: none;
@@ -92,3 +106,5 @@ a {
 .main_footer li a:hover {
 	color: $color-one;
 }
+
+
