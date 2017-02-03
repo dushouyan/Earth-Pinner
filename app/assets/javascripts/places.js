@@ -65,6 +65,9 @@ $('.place_display').each(function () {
 })
 })
 
+
+
+
 /*
 var stars = document.getElementsByClassName('fillstar');
 console.log(stars)

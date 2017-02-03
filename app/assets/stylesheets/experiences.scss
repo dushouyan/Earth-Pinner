@@ -4,7 +4,14 @@
 $color-one: rgb(52, 165, 111);
 $color-low-one: rgba(52, 165, 111, .2);  
 
+.experience_share h3 {
+	text-align: center;
+}
 
+.ratings {
+	display: flex;
+	justify-content: center;
+}
 
 .ratings label {
 
@@ -18,7 +25,31 @@ $color-low-one: rgba(52, 165, 111, .2);
 }
 
 	.filled {
-		fill: green;
+		fill: $color-one;
 }
+
+}
+
+.review_box {
+
+#experience_review {
+	width: 60%;
+	height: 300px;
+	display: block;
+	outline-color: $color-one;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.share_button {
+	width: 10%;
+	display: block;
+	background-color: $color-one;
+	outline-color: $color-one;
+	color: white;
+	font-weight: 400;
+	margin: 0 auto;
+}
+
 
 }

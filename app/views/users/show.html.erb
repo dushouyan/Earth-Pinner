@@ -1,47 +1,45 @@
-<h2><%= @user.name.split.first %>'s Profile</h2>
 
-<div class="users_nav">
+		<h2><%= @user.name.split.first %>'s Profile</h2>
 	<ul>
-		<li><%= link_to 'Pin Your Escape', new_place_path %></li>
-		<li><%= link_to 'Update Your Profile' %></li>
-	</ul>	
-</div>
+		<li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+		<li>  <%= form_for(@user, :method => 'delete') do |f| %>
+      		 <%= f.submit 'Delete Your Account', data: { confirm: "Are you sure?" } %> PLEASE NOOOOO!!!!!!<% end %>
+      	</li>
+	</ul>
 
-<div class="place_flex_title"><h2><%= @user.name.split.first %>'s' Dream Places</h2></div>
-<div class="place_flex">
-	<% @user.dream.places.each do |place| %>
-		<div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
-			<%= link_to place_path(place.url) do %>
-				<div class="place_color">
-					<p><%= place.name %></p>
-						<%= form_tag 'delete_dreams' do %>
+	<div class="place_flex_title">
+		<h2><%= @user.name.split.first %>'s' Dream Places</h2></div>
+	<div class="place_flex">
+		<% @user.dream.places.each do |place| %>
+			<div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
+				<%= link_to place_path(place.url) do %>
+					<div class="place_color">
+						<p><%= place.name %></p>
+							<%= form_tag 'delete_dreams' do %>
 
-						<%= hidden_field_tag :place_id, place.id %>
-						<%= hidden_field_tag :user_id, @user.id %>
-						<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-						<%= submit_tag 'X' %>
-						<% end %>
-				</div>
-			<% end %> 
-		</div>
-	<% end %>
-</div>
-<div class="place_flex_title"><h2><%= @user.name.split.first %>'s' Shared Escapes</h2></div>
-<div class="place_flex">
-	<% @user.make.places.each do |place| %>
-	<% if place.approved? %>
-		<div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
-			<%= link_to place_path(place.url) do %>
-				<div class="place_color">
-					<p><%= place.name %></p>
-				</div>
-			<% end %> 
-		</div>
-	<% end %>	
-	<% end %>	
-</div>
-
-  <%= form_for(@user, :method => 'delete') do |f| %>
-       <%= f.submit 'Delete Your Account', data: { confirm: "Are you sure?" } %> PLEASE NOOOOO!!!!!!
-  <% end %>
+							<%= hidden_field_tag :place_id, place.id %>
+							<%= hidden_field_tag :user_id, @user.id %>
+							<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+							<%= submit_tag 'X' %>
+							<% end %>
+					</div>
+				<% end %> 
+			</div>
+		<% end %>
+	</div>
+	<div class="place_flex_title">
+		<h2><%= @user.name.split.first %>'s' Shared Escapes</h2></div>
+	<div class="place_flex">
+		<% @user.make.places.each do |place| %>
+		<% if place.approved? %>
+			<div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
+				<%= link_to place_path(place.url) do %>
+					<div class="place_color">
+						<p><%= place.name %></p>
+					</div>
+				<% end %> 
+			</div>
+		<% end %>	
+		<% end %>	
+	</div>
 
