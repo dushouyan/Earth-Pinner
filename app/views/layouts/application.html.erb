@@ -21,7 +21,7 @@
                   <% end %>
                 </script>
        <% if current_user %>
-              <li><%= link_to 'Pin Your Escape', new_place_path %></li>
+              <li><%= link_to 'Pin Your Place', new_place_path %></li>
               <li><%= link_to "My Profile", user_path(current_user) %></li>
       <% else %>
               <li></li>
@@ -38,6 +38,11 @@
     <ul>
       <li><%= link_to "About", about_path %></li>
       <li><%= link_to "Plan Your Trip", help_path %></li>
+       <% if current_user %>
+      <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+      <li> <%= form_for(current_user, :method => 'delete') do |f| %>
+           <%= f.submit 'Delete Your Account', data: { confirm: "Are you sure?" } %><% end %></li>
+      <% end %>
     </ul>
   </div>
 </body>

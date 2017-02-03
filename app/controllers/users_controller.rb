@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+
   def index
   end
 
@@ -32,3 +34,4 @@ class UsersController < ApplicationController
     redirect_back(fallback_location: user_path(@user.id))
   end
 end
+

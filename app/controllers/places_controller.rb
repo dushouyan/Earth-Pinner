@@ -33,10 +33,10 @@ class PlacesController < ApplicationController
     @place = Place.new(places_params)
       if @place.save 
         redirect_back(fallback_location: new_place_path)
-        flash[:placesuccess] = "Thanks"
+        flash[:placesuccess] = "Your Place Was Submitted! Thanks!"
       else 
         redirect_back(fallback_location: new_place_path)
-        flash[:placeerror] = "Error Saving"
+        flash[:placeerror] = "Place Must Be Unique Or Some Forms Were Left Blank"
       end
   end
 
