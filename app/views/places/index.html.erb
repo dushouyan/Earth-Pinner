@@ -8,12 +8,12 @@
 				</div>
       <% end %>  
     </div>
-                  <% if current_user.try(:admin?) %>
-                      <%= form_for(place, :method => 'patch', confirm: "Are You Sure?") do |f| %>
-                      <%= f.submit 'Approve', data: { confirm: "Are you sure?" } %>
+               <% if current_user.try(:admin?) %>
+     <%= form_for(place, :method => 'patch', confirm: "Are You Sure?") do |f| %>
+            <%= f.submit 'Approve', data: { confirm: "Are you sure?" } %>
                       <% end %>
 
-                      <%= form_for(place, :method => 'delete', confirm: "Are You Sure?") do |f| %>
+     <%= form_for(place, :method => 'delete', confirm: "Are You Sure?") do |f| %>
                       <%= f.submit 'Delete', data: { confirm: "Are you sure?" } %>
                       <% end %>
                   <% end %> 

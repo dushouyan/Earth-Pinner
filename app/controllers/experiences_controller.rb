@@ -1,5 +1,6 @@
 class ExperiencesController < ApplicationController
 
+
   def index
     @place = Place.find_by_url(params[:url])
   end
@@ -12,6 +13,14 @@ class ExperiencesController < ApplicationController
   def create
   	@experience = Experience.create(experiences_params)
     redirect_to place_path
+  end
+
+  def edit
+    @experiences = Experience.where(user_id: current_user.id && place_id: @place.id)
+    @place = Place.where(url: params[:url]).first
+  end
+
+  def update
   end
   
   def destroy

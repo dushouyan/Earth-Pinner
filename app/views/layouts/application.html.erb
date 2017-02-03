@@ -41,7 +41,7 @@
        <% if current_user %>
       <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
       <li> <%= form_for(current_user, :method => 'delete') do |f| %>
-           <%= f.submit 'Delete Your Account', data: { confirm: "Are you sure?" } %><% end %></li>
+           <%= f.submit 'Delete Your Account', id: 'delete_account', data: { confirm: "Are you sure?" } %><% end %></li>
       <% end %>
     </ul>
   </div>

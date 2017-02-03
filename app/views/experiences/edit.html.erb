@@ -1,0 +1,9 @@
+
+
+<% @experiences.all.each do |experience| %>
+<%= experience.review %>
+		<%= form_for(update_place_experience_path, :method => 'post') do |f| %>
+	 		<%= f.text_area :review, value: '' %>
+     		<%= f.submit 'Update' %>
+     <% end %>	
+<% end %>

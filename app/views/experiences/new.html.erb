@@ -1,15 +1,20 @@
 <div class="experience_share">
-<h3>Share Your Experience At <%= @place.name %></h3>
-
-
 
 
 <% if Experience.exists?(user_id: [current_user.id], place_id: @place.id) %>
-	<h3>Your Experience At <%= @place.name %></h3>
-		<p>My experience</p>
+			<p>Did You Visit Here Again?</p>
+			<%= button_to 'Update Your Experience', edit_place_experience_path, :method => 'get', class: 'place_buttons' %>
+	
+				<% @place.experiences.each do |experience| %>
+					<% if experience.user_id == current_user.id %>
+						<p class="current_experience"><%= experience.review %></p>
+					<% end %>	
+				<% end %>
+
+	
 <% else %>
 	<%= form_for @experience, url: 'create', :method => 'post' do |f| %> 
-
+		<h3>Share Your Experience At <%= @place.name %></h3>
 			<div class="ratings">
 			<label>
 				<%= f.radio_button(:rating, 1) %>
