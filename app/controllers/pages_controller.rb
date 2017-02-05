@@ -1,6 +1,14 @@
 class PagesController < ApplicationController
   def home
   	@places = Place.all
+  		@index = [*1..@places.length]
+  		@url_array = []
+  		@number = 0
+  		@places.each do |place|
+       if place.latitude != nil && place.longitude != nil 
+  			@url_array.push(place.url)
+      end
+		end
   end
 
   def about
@@ -8,4 +16,5 @@ class PagesController < ApplicationController
 
   def help
   end
+
 end

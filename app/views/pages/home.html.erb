@@ -20,7 +20,7 @@
 
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('amap'), {
-          zoom: 3,
+          zoom: 2,
           center: {lat: 48.856614, lng: 2.3522219},
           mapTypeId: 'terrain',
           styles: [
@@ -133,34 +133,44 @@
         });
 
           // Create an array of alphabetical characters used to label the markers.
-        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+       // var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
         // Add some markers to the map.
         // Note: The code uses the JavaScript Array.prototype.map() method to
         // create an array of markers based on a given "locations" array.
         // The map() method here has nothing to do with the Google Maps API.
         var markers = locations.map(function(location, i) {
-          return new google.maps.Marker({
+            return new google.maps.Marker({
             position: location,
-            label: labels[i % labels.length]
           });
+      });
 
-        });
 
- google.maps.event.addListener(markers, 'click', function () {
-  window.location.href = 'http://www.google.com';
-});
+var urlArray = <%= @url_array.to_json.to_s.html_safe %>
+console.log(urlArray)
+
+for (var i = 0; i < markers.length; i++) {
+  (function (i) {
+  markers[i].addListener('click', function() {
+      window.location.href = '/places/' + urlArray[i]
+  }, false);
+ })(i);
+}
+
+
+
 
 
         // Add a marker clusterer to manage the markers.
-        var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+        var markerCluster = new MarkerClusterer(map, markers, {
+         imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+  });
 }
 
              var locations = [
       <% @places.each do |place| %>
       <% if place.latitude != nil && place.longitude != nil %>
-        {lat: <%= place.latitude %> , lng: <%= place.longitude %>},
+        {lat: <%= place.latitude %> , lng: <%= place.longitude %>, url: '<%= place.url %>' },
       <% end %>
       <% end %>  
       ]
