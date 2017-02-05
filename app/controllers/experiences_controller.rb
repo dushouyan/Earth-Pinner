@@ -16,8 +16,8 @@ class ExperiencesController < ApplicationController
   end
 
   def edit
-    @experiences = Experience.where(user_id: current_user.id && place_id: @place.id)
     @place = Place.where(url: params[:url]).first
+    @experiences = Experience.where(user_id: current_user.id, place_id: @place.id)
   end
 
   def update

@@ -60,7 +60,7 @@
 				<div class="experiences">
 				<%= experience.created_at.strftime("%b %d, %Y") %><br>
 				<strong>By <%= experience.user_name %></strong><br><br>
-				<%= experience.review %><br><br>
+				<%=raw experience.review %><br><br>
 				</div>
 			<% end %>
 </div>

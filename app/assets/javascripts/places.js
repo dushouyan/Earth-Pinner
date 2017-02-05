@@ -58,19 +58,29 @@ $('.fillstar').each(function() {
 });
 }
 
-placesCounter = 500;
-$('.place_display').each(function () {
-	placesCounter = placesCounter + 200;
-	$( this ).fadeIn(placesCounter, function() {
-})
-})
 
+var placeDisplay = document.getElementsByClassName('place_display');
+i = 0
 
+function displayPlace() {
+	setTimeout(function () {
+		placeDisplay[i].style.display = "block";
+		i++;
+		if (i < placeDisplay.length) {
+			displayPlace()
+		}
+	}, 200)
+}
 
+displayPlace()
 
 /*
 var stars = document.getElementsByClassName('fillstar');
 console.log(stars)
+
+
+
+
 
 function starSystem () {
 	for (var i = 0; i < stars.length; i++) {

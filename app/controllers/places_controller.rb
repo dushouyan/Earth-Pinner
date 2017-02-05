@@ -16,6 +16,7 @@ class PlacesController < ApplicationController
   end
 
   def show 
+    #add admin path to see full size photo
     @place = Place.where(:approved => true).find_by_url(params[:url])
     @totalratings = 0
     @averagerating = 0
