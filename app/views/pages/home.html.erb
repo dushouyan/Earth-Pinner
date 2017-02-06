@@ -21,7 +21,7 @@
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('amap'), {
           zoom: 2,
-          center: {lat: 48.856614, lng: 2.3522219},
+          center: {lat: 33.5731, lng: 7.5898},
           mapTypeId: 'terrain',
           styles: [
             { 
@@ -147,17 +147,18 @@
 
 
 var urlArray = <%= @url_array.to_json.to_s.html_safe %>
-console.log(urlArray)
 
-for (var i = 0; i < markers.length; i++) {
-  (function (i) {
+function linkMarkers() {
+  for (var i = 0; i < markers.length; i++) {
+    (function (i) {
   markers[i].addListener('click', function() {
       window.location.href = '/places/' + urlArray[i]
   }, false);
  })(i);
 }
+}
 
-
+linkMarkers()
 
 
 

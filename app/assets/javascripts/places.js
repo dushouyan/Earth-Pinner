@@ -58,12 +58,16 @@ $('.fillstar').each(function() {
 });
 }
 
-
-
+function fadeInPlaces () {
+	counter = 500
 $('.place_display').each(function() {
-	$( this ).fadeIn(200);
+	$( this ).fadeIn(counter);
+	counter = counter + 200;
 });
 
+}
+
+fadeInPlaces()
 
 /*
 var placeDisplay = document.getElementsByClassName('place_display');
