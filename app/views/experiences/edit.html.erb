@@ -1,8 +1,9 @@
+<div class="experience_share">
 
-
-<% @experiences.all.each do |experience| %>
-		<%= form_for(update_place_experience_path, :method => 'post') do |f| %>
-	 		<%= f.text_area :review, value: experience.review %>
-     		<%= f.submit 'Update' %>
-     <% end %>	
+<% if current_user %>
+		<%= form_for(@experience, url: update_place_experience_path) do |f| %>
+	 		<%= f.text_area :review %>
+     		<%= f.submit 'Update', class: "share_button" %>
+     	<% end %>
 <% end %>
+ </div>

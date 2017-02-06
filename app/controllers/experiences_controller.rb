@@ -1,5 +1,6 @@
 class ExperiencesController < ApplicationController
 
+  before_action :set_experience, only: [:edit, :update, :destroy]
 
   def index
     @place = Place.find_by_url(params[:url])
@@ -16,11 +17,12 @@ class ExperiencesController < ApplicationController
   end
 
   def edit
-    @place = Place.where(url: params[:url]).first
-    @experiences = Experience.where(user_id: current_user.id, place_id: @place.id)
+    @place = Place.find_by_url(params[:url])
   end
 
   def update
+    @experience.update!(review: params[:review])
+    redirect_to new_place_experience_path
   end
   
   def destroy
@@ -29,6 +31,10 @@ end
 
 
 private 
+
+def set_experience 
+ @experience = Experience.find(params[:id])
+end
 
 def experiences_params
     params.require(:experience).permit(:user_id, :place_id, :user_name, :review, :rating)

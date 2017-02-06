@@ -15,8 +15,8 @@ Rails.application.routes.draw do
     get '/places/:url/experiences', to: 'experiences#index'
     get '/places/:url/experiences/new', to: 'experiences#new', as: 'new_place_experience'
     post '/places/:url/experiences/create', to: 'experiences#create'
-    get 'places/:url/experiences/edit', to: 'experiences#edit', as: 'edit_place_experience'
-    post 'places/:url/experiences/update', to: 'experiences#update', as: 'update_place_experience'
+    get 'places/:url/experiences/edit/:id', to: 'experiences#edit', as: 'edit_place_experience'
+    patch 'places/:url/experiences/edit/:id', to: 'experiences#update', as: 'update_place_experience'
  
     resources :sessions
     resources :users 

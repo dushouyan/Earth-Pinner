@@ -3,10 +3,10 @@
 
 <% if Experience.exists?(user_id: [current_user.id], place_id: @place.id) %>
 			<p>Did You Visit Here Again?</p>
-			<%= button_to 'Update Your Experience', edit_place_experience_path, :method => 'get', class: 'place_buttons' %>
 	
 				<% @place.experiences.each do |experience| %>
-					<% if experience.user_id == current_user.id %>
+				<% if experience.user_id == current_user.id %>
+		<%= button_to 'Update Your Experience', edit_place_experience_path(@place.url, experience.id), :method => 'get', class: 'place_buttons' %>
 						<p class="current_experience"><%= experience.review %></p>
 					<% end %>	
 				<% end %>
@@ -59,9 +59,9 @@
 				<%= f.hidden_field :user_id, :value => current_user.id %>
 				<%= f.hidden_field :place_id, :value => @place.id %>
 				<%= f.hidden_field :user_name, :value => current_user.name %>
-
+		
 				<%= f.text_area :review, size:"40x50" %>
-
+		
 				<%= submit_tag "Share", class: "share_button" %>
 			</div>
 	<% end %>			

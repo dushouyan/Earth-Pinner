@@ -3,7 +3,6 @@ class PagesController < ApplicationController
   	@places = Place.all
   		@index = [*1..@places.length]
   		@url_array = []
-  		@number = 0
   		@places.each do |place|
        if place.latitude != nil && place.longitude != nil 
   			@url_array.push(place.url)

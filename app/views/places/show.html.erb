@@ -18,12 +18,14 @@
 	<% end %>
 	</div>
 	<div class="col-xs-4 info">
-	       <%= button_to 'Share Your Experience', new_place_experience_path, :method => "get", class: 'place_buttons' %>
-	</div>
-  
-	<div class="col-xs-4 info">
 	<%= button_to "Plan Your Trip", help_path, :method => "get", class: 'place_buttons' %>
 	</div>
+
+    <div class="col-xs-4 info">
+    <% if current_user %>
+         <%= button_to 'Share Your Experience', new_place_experience_path, :method => "get", class: 'place_buttons' %>
+      <% end %>
+  </div>
 </div>
 
 <div class="row place_info_bar">
