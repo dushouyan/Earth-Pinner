@@ -26,4 +26,31 @@
 	border: none;
 }
 
+.user_experiencesheader {
+	text-align: center;
+}
+.user_experiences {
+	h4 {
+		text-align: center;
+
+		font-weight: 900;
+	}
+
+	p {
+		float: left;
+		clear: left;
+		font-weight: 400;
+		display: inline-block;
+		padding-left: 60px;
+		padding-right:60px;
+		margin-bottom: 0;
+	}
+
+	.place_buttons {
+		display: inline-block;
+		float: right;
+		font-weight: 400;
+		margin-right: 60px;
+	}
+}
 

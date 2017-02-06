@@ -35,17 +35,20 @@
 		<% end %>	
 	</div>
 
-
-	<div class="user_experiences">
-		<h2><%= @user.name.split.first %>'s' Shared Experience</h2>
+	
+		<div class="place_flex_title"><h2><%= @user.name.split.first %>'s' Shared Experiences</h2></div>
 		<% @user.experiences.each do |experience| %>
 		<% @places.each do |place| %>
 			<% if experience.place_id == place.id %>
-				<%= link_to 'Update', edit_place_experience_path(place.url, experience.id) %>
-				<p><%= place.name %></p>
+			<div class="row user_experiences">
+				<h4><%= place.name %></h4>
+				<div class="row">
 				<p><%= experience.review %></p>
+				<%= button_to 'Update', edit_place_experience_path(place.url, experience.id), class: 'place_buttons', :method => 'get' %>
+				</div>
+			</div>	
 			<% end %>
 		<% end %>
 		<% end %>
-	</div>	
+	
 
