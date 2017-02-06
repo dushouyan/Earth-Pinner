@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
   def home
   	@places = Place.all
-  		@index = [*1..@places.length]
   		@url_array = []
   		@places.each do |place|
        if place.latitude != nil && place.longitude != nil 

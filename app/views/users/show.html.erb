@@ -35,3 +35,17 @@
 		<% end %>	
 	</div>
 
+
+	<div class="user_experiences">
+		<h2><%= @user.name.split.first %>'s' Shared Experience</h2>
+		<% @user.experiences.each do |experience| %>
+		<% @places.each do |place| %>
+			<% if experience.place_id == place.id %>
+				<%= link_to 'Update', edit_place_experience_path(place.url, experience.id) %>
+				<p><%= place.name %></p>
+				<p><%= experience.review %></p>
+			<% end %>
+		<% end %>
+		<% end %>
+	</div>	
+

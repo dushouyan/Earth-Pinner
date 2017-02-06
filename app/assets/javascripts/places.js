@@ -59,6 +59,13 @@ $('.fillstar').each(function() {
 }
 
 
+
+$('.place_display').each(function() {
+	$( this ).fadeIn(200);
+});
+
+
+/*
 var placeDisplay = document.getElementsByClassName('place_display');
 i = 0
 
@@ -73,7 +80,7 @@ function displayPlace() {
 }
 
 displayPlace()
-
+/*
 /*
 var stars = document.getElementsByClassName('fillstar');
 console.log(stars)

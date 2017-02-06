@@ -65,7 +65,7 @@ end
 private 
 
 def set_place 
-  @place = Place.find(params[:id])
+    @place = Place.find_by_url(params[:url])
 end
 
 def places_params

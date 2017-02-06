@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     get '/places/new', to: 'places#new', as: 'new_place'
     get '/places/:url', to: 'places#show', as: 'place' 
     post '/places', to: 'places#create'
-    patch 'places/:id', to: 'places#update'
-    delete 'places/:id', to: 'places#destroy'
+    patch 'places/:url', to: 'places#update', as: 'update_place' 
+    delete 'places/:url', to: 'places#destroy', as: 'delete_place'
 
     get '/places/:url/experiences', to: 'experiences#index'
     get '/places/:url/experiences/new', to: 'experiences#new', as: 'new_place_experience'

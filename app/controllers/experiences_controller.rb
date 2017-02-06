@@ -21,7 +21,7 @@ class ExperiencesController < ApplicationController
   end
 
   def update
-    @experience.update!(review: params[:review])
+    @experience.update(experiences_params)
     redirect_to new_place_experience_path
   end
   
