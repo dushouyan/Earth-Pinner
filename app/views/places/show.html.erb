@@ -58,15 +58,18 @@
 <div class="row experience_div">
 	<h2>Latest Experiences At <%= @place.name %></h2>
   <p>Average User Rating <span id="averagerating"><%= @averagerating %></span></p>
-			<% @place.experiences.last(5).reverse_each do |experience| %>
-				<div class="experiences">
+			<% @place.experiences.each do |experience| %>
+        <div class="experiences">
 				<%= experience.created_at.strftime("%b %d, %Y") %><br>
 				<strong>By <%= experience.user_name %></strong><br><br>
-				<%=raw experience.review %><br><br>
+				<%= experience.review %><br><br>
 				</div>
 			<% end %>
+   <div class="experiences_bar">
+        <span class="experience_page"><</span>
+        <span class="experience_page">></span>
+    </div>   
 </div>
-
 
 
 <div id="map">

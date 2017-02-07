@@ -6,16 +6,16 @@
 				<div class="place_color">
 					<p><%= place.name %></p>
 				</div>
-      <% end %>  
+<% end %>  
     </div>
                <% if current_user.try(:admin?) %>
-     <%= form_for(place, url: update_place_path(place.url), :method => 'patch', confirm: "Are You Sure?") do |f| %>
-            <%= f.submit 'Approve', data: { confirm: "Are you sure?" } %>
+                     <%= form_for(place, url: update_place_path(place.url), :method => 'patch', confirm: "Are You Sure?") do |f| %>
+                      <%= f.submit 'Approve', data: { confirm: "Are you sure?" } %>
                       <% end %>
 
-     <%= form_for(place, url: delete_place_path(place.url), :method => 'delete', confirm: "Are You Sure?") do |f| %>
+                      <%= form_for(place, url: delete_place_path(place.url), :method => 'delete', confirm: "Are You Sure?") do |f| %>
                       <%= f.submit 'Delete', data: { confirm: "Are you sure?" } %>
                       <% end %>
-                  <% end %> 
+               <% end %> 
 <% end %>
 </div>

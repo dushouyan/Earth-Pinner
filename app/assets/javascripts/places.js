@@ -58,6 +58,7 @@ $('.fillstar').each(function() {
 });
 }
 
+
 function fadeInPlaces () {
 	counter = 500
 $('.place_display').each(function() {
@@ -66,9 +67,52 @@ $('.place_display').each(function() {
 });
 
 }
-
 fadeInPlaces()
 
+var allExperiences = document.getElementsByClassName('experiences');
+var pageBack = document.getElementsByClassName('experience_page')[0];
+var pageForward = document.getElementsByClassName('experience_page')[1];
+
+pageForward.addEventListener('click', goForward)
+pageBack.addEventListener('click', goBack)
+var index = 0
+var number = 1
+
+function hideExperiences() {
+	for (var i = 0; i < allExperiences.length; i++)
+		allExperiences[i].style.display = "none"
+}
+
+function goForward () {
+		console.log(index)
+		console.log(number)
+		hideExperiences()
+	for (index; index <= number; index++) {
+		allExperiences[index].style.display = "block"
+	} 
+		number = number + 2 
+}
+
+function goBack () {
+	console.log(index)
+	console.log(number)
+	hideExperiences()
+	index = index - 2
+	number = number - 2
+		for (index; index <= number; index++) {
+			allExperiences[index].style.display = "block"
+		}
+}
+
+goForward()
+
+
+
+/*
+pageBack.addEventListener('click', function () {
+	
+})
+*/
 /*
 var placeDisplay = document.getElementsByClassName('place_display');
 i = 0

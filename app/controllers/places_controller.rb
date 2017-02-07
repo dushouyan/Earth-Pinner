@@ -63,11 +63,11 @@ class PlacesController < ApplicationController
 end 
 
 private 
-
+=begin
 def set_place 
     @place = Place.find_by_url(params[:url])
 end
-
+=end
 def places_params
     params.require(:place).permit(:name, :address, :country, :avatar, :created_by, :make_id, :approved)
 end

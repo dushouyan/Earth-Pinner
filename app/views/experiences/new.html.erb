@@ -1,6 +1,6 @@
 <div class="experience_share">
 
-
+<% if false %>
 <% if Experience.exists?(user_id: [current_user.id], place_id: @place.id) %>
 			<p>Did You Visit Here Again?</p>
 	
@@ -10,7 +10,7 @@
 						<p class="current_experience"><%= experience.review %></p>
 					<% end %>	
 				<% end %>
-
+<% end %>
 	
 <% else %>
 	<%= form_for @experience, url: 'create', :method => 'post' do |f| %> 
