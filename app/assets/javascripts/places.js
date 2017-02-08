@@ -58,55 +58,52 @@ $('.fillstar').each(function() {
 });
 }
 
-
-function fadeInPlaces () {
-	counter = 500
+counter = 500
 $('.place_display').each(function() {
+	counter = counter + 200
 	$( this ).fadeIn(counter);
-	counter = counter + 200;
 });
 
-}
-fadeInPlaces()
 
 var allExperiences = document.getElementsByClassName('experiences');
 var pageBack = document.getElementsByClassName('experience_page')[0];
 var pageForward = document.getElementsByClassName('experience_page')[1];
 
+console.log(allExperiences)
 pageForward.addEventListener('click', goForward)
 pageBack.addEventListener('click', goBack)
-var index = 0
-var number = 1
+
+
+index = 0
+number = 5
+
 
 function hideExperiences() {
-	for (var i = 0; i < allExperiences.length; i++)
-		allExperiences[i].style.display = "none"
-}
-
-function goForward () {
-		console.log(index)
-		console.log(number)
-		hideExperiences()
-	for (index; index <= number; index++) {
-		allExperiences[index].style.display = "block"
-	} 
-		number = number + 2 
-}
-
-function goBack () {
-	console.log(index)
-	console.log(number)
-	hideExperiences()
-	index = index - 2
-	number = number - 2
-		for (index; index <= number; index++) {
-			allExperiences[index].style.display = "block"
+	for (var v = 0; v < allExperiences.length; v++) {
+			allExperiences[v].style.display = "none"
 		}
 }
 
+function goForward() {
+	if (number <= allExperiences.length) {
+		hideExperiences()
+		for (index; index < number; index++) {
+			allExperiences[index].style.display = "block"
+		}
+		number = number + 5
+	}
+}
+
+function goBack() {
+	if (index > 5) {
+		hideExperiences()
+		index = index - 10
+		number =  number - 10
+		goForward()		
+	}
+}
+
 goForward()
-
-
 
 /*
 pageBack.addEventListener('click', function () {
