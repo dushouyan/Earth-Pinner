@@ -44,12 +44,12 @@
 
 
 	<div class="col-xs-6 info">
-		<h4>About <%= @place.country %></h4>
-    Capital:<br>
-    Currency: <br>
-    Population:<br>
-    Language: <br>
-    Visa Requirements: (embassy website)<br>
+		<h4>About <%= @place.country.name %></h4>
+    Capital: <%= @place.country.capital %><br>
+    Currency: <%= @place.country.currency %><br>
+    Population: <%= @place.country.population %><br>
+    Language: <%= @place.country.language %><br>
+    Visa Requirements: <%= @place.country.visa %><br>
 	</div>
 </div>
 

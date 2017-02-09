@@ -1,9 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-
 $(document).ready(function () { 
-
 
 var colorsArray = ["rgba(52, 165, 111, .5)", "rgba(236, 43, 43, .5)", "rgba(28, 28, 241, .5)", "rgba(0, 0, 0, .5)", "rgba(245, 249, 5, .5)"]
 
@@ -64,15 +62,66 @@ $('.place_display').each(function() {
 	$( this ).fadeIn(counter);
 });
 
+var allExperiences = document.getElementsByClassName('experiences');
+var pageBack = document.getElementsByClassName('experience_page')[0];
+var pageForward = document.getElementsByClassName('experience_page')[1];
+pageForward.addEventListener('click', goForward)
+pageBack.addEventListener('click', goBack)
+var reviewIndex = 0
+var byFive = 5
 
 
+function hideExperiences() {
+	for (var v = 0; v < allExperiences.length; v++) {
+			allExperiences[v].style.display = "none"
+		} //hides all experiences
+}
+
+function goForward() {
+	if (byFive <= allExperiences.length) {
+		hideExperiences()
+		for (reviewIndex; reviewIndex < byFive; reviewIndex++) {
+			allExperiences[reviewIndex].style.display = "block"
+		}
+		byFive = byFive + 5 //increments experiences by
+	}
+	else if (byFive > allExperiences.length) {
+		hideExperiences()
+		for (reviewIndex; reviewIndex < allExperiences.length; reviewIndex++) {
+			allExperiences[reviewIndex].style.display = "block"
+		}
+		reviewIndex = byFive //shows remaining experiences, removeEventListner	
+		byFive = byFive + 5
+		pageForward.removeEventListener('click', goForward)
+	}
+}
+
+function goBack() {
+	if (reviewIndex > 5 && reviewIndex < allExperiences.length) {
+		hideExperiences()
+		reviewIndex = reviewIndex - 10
+		byFive = byFive - 10
+		goForward()		
+	}
+	else if (reviewIndex > allExperiences.length) {
+		hideExperiences()
+		pageForward.addEventListener('click', goForward) //event listener is readded if 
+		reviewIndex = reviewIndex - 10					//user goes back and index > all			
+		byFive = byFive - 10
+		goForward() 
+	}
+
+}
+
+goForward()
+
+})
 
 
 
 /*
 var placeDisplay = document.getElementsByClassName('place_display');
 i = 0
-
 function displayPlace() {
 	setTimeout(function () {
 		placeDisplay[i].style.display = "block";
@@ -82,18 +131,12 @@ function displayPlace() {
 		}
 	}, 200)
 }
-
 displayPlace()
-
-
 
 var stars = document.getElementsByClassName('fillstar');
 console.log(stars)
 
-
-
-
-
+/messed up functions for the stars
 function starSystem () {
 	for (var i = 0; i < stars.length; i++) {
 		stars[i].addEventListener('click', function() {
@@ -103,17 +146,12 @@ function starSystem () {
 		})
 	};
 }
-
 starSystem()
-
-
 function filledStars () {
 	for (var i = 0; i < 2; i++) {
 		stars[i].classList.add('filled');
 	};
 }
-
-
 function unfilledStars() {
 	for (var i = 0; i < stars.length; i++) {
 		stars[i].classList.remove('filled')
@@ -121,5 +159,4 @@ function unfilledStars() {
 }*/
 
 
-})
 
