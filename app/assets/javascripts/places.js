@@ -65,51 +65,10 @@ $('.place_display').each(function() {
 });
 
 
-var allExperiences = document.getElementsByClassName('experiences');
-var pageBack = document.getElementsByClassName('experience_page')[0];
-var pageForward = document.getElementsByClassName('experience_page')[1];
-
-console.log(allExperiences)
-pageForward.addEventListener('click', goForward)
-pageBack.addEventListener('click', goBack)
 
 
-index = 0
-number = 5
 
 
-function hideExperiences() {
-	for (var v = 0; v < allExperiences.length; v++) {
-			allExperiences[v].style.display = "none"
-		}
-}
-
-function goForward() {
-	if (number <= allExperiences.length) {
-		hideExperiences()
-		for (index; index < number; index++) {
-			allExperiences[index].style.display = "block"
-		}
-		number = number + 5
-	}
-}
-
-function goBack() {
-	if (index > 5) {
-		hideExperiences()
-		index = index - 10
-		number =  number - 10
-		goForward()		
-	}
-}
-
-goForward()
-
-/*
-pageBack.addEventListener('click', function () {
-	
-})
-*/
 /*
 var placeDisplay = document.getElementsByClassName('place_display');
 i = 0
@@ -125,8 +84,9 @@ function displayPlace() {
 }
 
 displayPlace()
-/*
-/*
+
+
+
 var stars = document.getElementsByClassName('fillstar');
 console.log(stars)
 
