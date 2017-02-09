@@ -13,8 +13,8 @@
 		<%= f.label :address, value: "Full Address" %>
 		<%= f.text_field :address %>
 
-		<%= f.label :country, value: "Country" %>
-		<%= f.select(:country, options_for_select(countries)) %>
+		<%= f.label :country_id, value: "Country" %>
+		<%= f.collection_select(:country_id, Country.all, :id, :name) %>
 
 		<%= f.label "Shared By" %>
 		<%= f.text_field :created_by, :value => current_user.name, :readonly => true %>

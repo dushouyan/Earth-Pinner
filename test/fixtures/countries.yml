@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  capital: MyString
+  currency: MyString
+  population: MyString
+  language: MyString
+  visa: MyText
+
+two:
+  capital: MyString
+  currency: MyString
+  population: MyString
+  language: MyString
+  visa: MyText

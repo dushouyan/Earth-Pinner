@@ -4,9 +4,7 @@ class CreatePlaces < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :city
       t.string :closest_city
-      t.string :country
-      t.string :website
-
+      t.integer :country_id
       t.timestamps
     end
   end

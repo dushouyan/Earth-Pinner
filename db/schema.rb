@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170126213431) do
+ActiveRecord::Schema.define(version: 20170209162653) do
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "capital"
+    t.string   "currency"
+    t.string   "population"
+    t.string   "language"
+    t.text     "visa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "dreams", force: :cascade do |t|
     t.integer  "user_id"
@@ -43,8 +54,7 @@ ActiveRecord::Schema.define(version: 20170126213431) do
 
   create_table "places", force: :cascade do |t|
     t.string   "name"
-    t.string   "country"
-    t.string   "website"
+    t.integer  "country_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.string   "url"

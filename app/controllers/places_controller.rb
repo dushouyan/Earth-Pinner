@@ -28,6 +28,7 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
+    @countries = Country.all
   end
 
   def create
@@ -69,5 +70,5 @@ def set_place
 end
 
 def places_params
-    params.require(:place).permit(:name, :address, :country, :avatar, :created_by, :make_id, :approved)
+    params.require(:place).permit(:name, :address, :country_id, :avatar, :created_by, :make_id, :approved)
 end

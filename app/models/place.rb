@@ -2,10 +2,10 @@ class Place < ApplicationRecord
 	has_and_belongs_to_many :dreams
 	belongs_to :make  
 	has_many :experiences
+	belongs_to :country
 
 	validates :name, presence: true, uniqueness: true
 	validates :address, presence: true, uniqueness: true
-	validates :country, presence: true
 	has_attached_file :avatar, styles: { thumb: "200x200>" }
 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
