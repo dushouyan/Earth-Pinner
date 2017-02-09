@@ -224,11 +224,17 @@ h1 {
 	clear: left;
 }
 
+.places_form label {
+	font-size: 1.2em;
+	margin-bottom: 30px;
+}
+
 .places_form input {
 	display: block;
-	margin: 0 auto;
-	width: 60%;
+	margin: 0 auto !important;
+	width: 65% !important;
 	outline-color: $color-one;
+	font-size: 1.1em !important;
 }
 
 .places_form select {
@@ -238,13 +244,11 @@ h1 {
 	outline-color: $color-one;
 }
 
-.places_form label {
-	margin-top: 30px;
-}
+
 
 input.submit_button {
 	width: 10%;
-	margin-top: 20px;
+	margin-top: 30px !important;
 	background-color: $color-one;
 	outline-color: $color-one;
 	color: white;
@@ -254,7 +258,6 @@ input.submit_button {
 .places_form_content {
 	width: 45%;
 	float: right;
-	font-size: .85em;
 	font-weight: 400;
 	padding: 30px;
 }
