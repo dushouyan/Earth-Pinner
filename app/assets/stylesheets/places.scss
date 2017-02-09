@@ -180,6 +180,14 @@ h1 {
 	@extend .place_content_bar
 }
 
+.place_info_bar a {
+	color: black;
+}
+
+.place_info_bar a:hover {
+	color: $color-one;
+}
+
 .experience_div {
 	@extend .place_content_bar
 }

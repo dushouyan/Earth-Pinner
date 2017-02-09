@@ -44,7 +44,7 @@
 
 
 	<div class="col-xs-6 info">
-		<h4>About <%= @place.country.name %></h4>
+		<h4>About <%= link_to @place.country.name, country_path(@place.country.url) %></h4>
     Capital: <%= @place.country.capital %><br>
     Currency: <%= @place.country.currency %><br>
     Population: <%= @place.country.population %><br>

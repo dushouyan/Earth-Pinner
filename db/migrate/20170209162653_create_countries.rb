@@ -7,6 +7,7 @@ class CreateCountries < ActiveRecord::Migration[5.0]
       t.string :population
       t.string :language
       t.text :visa
+      t.string :url
 
       t.timestamps
     end

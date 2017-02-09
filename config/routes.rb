@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     get 'signout', to: 'sessions#destroy', as: 'signout'
 
     get 'countries', to: 'country#index'
-    get 'countries/:name', to: 'country#show'
+    get 'countries/:url', to: 'country#show', as: 'country'
     get '/places', to: 'places#index', as: 'places' 
     get '/places/new', to: 'places#new', as: 'new_place'
     get '/places/:url', to: 'places#show', as: 'place' 
