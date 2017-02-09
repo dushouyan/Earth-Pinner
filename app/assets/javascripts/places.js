@@ -71,6 +71,8 @@ var reviewIndex = 0
 var byFive = 5
 
 
+//Need while loop for experience, breaks when experiences are less then
+
 function hideExperiences() {
 	for (var v = 0; v < allExperiences.length; v++) {
 			allExperiences[v].style.display = "none"
@@ -78,14 +80,14 @@ function hideExperiences() {
 }
 
 function goForward() {
-	if (byFive <= allExperiences.length) {
+	if (byFive < allExperiences.length) {
 		hideExperiences()
 		for (reviewIndex; reviewIndex < byFive; reviewIndex++) {
 			allExperiences[reviewIndex].style.display = "block"
 		}
 		byFive = byFive + 5 //increments experiences by
 	}
-	else if (byFive > allExperiences.length) {
+	else if (byFive >= allExperiences.length) {
 		hideExperiences()
 		for (reviewIndex; reviewIndex < allExperiences.length; reviewIndex++) {
 			allExperiences[reviewIndex].style.display = "block"
@@ -103,7 +105,7 @@ function goBack() {
 		byFive = byFive - 10
 		goForward()		
 	}
-	else if (reviewIndex > allExperiences.length) {
+	else if (reviewIndex > 5 && reviewIndex > allExperiences.length) {
 		hideExperiences()
 		pageForward.addEventListener('click', goForward) //event listener is readded if 
 		reviewIndex = reviewIndex - 10					//user goes back and index > all			
