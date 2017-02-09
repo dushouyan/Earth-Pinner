@@ -3,12 +3,6 @@
 <h2>Meet Your Inspiration</h2>
 <p>Find The World's Most Beautiful Natural Places. Help Pin The World's Greatest Travel Map.</p>
 
-<div class="row search_bar">
-<%= form_tag(places_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search The Earth" %>
-    <%= submit_tag "Search", :name => nil, class: 'search_button' %>
-<% end %>
-</div>
 </div>
 <input id="pac-input" class="controls" type="text" placeholder="Your City, Your State">
 

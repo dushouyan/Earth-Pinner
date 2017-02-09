@@ -7,11 +7,6 @@ class PlacesController < ApplicationController
       @places = Place.where(:approved => false)
     else  
       @places = Place.where(:approved => true)
-        if params[:search]
-          @places = Place.search(params[:search]).order("created_at DESC")
-        else
-          @places = Place.where(:approved => true).order("created_at DESC")
-        end
     end 
   end
 

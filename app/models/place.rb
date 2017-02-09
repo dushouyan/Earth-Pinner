@@ -22,9 +22,4 @@ class Place < ApplicationRecord
 	geocoded_by :address	
 	after_validation :geocode   
 
-	def self.search(search)
-  		where("name LIKE ? OR address LIKE ? OR country LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%",) 
-	end
-
-
 end
