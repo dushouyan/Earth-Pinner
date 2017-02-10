@@ -1,34 +1,13 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$color-one: rgb(52, 165, 111); 
+$color-one: rgb(52, 165, 111);
 
 .front_page_container {
 	text-align: center;
 	margin-top: 20px;
 }
-
-form#search-form {
-	text-align: center;
-}
-
-input#search {
-	width: 50%;
-	height: 50px;
-	margin: 0 auto;
-	margin-top: 20px;
-	outline-color: $color-one;
-}
-
-input.search_button {
-	margin-left: 20px;
-	height: 50px;
-	background-color: $color-one;
-	outline-color: $color-one;
-	color: white;
-	font-weight: 400;
-}
-
+ 
 
 .travel_plan {
     text-align: center;

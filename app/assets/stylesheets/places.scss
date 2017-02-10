@@ -4,6 +4,12 @@
 $color-one: rgb(52, 165, 111); 
 
 
+h1 {
+	font-size: 3em !important;
+	text-align: center;
+}
+
+
 #amap {
 	width: 100%;
 	height: 400px;
@@ -139,14 +145,6 @@ $color-one: rgb(52, 165, 111);
 }
 
 
-h1 {
-	font-size: 4em;
-	text-align: center;
-	font-family: 'Raleway', sans-serif;
-	font-weight: 900;
-}
-
-
 .place_image {
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -172,7 +170,6 @@ h1 {
 
 .place_content_bar {
 	margin: 30px;
-	font-size: .80em;
 	font-weight: 400;
 	text-align: center;
 }

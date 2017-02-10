@@ -56,7 +56,7 @@
 
 
 <div class="row experience_div">
-	<h2>Latest Experiences At <%= @place.name %></h2>
+	<h3>Latest Experiences At <%= @place.name %></h3>
   <p>Average User Rating <span id="averagerating"><%= @averagerating.round(2) %></span></p>
 			<% @place.experiences.reverse_each do |experience| %>
         <div class="experiences">

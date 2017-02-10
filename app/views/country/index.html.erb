@@ -1,14 +1,15 @@
 <h1>Countries</h1>
 <div class="countries_div">
 <% @countries.each do |country| %>
-	<div class="country_card">
-	<%= country.name %>
-	<% if current_user.try(:admin?) %>
-		<%= form_for country, url: update_country_path(country.url), :method => 'patch' do |form| %>
-  			<%= form.file_field :avatar %>
-  			<%= form.submit %>
+		<div class="flag" style="background-image: url('<%= country.avatar.url(:thumb) %>')">
+		</div>
+	
+		<% if current_user.try(:admin?) %>
+			<%= country.name %>
+				<%= form_for country, url: update_country_path(country.url), :method => 'patch' do |form| %>
+  				<%= form.file_field :avatar %>
+  				<%= form.submit %>
+  				<% end %>
   		<% end %>
-  	<% end %>
-	</div>
 <% end %>
 </div>

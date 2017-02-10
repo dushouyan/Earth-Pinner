@@ -3,6 +3,7 @@ class CountryController < ApplicationController
   before_action :set_place, only: [:update]
 
   def index
+
   	@countries = Country.all
   end
 
