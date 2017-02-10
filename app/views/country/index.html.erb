@@ -1,2 +1,14 @@
-<h1>Country#index</h1>
-<p>Find me in app/views/country/index.html.erb</p>
+<h1>Countries</h1>
+<div class="countries_div">
+<% @countries.each do |country| %>
+	<div class="country_card">
+	<%= country.name %>
+	<% if current_user.try(:admin?) %>
+		<%= form_for country, url: update_country_path(country.url), :method => 'patch' do |form| %>
+  			<%= form.file_field :avatar %>
+  			<%= form.submit %>
+  		<% end %>
+  	<% end %>
+	</div>
+<% end %>
+</div>

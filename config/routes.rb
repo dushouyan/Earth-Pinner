@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
     get 'countries', to: 'country#index'
     get 'countries/:url', to: 'country#show', as: 'country'
+    patch 'countries/:url', to: 'country#update', as: 'update_country'
     get '/places', to: 'places#index', as: 'places' 
     get '/places/new', to: 'places#new', as: 'new_place'
     get '/places/:url', to: 'places#show', as: 'place' 
