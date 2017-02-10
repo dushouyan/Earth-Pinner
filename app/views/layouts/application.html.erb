@@ -12,7 +12,11 @@
     <div class="mynavbar">
           <ul>
             <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Places", places_path %></li>
+            <li><%= link_to "Places", places_path %>
+              <ul>
+                <li><%= link_to "Countries", countries_path %></li>
+              </ul>
+            </li>
               
             <li><h1 class="logo">Earth Pinner</h1></li>
                 <script>
