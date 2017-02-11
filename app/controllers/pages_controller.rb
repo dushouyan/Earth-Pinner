@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-  	@places = Place.all
+  	 @places = Place.where(:approved => true)
   		@url_array = []
   		@places.each do |place|
        if place.latitude != nil && place.longitude != nil 

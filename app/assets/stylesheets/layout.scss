@@ -26,6 +26,7 @@ a {
 	white-space: nowrap;
   	overflow: hidden;
 	animation: write 3s steps(60, end); 
+	animation-delay: 0.25s;
 	width: 100%;
 }
 
@@ -43,6 +44,7 @@ a {
 	align-items: flex-end;
 	margin-bottom: 10px;
 	padding: 0;
+	position: relative;
 }
 
 .mynavbar li {
@@ -67,6 +69,12 @@ a {
 	position: absolute;
 }
 
+.nofacebook {
+	position: absolute;
+	font-size: .8em;
+	color: #4267B2;
+}
+
 .instagram-logo {
 	position: absolute;
 	width: 25px;
@@ -77,8 +85,8 @@ a {
 	top: 50px;
 }
 
-a:hover {
-	fill: $color-one;
+.mynavbar svg:hover {
+	fill: #34A56F;
 }
 
 .facebook {

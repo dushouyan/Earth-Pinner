@@ -10,14 +10,23 @@ class PlacesController < ApplicationController
     end 
   end
 
-  def show 
-    #add admin path to see full size photo
-    @place = Place.where(:approved => true).find_by_url(params[:url])
-    @totalratings = 0
-    @averagerating = 0
-    @place.experiences.each do |experience|
-      @totalratings += experience.rating
-      @averagerating = @totalratings.to_f / @place.experiences.length.to_f
+  def show
+    if current_user.try(:admin?)
+      @place = Place.where(:approved => false).find_by_url(params[:url])
+        @totalratings = 0
+        @averagerating = 0
+        @place.experiences.each do |experience|
+          @totalratings += experience.rating
+          @averagerating = @totalratings.to_f / @place.experiences.length.to_f
+        end 
+    else 
+      @place = Place.where(:approved => true).find_by_url(params[:url])
+        @totalratings = 0
+        @averagerating = 0
+        @place.experiences.each do |experience|
+          @totalratings += experience.rating
+          @averagerating = @totalratings.to_f / @place.experiences.length.to_f
+        end
     end
   end
 
@@ -31,9 +40,9 @@ class PlacesController < ApplicationController
       if @place.save 
         redirect_back(fallback_location: new_place_path)
         flash[:placesuccess] = "Your Place Was Submitted! Thanks!"
-      else 
-        redirect_back(fallback_location: new_place_path)
-        flash[:placeerror] = "Place Must Be Unique Or Some Forms Were Left Blank"
+      else
+          redirect_back(fallback_location: new_place_path)
+          flash[:placeerror] = "Place Already Exists Or Forms Were Blank" 
       end
   end
 
