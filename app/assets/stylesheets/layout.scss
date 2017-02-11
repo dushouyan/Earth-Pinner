@@ -67,6 +67,19 @@ a {
 	position: absolute;
 }
 
+.instagram-logo {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	right: 0;
+	margin-right: 15px;
+	top: 50;
+	top: 50px;
+}
+
+a:hover {
+	fill: $color-one;
+}
 
 .facebook {
 	background-color: #4267B2;

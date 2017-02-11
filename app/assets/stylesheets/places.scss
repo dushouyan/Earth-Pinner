@@ -235,6 +235,10 @@ h1 {
 	font-size: 1.1em !important;
 }
 
+.places_form label:hover {
+	color: $color-one;
+}
+
 .places_form select {
 	display: block;
 	margin: 0 auto;
