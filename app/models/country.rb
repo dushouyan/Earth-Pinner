@@ -1,6 +1,6 @@
 class Country < ApplicationRecord
 	has_many :places
-
+	has_and_belongs_to_many :countrylists
 	before_validation :pretty_url
 
 	has_attached_file :avatar, styles: { thumb: "100x100>" }, default_url: "/images/:style/missing.png"

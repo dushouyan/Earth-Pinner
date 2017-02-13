@@ -1,0 +1,2 @@
+class CountryCountrylist < ApplicationRecord
+end

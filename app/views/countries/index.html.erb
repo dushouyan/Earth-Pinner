@@ -1,0 +1,37 @@
+
+<h1>Countries</h1>
+<% if current_user %>
+	<span class="glyphicon glyphicon-flag"><%= current_user.countrylist.countries.length %>/<%= @countries.length %> Click <span class="glyphicon glyphicon-plane"></span> to Keep Track of Your Countries
+	Visited!</span>
+<% end %>
+<div class="countries_div">
+<% @countries.each do |country| %>
+	<div class="flag" style="background-image: url('<%= country.avatar.url(:thumb) %>')">
+		<%= link_to country_path(country.url) do %>
+			<div class="flag_info">
+				<div class="flag_name"><%= country.name %></div>
+				<% if current_user %>
+				<div class="flag_icon">
+					<%= form_tag 'countries/add_countries' do %>
+						<%= hidden_field_tag :user_id, current_user.id %>
+						<%= hidden_field_tag :country_id, country.id %>
+						<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+						<%= button_tag(type: 'submit', class: "country_button") do %>
+							  <span class="glyphicon glyphicon-plane"></span>
+						<% end %>
+					<% end %>
+				<% end %>
+				</div> 
+			</div>
+		<% end %>
+	</div>
+	
+		<% if current_user.try(:admin?) %>
+			<%= country.name %>
+				<%= form_for country, url: update_country_path(country.url), :method => 'patch' do |form| %>
+  				<%= form.file_field :avatar %>
+  				<%= form.submit %>
+  				<% end %>
+  		<% end %>
+<% end %>
+</div>

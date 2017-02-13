@@ -8,6 +8,19 @@ $color-one: rgb(52, 165, 111);
 	flex-wrap: wrap;
 }
 
+.glyphicon.glyphicon-flag {
+	color: $color-one;
+	font-size: 1.5em
+}
+
+.glyphicon.glyphicon-flag a {
+	color: black;
+}
+
+.glyphicon.glyphicon-flag a:hover {
+	color: $color-one;
+}
+
 .flag {
 	height: 100px;
 	width: 12.5%;
@@ -35,5 +48,21 @@ $color-one: rgb(52, 165, 111);
 	text-align: center;
 	left: 0;
 	right: 0;
-	margin-top: 30px; 
+	margin-top: 10px; 
+	padding: 5px;
 }
+
+.flag_icon {
+	@extend .flag_name;
+	margin-top: 50px;
+}
+
+.country_button {
+	background-color: $color-one;
+	border: none;
+}
+
+.glyphicon.glyphicon-plane {
+	font-size: 1.6em;
+}
+

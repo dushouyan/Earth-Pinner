@@ -1,0 +1,14 @@
+<h1><%= @country.name %></h1>
+<div class="place_flex">
+<% @country.places.sort_by(&:name).each do |place| %>
+	<% if place.approved? %>
+	   <div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
+			<%= link_to place_path(place.url) do %>
+				<div class="place_color">
+					<p><%= place.name %></p>
+				</div>
+				<% end %>
+		</div>
+	<% end %>
+<% end %>  
+</div>

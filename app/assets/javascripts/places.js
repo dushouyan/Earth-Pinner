@@ -3,7 +3,7 @@
 
 $(document).ready(function () { 
 
-var colorsArray = ["rgba(52, 165, 111, .5)", "rgba(236, 43, 43, .5)", "rgba(28, 28, 241, .5)", "rgba(0, 0, 0, .5)", "rgba(245, 249, 5, .5)"]
+var colorsArray = ["rgba(236, 43, 43, .5)", "rgba(28, 28, 241, .5)", "rgba(245, 249, 5, .5)", "rgba(255, 69, 0, .5)", "rgba(50, 205, 50, .5)", "rgba(102, 51, 153, .5)", "rgba(173, 216, 230, .5)",]
 
 function changeColor() {
   var thumbsGet = document.getElementsByClassName('place_color');
@@ -118,6 +118,7 @@ function goBack() {
 goForward()
 
 })
+
 
 
 

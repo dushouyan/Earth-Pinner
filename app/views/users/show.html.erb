@@ -1,14 +1,24 @@
-	
+<div class="user_countries">
+	<p><%= current_user.name %></p>
+	<span class="glyphicon glyphicon-flag"></span>
+	<p><%= @user.countrylist.countries.length %>/<%= @countries.length %><%= link_to ' Countries', countries_path %></p>	
+
+<p>
+<% @user.countrylist.countries.each do |country| %>
+	<%= link_to country.name + ",", country_path(country.name.downcase) %>
+<% end %>
+</p>
+</div>
+
 	<div class="place_flex_title">
-		<h2><%= @user.name.split.first %>'s' Dream Places</h2></div>
+		<h3>Dream Places</h3></div>
 	<div class="place_flex">
-		<% @user.dream.places.each do |place| %>
+		<% @user.dream.places.first(5).each do |place| %>
 			<div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
 				<%= link_to place_path(place.url) do %>
 					<div class="place_color">
 						<p><%= place.name %></p>
 							<%= form_tag 'delete_dreams' do %>
-
 							<%= hidden_field_tag :place_id, place.id %>
 							<%= hidden_field_tag :user_id, @user.id %>
 							<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
@@ -20,7 +30,7 @@
 		<% end %>
 	</div>
 	<div class="place_flex_title">
-		<h2><%= @user.name.split.first %>'s' Shared Places</h2></div>
+		<h3>Pinned Places</h3></div>
 	<div class="place_flex">
 		<% @user.make.places.each do |place| %>
 		<% if place.approved? %>
@@ -36,11 +46,11 @@
 	</div>
 
 	
-		<div class="place_flex_title"><h2><%= @user.name.split.first %>'s' Shared Experiences</h2></div>
+		<div class="place_flex_title"><h3>Shared Experiences</h3></div>
 		<% @user.experiences.each do |experience| %>
 		<% @places.each do |place| %>
 			<% if experience.place_id == place.id %>
-			<div class="row user_experiences">
+			<div class="row user_experiences tenexperiences">
 				<h4><%= place.name %></h4>
 				<div class="row">
 				<p><%= experience.review %></p>
@@ -50,5 +60,9 @@
 			<% end %>
 		<% end %>
 		<% end %>
+
+
+
+
 	
 

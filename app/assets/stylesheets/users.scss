@@ -3,7 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+$color-one: rgb(52, 165, 111);
 
+.user_countries a {
+	color: black;
+}
+
+.user_countries a:hover {
+	color: $color-one;
+}
 
 .users_nav ul {
 	list-style-type: none;

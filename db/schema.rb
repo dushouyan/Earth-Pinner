@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210001623) do
+ActiveRecord::Schema.define(version: 20170212165456) do
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -26,6 +26,19 @@ ActiveRecord::Schema.define(version: 20170210001623) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "countries_countrylists", id: false, force: :cascade do |t|
+    t.integer "country_id",     null: false
+    t.integer "countrylist_id", null: false
+    t.index ["country_id", "countrylist_id"], name: "index_countries_countrylists_on_country_id_and_countrylist_id"
+    t.index ["countrylist_id", "country_id"], name: "index_countries_countrylists_on_countrylist_id_and_country_id"
+  end
+
+  create_table "countrylists", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "dreams", force: :cascade do |t|
