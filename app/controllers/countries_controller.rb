@@ -21,6 +21,7 @@ class CountriesController < ApplicationController
     @user.countrylist.countries.push(@country)
     redirect_back(fallback_location: countries_path)
   end
+
 end
   
 private

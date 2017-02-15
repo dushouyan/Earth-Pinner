@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     get 'auth/failure', to: redirect('/')
     get 'signout', to: 'sessions#destroy', as: 'signout'
 
+    get 'users/:id', to: 'users#show', as: 'user'
+    delete '/users/:id', to: 'users#destroy'
+
+
     get '/countries', to: 'countries#index'
     get '/countries/:url', to: 'countries#show', as: 'country'
     patch '/countries/:url', to: 'countries#update', as: 'update_country'
@@ -23,8 +27,7 @@ Rails.application.routes.draw do
     patch '/places/:url/experiences/edit/:id', to: 'experiences#update', as: 'update_place_experience'
  
     resources :sessions
-    resources :users 
-  
+    resources :users
    
     root to: 'pages#home'
 
@@ -34,6 +37,7 @@ Rails.application.routes.draw do
     post '/places/add_dreams', to: 'places#add_dreams'
     post '/users/delete_dreams', to: 'users#delete_dreams'
     post '/countries/add_countries', to: 'countries#add_countries'
+    post '/users/delete_countries', to: 'users#delete_countries'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -62,3 +62,42 @@ $color-one: rgb(52, 165, 111);
 	}
 }
 
+.country_list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.country_button {
+	padding: 2px;
+	font-size: 0.5em;
+	margin: 5px;
+	border: 1px solid black;
+	color: white;
+}
+
+
+.pinned_places {
+	text-align: center;
+}
+
+#showpins {
+	margin: 0 auto;
+	background-color: transparent;
+	border: none;
+}
+
+.dream_places {
+	@extend .pinned_places
+}
+
+.experienced_places {
+	@extend .pinned_places
+}
+
+#showdreams {
+	@extend #showpins
+}
+
+#showexperiences {
+	@extend #showpins
+}

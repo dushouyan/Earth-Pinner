@@ -63,6 +63,8 @@ class PlacesController < ApplicationController
   @place = Place.find(params[:place_id])
   @user = User.find(params[:user_id])
   @user.dream.places.push(@place)
+    flash[:dreamadded] = "Added!"
+    redirect_back(fallback_location: places_path)
   end
 
 end 

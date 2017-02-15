@@ -1,70 +1,66 @@
 <h1><%= @place.name %></h1>
 
- <div class="place_image" style="background-image: url('<%= @place.avatar.url %>')">
-	<h6><%= @place.created_by %></h6>
-</div>
+  <div class="place_image" style="background-image: url('<%= @place.avatar.url %>')">
+	   <h6><%= @place.created_by %></h6>
+  </div>
 
 
 <div class="row place_content_bar">
 	<div class="col-xs-4 info">
-	<% if current_user %>
-		<%= form_tag 'add_dreams' do %>
+	   <% if current_user %>
 
-		<%= hidden_field_tag :user_id, current_user.id %>
-		<%= hidden_field_tag :place_id, @place.id %>
-		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-		<%= button_tag "Add To Your Dream Places", type: 'submit', class: "place_buttons" %>
-		<% end %>
-	<% end %>
+		  <%= form_tag 'add_dreams' do %>
+
+		    <%= hidden_field_tag :user_id, current_user.id %>
+		    <%= hidden_field_tag :place_id, @place.id %>
+		    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+		    <%= button_tag "Add To Your Dream Places", type: 'submit', class: "place_buttons" %>
+        <p class="place_flash"><%= flash[:dreamadded] if flash[:dreamadded] %></p>
+		  <% end %>
+	   <% end %>
 	</div>
 	<div class="col-xs-4 info">
-	<%= button_to "Plan Your Trip", help_path, :method => "get", class: 'place_buttons' %>
+	     <%= button_to "Plan Your Trip", help_path, :method => "get", class: 'place_buttons' %>
 	</div>
-
-    <div class="col-xs-4 info">
+  <div class="col-xs-4 info">
     <% if current_user %>
          <%= button_to 'Share Your Experience', new_place_experience_path, :method => "get", class: 'place_buttons' %>
-      <% end %>
+    <% end %>
   </div>
+
 </div>
 
 <div class="row place_info_bar">
 
-
-
-
-
 	<div class="col-xs-6 info">
-  <h4>About <%= @place.name %></h4>
-    Website:<br> 
-    Admission:<br>
-    Description: <br>
-    Arrive Without A Tour: <br>
+     <h4>About <%= @place.name %></h4>
+         Website: <%= @place.website %><br> 
+         Admission: <%= @place.admission %><br>
+         Description: <%= @place.description %><br>
+         Arrive Without A Tour: <%= @place.arrive %><br>
 	</div>
 
 
 	<div class="col-xs-6 info">
-		<h4>About <%= link_to @place.country.name, country_path(@place.country.url) %></h4>
-    Capital: <%= @place.country.capital %><br>
-    Currency: <%= @place.country.currency %><br>
-    Population: <%= @place.country.population %><br>
-    Language: <%= @place.country.language %><br>
-    Visa Requirements: <%= @place.country.visa %><br>
+		  <h4>About <%= link_to @place.country.name, country_path(@place.country.url) %></h4>
+        Capital: <%= @place.country.capital %><br>
+        Currency: <%= @place.country.currency %><br>
+        <%= @place.country.population %> pop<br>
+        <%= @place.country.language %><br>
+        <%= link_to 'Visa Requirements', @place.country.visa %><br>
 	</div>
 </div>
 
-
-
 <div class="row experience_div">
-	<h3>Latest Experiences At <%= @place.name %></h3>
-  <p>Average User Rating <span id="averagerating"><%= @averagerating.round(2) %></span></p>
-			<% @place.experiences.reverse_each do |experience| %>
-        <div class="experiences">
-				<%= experience.created_at.strftime("%b %d, %Y") %><br>
-				<strong>By <%= experience.user_name %></strong><br><br>
-				<%= experience.review %><br><br>
-				</div>
-			<% end %>
+	 <h3>Latest Experiences At <%= @place.name %></h3>
+    <p>Average User Rating <span id="averagerating"><%= @averagerating.round(2) %></span></p>
+			 <% @place.experiences.reverse_each do |experience| %>
+          <div class="experiences">
+				    <%= experience.created_at.strftime("%b %d, %Y") %><br>
+				    <strong>By <%= experience.user_name %></strong><br><br>
+				    <%= experience.review %><br><br>
+				  </div>
+			 <% end %>
    <div class="experiences_bar">
         <span class="experience_page glyphicon glyphicon-arrow-left"></span>
         <span class="experience_page glyphicon glyphicon-arrow-right"></span>
@@ -159,6 +155,19 @@
 <script async defer
    src="https://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_MAPS_API_KEY %>&callback=initMap">
 </script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92007700-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 
 
 

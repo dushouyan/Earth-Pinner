@@ -55,12 +55,12 @@ $('.fillstar').each(function() {
 	$( this ).removeClass('filled')
 });
 }
-
+/*
 counter = 500
 $('.place_display').each(function() {
 	counter = counter + 200
 	$( this ).fadeIn(counter);
-});
+});*/
 
 var allExperiences = document.getElementsByClassName('experiences');
 var pageBack = document.getElementsByClassName('experience_page')[0];

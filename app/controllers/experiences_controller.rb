@@ -25,8 +25,6 @@ class ExperiencesController < ApplicationController
     redirect_to new_place_experience_path
   end
   
-  def destroy
-  end
 end
 
 
