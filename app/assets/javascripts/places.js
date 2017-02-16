@@ -21,46 +21,36 @@ function changeColor() {
 
 changeColor()
 
-$('.fillstar').eq(0).on('click', function() {
-	noStars()
-	$(this).addClass('filled')	
-})
+var stars = document.getElementsByClassName('fillstar');
+var starIndex = 0
 
-
-$('.fillstar').eq(1).on('click', function() {
-	noStars()
-	$('.fillstar').slice(0,2).addClass('filled')	
-})
-
-
-$('.fillstar').eq(2).on('click', function() {
-	noStars()
-	$('.fillstar').slice(0,3).addClass('filled')		
-})
-
-
-$('.fillstar').eq(3).on('click', function() {
-	noStars()
-	$('.fillstar').slice(0,4).addClass('filled')			
-})
-
-
-$('.fillstar').eq(4).on('click', function() {
-	noStars()
-	$('.fillstar').slice(0,5).addClass('filled')
-})
-
-function noStars () {
-$('.fillstar').each(function() {
-	$( this ).removeClass('filled')
-});
+function starSystem () {
+	for (let i = 0; i < stars.length; i++) {
+		stars[i].addEventListener('click', function() {
+			starIndex = i 
+			unfilledStars();
+			filledStars();
+		})
+	};
 }
-/*
+starSystem()
+function filledStars () {
+	for (var x = 0; x <= starIndex; x++) {
+		stars[x].classList.add('filled');
+	};
+}
+function unfilledStars() {
+	for (var x = 0; x < stars.length; x++) {
+		stars[x].classList.remove('filled')
+	}
+}
+
+
 counter = 500
 $('.place_display').each(function() {
 	counter = counter + 200
 	$( this ).fadeIn(counter);
-});*/
+});
 
 var allExperiences = document.getElementsByClassName('experiences');
 var pageBack = document.getElementsByClassName('experience_page')[0];
@@ -71,7 +61,6 @@ var reviewIndex = 0
 var byFive = 5
 
 
-//Need while loop for experience, breaks when experiences are less then
 
 function hideExperiences() {
 	for (var v = 0; v < allExperiences.length; v++) {
@@ -121,45 +110,6 @@ goForward()
 
 
 
-
-/*
-var placeDisplay = document.getElementsByClassName('place_display');
-i = 0
-function displayPlace() {
-	setTimeout(function () {
-		placeDisplay[i].style.display = "block";
-		i++;
-		if (i < placeDisplay.length) {
-			displayPlace()
-		}
-	}, 200)
-}
-displayPlace()
-
-var stars = document.getElementsByClassName('fillstar');
-console.log(stars)
-
-/messed up functions for the stars
-function starSystem () {
-	for (var i = 0; i < stars.length; i++) {
-		stars[i].addEventListener('click', function() {
-			console.log(this)
-			unfilledStars();
-			filledStars();
-		})
-	};
-}
-starSystem()
-function filledStars () {
-	for (var i = 0; i < 2; i++) {
-		stars[i].classList.add('filled');
-	};
-}
-function unfilledStars() {
-	for (var i = 0; i < stars.length; i++) {
-		stars[i].classList.remove('filled')
-	}
-}*/
 
 
 
