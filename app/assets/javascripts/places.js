@@ -21,13 +21,51 @@ function changeColor() {
 
 changeColor()
 
+
+$('.fillstar').eq(0).on('click', function() {
+ 	noStars()
+ 	$(this).addClass('filled')	
+ })
+ 
+ 
+ $('.fillstar').eq(1).on('click', function() {
+ 	noStars()
+ 	$('.fillstar').slice(0,2).addClass('filled')	
+ })
+ 
+ 
+ $('.fillstar').eq(2).on('click', function() {
+ 	noStars()
+ 	$('.fillstar').slice(0,3).addClass('filled')		
+ })
+ 
+ 
+ $('.fillstar').eq(3).on('click', function() {
+ 	noStars()
+ 	$('.fillstar').slice(0,4).addClass('filled')			
+ })
+
+ $('.fillstar').eq(4).on('click', function() {
+ 	noStars()
+ 	$('.fillstar').slice(0,5).addClass('filled')
+ })
+
+
+ function noStars () {
+ $('.fillstar').each(function() {
+ 	$( this ).removeClass('filled')
+ });
+ }
+ 
+
+/*
 var stars = document.getElementsByClassName('fillstar');
 var starIndex = 0
 
 function starSystem () {
-	for (let i = 0; i < stars.length; i++) {
-		stars[i].addEventListener('click', function() {
-			starIndex = i 
+	for (let index = 0; index < stars.length; index++) {
+		stars[index].addEventListener('click', function() {
+			starIndex = index; 
 			unfilledStars();
 			filledStars();
 		})
@@ -44,11 +82,11 @@ function unfilledStars() {
 		stars[x].classList.remove('filled')
 	}
 }
-
+*/
 
 counter = 500
 $('.place_display').each(function() {
-	counter = counter + 200
+	counter = counter + 200;
 	$( this ).fadeIn(counter);
 });
 
