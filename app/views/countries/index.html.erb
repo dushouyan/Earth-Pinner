@@ -9,7 +9,7 @@
 
 
 <div class="countries_div">
-<% @countries.each do |country| %>
+<% @countries.sort_by(&:name).each do |country| %>
 	<div class="flag" style="background-image: url('<%= country.avatar.url(:thumb) %>')">
 		<%= link_to country_path(country.url) do %>
 			<div class="flag_info">
