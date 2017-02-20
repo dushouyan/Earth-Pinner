@@ -26,7 +26,6 @@ $color-one: rgb(52, 165, 111);
 	width: 12.5%;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
-	border: 1px solid black;
 }
 
 .flag_info {
@@ -60,7 +59,7 @@ $color-one: rgb(52, 165, 111);
 
 .country_button {
 	background-color: $color-one;
-	border: none;
+	border-style: none;
 }
 
 .glyphicon.glyphicon-plane {
