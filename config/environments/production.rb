@@ -14,6 +14,17 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_region: ENV["S3_REGION"],
+    s3_credentials: {
+      s3_host_name: ENV["S3_HOST_NAME"],
+      bucket: ENV["BUCKET"],
+      access_key_id: ENV["S3_ACCESS_KEY_ID"],
+      secret_access_key: ENV["S3_SECRET_ACCESS_KEY"],
+      }
+    } 
+
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
