@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170212165456) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "countries", force: :cascade do |t|
     t.string   "name"
     t.string   "capital"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 20170212165456) do
   create_table "countries_countrylists", id: false, force: :cascade do |t|
     t.integer "country_id",     null: false
     t.integer "countrylist_id", null: false
-    t.index ["country_id", "countrylist_id"], name: "index_countries_countrylists_on_country_id_and_countrylist_id"
-    t.index ["countrylist_id", "country_id"], name: "index_countries_countrylists_on_countrylist_id_and_country_id"
+    t.index ["country_id", "countrylist_id"], name: "index_countries_countrylists_on_country_id_and_countrylist_id", using: :btree
+    t.index ["countrylist_id", "country_id"], name: "index_countries_countrylists_on_countrylist_id_and_country_id", using: :btree
   end
 
   create_table "countrylists", force: :cascade do |t|
@@ -50,8 +53,8 @@ ActiveRecord::Schema.define(version: 20170212165456) do
   create_table "dreams_places", id: false, force: :cascade do |t|
     t.integer "place_id", null: false
     t.integer "dream_id", null: false
-    t.index ["dream_id", "place_id"], name: "index_dreams_places_on_dream_id_and_place_id"
-    t.index ["place_id", "dream_id"], name: "index_dreams_places_on_place_id_and_dream_id"
+    t.index ["dream_id", "place_id"], name: "index_dreams_places_on_dream_id_and_place_id", using: :btree
+    t.index ["place_id", "dream_id"], name: "index_dreams_places_on_place_id_and_dream_id", using: :btree
   end
 
   create_table "experiences", force: :cascade do |t|
