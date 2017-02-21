@@ -20,7 +20,7 @@
 								<%= hidden_field_tag :user_id, current_user.id %>
 								<%= hidden_field_tag :country_id, country.id %>
 								<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-								<%= button_tag(type: 'submit', class: "country_button btn-lg") do %>
+								<%= button_tag(type: 'submit', class: "country_button") do %>
 							  		<span class="glyphicon glyphicon-plane"></span>
 							  	<% end %>
 							<% end %>

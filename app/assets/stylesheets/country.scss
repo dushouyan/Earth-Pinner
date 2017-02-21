@@ -59,7 +59,8 @@ $color-one: rgb(52, 165, 111);
 
 .country_button {
 	background-color: $color-one;
-	border: 1px solid $color-one;
+	border: 1px solid $color-one !important;
+	font-size: 20px;
 }
 
 .glyphicon.glyphicon-plane {
