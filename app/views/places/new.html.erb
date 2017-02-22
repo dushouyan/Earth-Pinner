@@ -13,7 +13,7 @@
 		<%= f.text_field :address %>
 		<%= f.label :address, value: "Full Address" %>
 
-		<%= f.collection_select(:country_id, Country.all, :id, :name) %>
+		<%= f.collection_select(:country_id, Country.all.sort_by(&:name), :id, :name) %>
 		<%= f.label :country_id, value: "Country" %>
 
 		<%= f.text_field :created_by, :value => current_user.name, :readonly => true %>
@@ -33,5 +33,5 @@
 	<p>A beautiful can technically be anything. Submit your place, lets find out how many beautiful places are here.</p>
 	<h3>Submiting A Pin For Approval</h3>
 	<p>-Do Not Leave Any Forms Blank.</p>
-	<p>-If you cannot find an address. Use something like, "Eiffel Tower, Paris, France"</p><p>Submit YOUR Photos. Use a large horizontal photo. The image is meant to give an accurate represention of the place, please avoid using heavely altered images.</p><p>-Your name will be listed on the bottom right hand corner of the image when approved on our website. Think of it as your stamp</p><p>-Our team will approve images within 24 hours of submission.</p>
+	<p>-If you cannot find an address. Use something like, "Eiffel Tower, Paris, France"</p><p>-Submit YOUR Photos. Use a large horizontal photo. The image is meant to give an accurate represention of the place, please avoid using heavely altered images.</p><p>-Your name will be listed on the bottom right hand corner of the image when approved on our website. Think of it as your stamp</p><p>-Our team will approve images within 24 hours of submission.</p>
 </div>

@@ -1,6 +1,6 @@
 
 <div class="place_flex">
-  <% @places.each do |place| %>
+  <% @places.sample(200).each do |place| %>
 	   <div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
 			<%= link_to place_path(place.url) do %>
 				<div class="place_color">
