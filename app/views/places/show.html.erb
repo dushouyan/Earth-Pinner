@@ -35,16 +35,16 @@
 	<div class="col-xs-6 info">
      <h4>About <%= @place.name %></h4>
          <%= link_to 'Website', @place.website %><br> 
-         Admission: <%= @place.admission %><br>
-         Description: <%= @place.description %><br>
-         Arrive Without A Tour: <%= @place.arrive %><br>
+         <strong>Admission:</strong> <%= @place.admission %><br>
+         <u>Description</u><br> <%= @place.description %><br>
+         <u>Arrive</u><br> <%= @place.arrive %><br>
 	</div>
 
 
 	<div class="col-xs-6 info">
 		  <h4>About <%= link_to @place.country.name, country_path(@place.country.url) %></h4>
-        Capital: <%= @place.country.capital %><br>
-        Currency: <%= @place.country.currency %><br>
+        <strong>Capital:</strong> <%= @place.country.capital %><br>
+        <strong>Currency:</strong> <%= @place.country.currency %><br>
         <%= @place.country.population %> pop<br>
         <%= @place.country.language %><br>
         <%= link_to 'Visa Requirements', @place.country.visa %><br>
