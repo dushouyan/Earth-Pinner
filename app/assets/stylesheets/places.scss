@@ -152,6 +152,7 @@ h1 {
 	height: 500px;
 	position: relative;
 	border: 1px solid black;
+	image-rendering:-webkit-optimize-contrast;
 }
 
 .place_image h6 {
