@@ -267,3 +267,49 @@ input.submit_button {
 }
 
 
+@media screen and (max-width: 480px) {
+	.place_flex {
+}
+
+.place_flex_title {
+	text-align: center;
+}
+
+.place_display {
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 50%;
+	height: 200px;
+	image-rendering:-webkit-optimize-contrast;
+}
+
+.place_color {
+	height: 100%;
+	width: 100%;
+	color: transparent;
+	position: relative;
+}	
+
+.place_color a {
+	color: transparent;
+}
+
+.place_color p {
+	margin-top: 50px;
+	text-align: center;
+	padding: 5px;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+
+.place_color:hover {
+	color: white;
+	a {
+		color: white;
+	}
+}
+
+
+}
