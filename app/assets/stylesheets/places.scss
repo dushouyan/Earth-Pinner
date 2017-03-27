@@ -231,23 +231,34 @@ h1 {
 .places_form input {
 	display: block;
 	margin: 0 auto !important;
-	width: 65% !important;
-	outline-color: $color-one;
+	width: 80% !important;
+	outline: none;
 	font-size: 1.1em !important;
+	border: none;
 }
 
 .places_form label:hover {
+	color: $color-one;
+	cursor: pointer;
+}
+
+.places_form input:focus {
+	border-bottom: 1px solid $color-one;
+}
+
+.places_form input:focus .places_form label {
 	color: $color-one;
 }
 
 .places_form select {
 	display: block;
 	margin: 0 auto;
-	width: 60%;
-	outline-color: $color-one;
-	border: 1px solid #9e9e9e;
+	width: 80%;
+	border: 2px solid $color-one;
+	color: black;
+	outline-color: none;
+	background-color: white;
 }
-
 
 
 input.submit_button {
@@ -267,8 +278,28 @@ input.submit_button {
 }
 
 
-@media screen and (max-width: 480px) {
-	.place_flex {
+@media screen and (max-width: 600px) {
+
+#amap {
+	border: none;
+	height: 100vh;
+	margin-top: 0;
+
+	.gm-style-mtc {
+		display: none;
+	}
+
+	#pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        text-overflow: ellipsis;
+        left: -15px !important;
+        padding: 10px;
+  		color: $color-one !important;
+	}
+
 }
 
 .place_flex_title {
@@ -311,5 +342,23 @@ input.submit_button {
 	}
 }
 
+.place_image {
+	border: none;
+}
+
+#map {
+	border: 0;
+}
+
+.places_form {
+	width: 100%;
+	float: none;
+	margin-top: 30px;
+}
+
+.places_form_content {
+	width: 100%;
+	float: none;
+}
 
 }

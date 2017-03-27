@@ -4,6 +4,9 @@
 $(document).ready(function () { 
 
 var colorsArray = ["rgba(236, 43, 43, .5)", "rgba(28, 28, 241, .5)", "rgba(245, 249, 5, .5)", "rgba(255, 69, 0, .5)", "rgba(50, 205, 50, .5)", "rgba(102, 51, 153, .5)", "rgba(173, 216, 230, .5)",]
+var menuIcon = document.getElementsByClassName('menu-icon')[0];
+var menuMain = document.getElementsByClassName('menu-main')[0];
+
 
 function changeColor() {
   var thumbsGet = document.getElementsByClassName('place_color');
@@ -21,6 +24,23 @@ function changeColor() {
 
 changeColor()
 
+
+function showNavBar () {
+	menuIcon.addEventListener('click', function () {
+		var displayStyle = window.getComputedStyle(menuMain, null).getPropertyValue('display')
+			if (displayStyle === 'none') {
+				menuMain.style.display = 'block'
+			}
+
+			else if (displayStyle === 'block') {
+				menuMain.style.display = 'none'
+			}
+		})
+}
+
+showNavBar() 
+
+/*
 
 $('.fillstar').eq(0).on('click', function() {
  	noStars()
@@ -48,7 +68,7 @@ $('.fillstar').eq(0).on('click', function() {
  $('.fillstar').eq(4).on('click', function() {
  	noStars()
  	$('.fillstar').slice(0,5).addClass('filled')
- })
+ })*/
 
 
  function noStars () {
@@ -58,7 +78,6 @@ $('.fillstar').eq(0).on('click', function() {
  }
  
 
-/*
 var stars = document.getElementsByClassName('fillstar');
 var starIndex = 0
 
@@ -82,9 +101,9 @@ function unfilledStars() {
 		stars[x].classList.remove('filled')
 	}
 }
-*/
 
 
+//Hide Experiences//GoForward//GoBack Functions
 var allExperiences = document.getElementsByClassName('experiences');
 var pageBack = document.getElementsByClassName('experience_page')[0];
 var pageForward = document.getElementsByClassName('experience_page')[1];
@@ -92,7 +111,6 @@ pageForward.addEventListener('click', goForward)
 pageBack.addEventListener('click', goBack)
 var reviewIndex = 0
 var byFive = 5
-
 
 
 function hideExperiences() {

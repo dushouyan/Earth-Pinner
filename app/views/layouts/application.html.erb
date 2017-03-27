@@ -3,40 +3,40 @@
   <head>
     <title>Earth Pinner</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
 <body>
-    <div class="mynavbar">
-          <ul>
+  <div class="container"> 
+
+    <div class="menu-nav">
+    <div class="menu-icon glyphicon glyphicon-list"></div>
+    <div class="logo"><h1>Earth Pinner</h1></div>
+          <ul class="menu-main">
             <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Places", places_path %>
-              <ul>
-                <li><%= link_to "Countries", countries_path %></li>
-              </ul>
-            </li>
-              
-            <li><h1 class="logo">Earth Pinner</h1></li>
-                <script>
-               <% if current_page?('/') %>
-                  document.getElementsByClassName('logo')[0].classList.add('endlogo')
-                  <% end %>
-                </script>
-       <% if current_user %>
+            <li><%= link_to "Places", places_path %></li>
+            <li><%= link_to "Countries", countries_path %></li>
+      <% if current_user %>
               <li><%= link_to 'Pin Your Place', new_place_path %></li>
-              <li><%= link_to "My Profile", user_path(current_user) %></li>
-      <% else %>
-              <li></li>
-              <li><%= button_to "f" + " Log In With Facebook", "/auth/facebook", class: 'facebook'%> <% if !current_user %>
-      <div class="nofacebook">We Don't Post On Facebook</div>
-    <% end %>  </li>
+              <li><%= link_to "My Profile", user_path(current_user) %>
+                <ul class="">
+                  <% if current_user %>
+                      <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+                      <li> <%= form_for(current_user, :method => 'delete') do |f| %>
+                              <%= f.submit 'Delete Your Account', id: 'delete_account', data: { confirm: "Are you sure?" } %></li>
+                  <% end %>
+                </ul>
       <% end %>
-          </ul>
-          <a href="http://instagram.com/earthpinner">
-            <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg class="instagram-logo"
+              </li>
+      <% else %>
+              <li><%= button_to "f" + " Log In With Facebook", "/auth/facebook", class: 'facebook'%> </li>
+              <li class="instagram-logo">
+              <a href="http://www.instagram.com/earthpinner">
+
+              <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -45,8 +45,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.0"
-   width="100"
-   height="100"
+   width="25"
+   height="25"
    viewBox="0 0 80 80"
    preserveAspectRatio="xMidYMid meet"
    id="svg2"
@@ -109,19 +109,18 @@ Created by potrace 1.12, written by Peter Selinger 2001-2015
   </g>
 </svg>
 
-          </a>
-    </div>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+
+  <%= yield %>
 
 
 
 
-
-
-
-
-
-  <div class="container"> 
-    <%= yield %>
 
 
   </div>
@@ -129,11 +128,6 @@ Created by potrace 1.12, written by Peter Selinger 2001-2015
     <ul>
       <li><%= link_to "About", about_path %></li>
       <li><%= link_to "Plan Your Trip", help_path %></li>
-       <% if current_user %>
-      <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
-      <li> <%= form_for(current_user, :method => 'delete') do |f| %>
-           <%= f.submit 'Delete Your Account', id: 'delete_account', data: { confirm: "Are you sure?" } %><% end %></li>
-      <% end %>
     </ul>
   </div>
 </body>

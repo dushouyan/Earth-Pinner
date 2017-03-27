@@ -67,3 +67,9 @@ $color-one: rgb(52, 165, 111);
 	font-size: 1.6em
 }
 
+
+@media screen and (max-width: 600px) {
+	.flag {
+		width: 33.3%;
+	}
+}

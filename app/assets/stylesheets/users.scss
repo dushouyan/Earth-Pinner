@@ -102,3 +102,10 @@ $color-one: rgb(52, 165, 111);
 #showexperiences {
 	@extend #showpins
 }
+
+
+@media screen and (max-width: 600px) {
+	.user_countries {
+		text-align: center;
+	}
+}
