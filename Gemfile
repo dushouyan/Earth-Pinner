@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 
-gem 'materialize-sass'
 gem 'aws-sdk', '~> 2.3.0'
 gem "paperclip", "~> 5.0.0"
 # Turn Lat/Long Into Address
