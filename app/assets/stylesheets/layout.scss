@@ -15,17 +15,39 @@ a {
 	min-height: 100vh;
 }
 
-.logo {
+.header {
 	color: $color-one;
 	font-family: 'Rouge Script', 'cursive';
 	text-align: center;
+	display: flex;
+	justify-content: center;
+	ul {
+		padding: 0;
+	}
+
 	h1 {
-		margin-bottom: 10px;
+		margin: 0;
 	}
 }
 
+.writelogo {
+	white-space: nowrap;
+  	overflow: hidden;
+	animation: write 3s steps(60, end); 
+	animation-delay: 0.25s;
+	width: 100%;
+}
+
+
+@keyframes write{
+  0%{width: 0;}
+  50%{width: 50;}
+  100%{ width: 100;} 
+} 
+
 .menu-nav {
 	position: relative;
+	margin-top: 10px;
 }
 
 .menu-main {

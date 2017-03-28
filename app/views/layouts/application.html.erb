@@ -13,7 +13,12 @@
 
     <div class="menu-nav">
     <div class="menu-icon glyphicon glyphicon-list"></div>
-    <div class="logo"><h1>Earth Pinner</h1></div>
+    <div class='header'><ul><li><h1 class="logo">Earth Pinner</h1></ul></li></div>
+      <script>
+        <% if current_page?('/') %>
+          document.getElementsByClassName('logo')[0].classList.add('writelogo')
+        <% end %>
+      </script>
           <ul class="menu-main">
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Places", places_path %></li>
