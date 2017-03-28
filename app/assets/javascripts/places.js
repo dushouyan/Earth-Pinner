@@ -23,6 +23,20 @@ function changeColor() {
 
 changeColor()
 
+
+$('.places_form_input').each(function(index) {
+	$('.places_form_input').eq(index).focus(function () {
+		$('.places_form_label').eq(index).css('color', 'rgb(52, 165, 111)')
+	})
+})
+
+
+$('.places_form_input').each(function(index) {
+	$('.places_form_input').eq(index).blur(function () {
+		$('.places_form_label').eq(index).css('color', 'black')
+	})
+})
+
 //Function for rating experiences/unfills stars then refills
 
 $('.fillstar').eq(0).on('click', function() {

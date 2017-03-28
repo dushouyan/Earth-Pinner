@@ -12,10 +12,8 @@ h1 {
 
 #amap {
 	width: 100%;
-	height: 400px;
-	margin-top: 60px;
+	height: 500px;
 	margin-bottom: 30px;
-	border: 1px solid black;
 }
 
      #description {
@@ -230,44 +228,35 @@ h1 {
 
 .places_form input {
 	display: block;
-	margin: 0 auto !important;
-	width: 80% !important;
+	margin: 0 auto;
+	width: 80%;
 	outline: none;
-	font-size: 1.1em !important;
+	font-size: 1.1em;
 	border: none;
 }
 
-.places_form label:hover {
-	color: $color-one;
-	cursor: pointer;
-}
-
 .places_form input:focus {
-	border-bottom: 1px solid $color-one;
+	border-bottom: 2px solid $color-one;
 }
 
-.places_form input:focus .places_form label {
-	color: $color-one;
-}
 
 .places_form select {
 	display: block;
 	margin: 0 auto;
 	width: 80%;
-	border: 2px solid $color-one;
-	color: black;
-	outline-color: none;
-	background-color: white;
+	outline-color: $color-one;
 }
 
 
-input.submit_button {
-	width: 10%;
-	margin-top: 30px !important;
+.submit_button {
+	width: 30% !important;
+	margin-top: 30px;
 	background-color: $color-one;
 	outline-color: $color-one;
 	color: white;
 	font-weight: 400;
+	border: 1px outset black !important;
+	border-radius: 2px;
 }
 
 .places_form_content {
@@ -353,12 +342,12 @@ input.submit_button {
 .places_form {
 	width: 100%;
 	float: none;
-	margin-top: 30px;
 }
 
 .places_form_content {
 	width: 100%;
 	float: none;
+	margin-top: 30px;
 }
 
 .col-xs-4 {

@@ -6,6 +6,7 @@ class Place < ApplicationRecord
 
 	validates :name, presence: true, uniqueness: true
 	validates :address, presence: true, uniqueness: true
+	validates :avatar, presence: true
 	has_attached_file :avatar, styles: { thumb: "200x200>" }
 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
