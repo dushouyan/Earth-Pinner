@@ -40,7 +40,7 @@ function showNavBar () {
 
 showNavBar() 
 
-/*
+
 
 $('.fillstar').eq(0).on('click', function() {
  	noStars()
@@ -68,9 +68,9 @@ $('.fillstar').eq(0).on('click', function() {
  $('.fillstar').eq(4).on('click', function() {
  	noStars()
  	$('.fillstar').slice(0,5).addClass('filled')
- })*/
+ })
 
-
+/*
  function noStars () {
  $('.fillstar').each(function() {
  	$( this ).removeClass('filled')
@@ -101,7 +101,7 @@ function unfilledStars() {
 		stars[x].classList.remove('filled')
 	}
 }
-
+*/
 
 //Hide Experiences//GoForward//GoBack Functions
 var allExperiences = document.getElementsByClassName('experiences');
