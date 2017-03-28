@@ -6,8 +6,10 @@
 
 
 <div class="row place_content_bar">
+<p class="place_flash"><%= flash[:dreamadded] if flash[:dreamadded] %></p>
 	<div class="col-xs-4 info">
-	   <% if current_user %>
+
+  	  <% if current_user %>
 
 		  <%= form_tag 'add_dreams' do %>
 
@@ -15,7 +17,6 @@
 		    <%= hidden_field_tag :place_id, @place.id %>
 		    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 		    <%= button_tag "Add To Your Dream Places", type: 'submit', class: "place_buttons" %>
-        <p class="place_flash"><%= flash[:dreamadded] if flash[:dreamadded] %></p>
 		  <% end %>
 	   <% end %>
 	</div>

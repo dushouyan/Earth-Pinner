@@ -20,11 +20,11 @@
             <li><%= link_to "Countries", countries_path %></li>
       <% if current_user %>
               <li><%= link_to 'Pin Your Place', new_place_path %></li>
-              <li><%= link_to "My Profile", user_path(current_user) %>
-                <ul class="">
+              <li><%= link_to "My Profile", user_path(current_user), class: 're-wrap' %>
+                <ul class="menu-hidden">
                   <% if current_user %>
-                      <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
-                      <li> <%= form_for(current_user, :method => 'delete') do |f| %>
+                      <li class="hidden-list-item"><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+                      <li class="hidden-list-item"> <%= form_for(current_user, :method => 'delete') do |f| %>
                               <%= f.submit 'Delete Your Account', id: 'delete_account', data: { confirm: "Are you sure?" } %></li>
                   <% end %>
                 </ul>
@@ -33,7 +33,7 @@
       <% else %>
               <li><%= button_to "f" + " Log In With Facebook", "/auth/facebook", class: 'facebook'%> </li>
               <li class="instagram-logo">
-              <a href="http://www.instagram.com/earthpinner">
+              <a href="http://www.instagram.com/earthpinner" class='instagram-link'>
 
               <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg

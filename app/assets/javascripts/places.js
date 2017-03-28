@@ -4,9 +4,8 @@
 $(document).ready(function () { 
 
 var colorsArray = ["rgba(236, 43, 43, .5)", "rgba(28, 28, 241, .5)", "rgba(245, 249, 5, .5)", "rgba(255, 69, 0, .5)", "rgba(50, 205, 50, .5)", "rgba(102, 51, 153, .5)", "rgba(173, 216, 230, .5)",]
-var menuIcon = document.getElementsByClassName('menu-icon')[0];
-var menuMain = document.getElementsByClassName('menu-main')[0];
 
+//Changes Overlay Colors of Places while hovering
 
 function changeColor() {
   var thumbsGet = document.getElementsByClassName('place_color');
@@ -24,23 +23,7 @@ function changeColor() {
 
 changeColor()
 
-
-function showNavBar () {
-	menuIcon.addEventListener('click', function () {
-		var displayStyle = window.getComputedStyle(menuMain, null).getPropertyValue('display')
-			if (displayStyle === 'none') {
-				menuMain.style.display = 'block'
-			}
-
-			else if (displayStyle === 'block') {
-				menuMain.style.display = 'none'
-			}
-		})
-}
-
-showNavBar() 
-
-
+//Function for rating experiences/unfills stars then refills
 
 $('.fillstar').eq(0).on('click', function() {
  	noStars()
@@ -70,38 +53,11 @@ $('.fillstar').eq(0).on('click', function() {
  	$('.fillstar').slice(0,5).addClass('filled')
  })
 
-/*
  function noStars () {
  $('.fillstar').each(function() {
  	$( this ).removeClass('filled')
  });
  }
- 
-
-var stars = document.getElementsByClassName('fillstar');
-var starIndex = 0
-
-function starSystem () {
-	for (let index = 0; index < stars.length; index++) {
-		stars[index].addEventListener('click', function() {
-			starIndex = index; 
-			unfilledStars();
-			filledStars();
-		})
-	};
-}
-starSystem()
-function filledStars () {
-	for (var x = 0; x <= starIndex; x++) {
-		stars[x].classList.add('filled');
-	};
-}
-function unfilledStars() {
-	for (var x = 0; x < stars.length; x++) {
-		stars[x].classList.remove('filled')
-	}
-}
-*/
 
 //Hide Experiences//GoForward//GoBack Functions
 var allExperiences = document.getElementsByClassName('experiences');
@@ -111,7 +67,6 @@ pageForward.addEventListener('click', goForward)
 pageBack.addEventListener('click', goBack)
 var reviewIndex = 0
 var byFive = 5
-
 
 function hideExperiences() {
 	for (var v = 0; v < allExperiences.length; v++) {
@@ -160,7 +115,34 @@ goForward()
 })
 
 
+/*
+ 
+//Simplier Function For Filled Stars. Heroku won't allow let variable for some reason;
 
+var stars = document.getElementsByClassName('fillstar');
+var starIndex = 0
+
+function starSystem () {
+	for (let index = 0; index < stars.length; index++) {
+		stars[index].addEventListener('click', function() {
+			starIndex = index; 
+			unfilledStars();
+			filledStars();
+		})
+	};
+}
+starSystem()
+function filledStars () {
+	for (var x = 0; x <= starIndex; x++) {
+		stars[x].classList.add('filled');
+	};
+}
+function unfilledStars() {
+	for (var x = 0; x < stars.length; x++) {
+		stars[x].classList.remove('filled')
+	}
+}
+*/
 
 
 
