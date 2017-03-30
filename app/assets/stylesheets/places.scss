@@ -214,18 +214,27 @@ $color-one: rgb(52, 165, 111);
 	width: 55%;
 }
 
-.places_form label {
+.places_form_label {
+	display: block;
 	font-size: 1.2em;
 	margin-bottom: 30px;
 }
 
-.places_form input {
+.places_form_input {
 	border: none;
+	border-bottom: 1px solid rgb(169, 169, 174);
 	display: block;
-	font-size: 1.1em;
 	margin: 0 auto;
 	outline: none;
 	width: 80%;
+}
+
+#place_avatar {
+	outline: none;
+}
+
+#place_created_by {
+	color: rgb(169, 169, 174);
 }
 
 .places_form input:focus {
