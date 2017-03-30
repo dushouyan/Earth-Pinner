@@ -9,10 +9,8 @@ $(document).ready(function () {
 
 var menuIcon = document.getElementsByClassName('menu-icon')[0];
 var menuMain = document.getElementsByClassName('menu-main')[0];
-
 var detectWidth = window.innerWidth;
 var currentPage = window.location.href;
-console.log(currentPage)
 
 function showNavBar () {
 	menuIcon.addEventListener('click', function () {
@@ -28,10 +26,6 @@ function showNavBar () {
 }
 
 showNavBar() 
-
-
-      
-
 
 function mobileDisplay () {
 	if(detectWidth <= 600) {
