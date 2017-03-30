@@ -1,9 +1,8 @@
 <div class="review_box">
-
-<% if current_user %>
+	<% if current_user %>
 		<%= form_for(@experience, url: update_place_experience_path, method: :patch) do |f| %>
 	 		<%= f.text_area :review, size:"40x50" %>
      		<%= f.submit 'Update', class: "share_button" %>
      	<% end %>
-<% end %>
+	<% end %>
 </div>

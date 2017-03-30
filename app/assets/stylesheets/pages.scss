@@ -5,9 +5,9 @@ $color-one: rgb(52, 165, 111);
 $font-one: 'IM Fell Great Primer SC', serif;
 
 .front_page_container {
-	text-align: center;
-	padding-bottom: 40px;
 	font-family: 'IM Fell Great Primer SC', serif;
+	padding-bottom: 40px;
+	text-align: center;
 
 	h2 {
 		font-size: 5em;
@@ -18,64 +18,69 @@ $font-one: 'IM Fell Great Primer SC', serif;
 	p {
 		font-size: 1.2em;
 	}
+	
 }
  
-
 .travel_plan {
+	margin: 0% 20% 0% 20%;
     text-align: center;
-    margin-left: 20%;
-    margin-right: 20%;
+
     h4 {
-    	margin-top: 40px;
     	color: red;
+    	margin-top: 40px;
     }
 
 }
 
-
 .about {
-	width: 75%;
 	margin: 0 auto;
+	width: 75%;
+
 	p {
 		line-height: 2;
 	}
+
 }
 
 .top_banner {
-	text-align: center;
-	padding-bottom: 40px;
 	font-family: $font-one;
 	font-size: 4em;
 	margin-top: 0;
-	padding-top: 20px;
+	padding: 20px 0px 20px 0px;
+	text-align: center;
 	width: 100%;
 }
 
 .top_title {
-	width: 100%;
 	font-family: $font-one;
+	width: 100%;
+
 	div {
-		width: 40%;
 		opacity: .5;
+		width: 40%;
 	}
+
 }
 
 .top_photo {
-	width: 100%;
-	height: 90vh;
-	background-size: 100% 100%;
 	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height: 90vh;
+	width: 100%;
 }
 
 
 
 @media screen and (max-width: 600px) {
+
 	.top_title {
 		padding: 10px;
+
 		div {
-			width: 100%;
 			padding: 10px;
+			width: 100%;
 		}
+
 	}
 
 	.top_photo {

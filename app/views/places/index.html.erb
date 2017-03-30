@@ -1,30 +1,31 @@
 
 <div class="place_flex">
-  <% @places.sample(180).each do |place| %>
-	   <div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
-			<%= link_to place_path(place.url) do %>
+    <% @places.sample(180).each do |place| %>
+	    <div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
+            <%= link_to place_path(place.url) do %>
 				<div class="place_color">
 					<p><%= place.name %></p>
 				</div>  
-      <% end %>  
-      </div>
+            <% end %>  
+        </div>
                <% if current_user.try(:admin?) %>
-                     <%= form_for(place, url: update_place_path(place.url), :method => 'patch', confirm: "Are You Sure?") do |f| %>
+                    <%= form_for(place, url: update_place_path(place.url), :method => 'patch', confirm: "Are You Sure?") do |f| %>
                          <%= f.submit 'Approve', data: { confirm: "Are you sure?" } %>
-                      <% end %>
+                    <% end %>
 
-                      <%= form_for(place, url: delete_place_path(place.url), :method => 'delete', confirm: "Are You Sure?") do |f| %>
+                    <%= form_for(place, url: delete_place_path(place.url), :method => 'delete', confirm: "Are You Sure?") do |f| %>
                           <%= f.submit 'Delete', data: { confirm: "Are you sure?" } %>
-                      <% end %>
+                    <% end %>
                <% end %> 
-  <% end %>
+    <% end %>
 </div>
 
-
 <script>
+
 counter = 500
-$('.place_display').each(function() {
-  counter = counter + 200;
-  $( this ).fadeIn(counter);
-});
+    $('.place_display').each(function() {
+        counter = counter + 200;
+        $( this ).fadeIn(counter);
+    });
+    
 </script>

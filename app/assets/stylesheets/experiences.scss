@@ -16,24 +16,23 @@ $color-low-one: rgba(52, 165, 111, .2);
 .ratings label {
 
 	input { /* Hide Radio Button */
- 	 visibility: hidden; /* Makes input not-clickable */
- 	 position: absolute; /* Remove input from document flow */
-}	
+		position: absolute; /* Remove input from document flow */
+ 		visibility: hidden; /* Makes input not-clickable */
+	}	
 	.fillstar {
 		cursor: pointer;
 		fill: white;
-}
+	}
 
 	.filled {
 		fill: $color-one;
-}
+	}
 
 }
 
 .experience_share {
 	text-align: center;
 }
-
 
 .current_experience {
 	font-weight: 400;
@@ -42,26 +41,24 @@ $color-low-one: rgba(52, 165, 111, .2);
 
 .review_box {
 
+	#experience_review {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 20px;
+		outline-color: $color-one;
+		height: 300px;
+		width: 80%;
+	}
 
-#experience_review {
-	width: 80%;
-	height: 300px;
-	display: block;
-	outline-color: $color-one;
-	margin: 0 auto;
-	margin-bottom: 20px;
-}
-
-.share_button {
-	width: 20%;
-	display: block;
-	background-color: $color-one;
-	outline-color: $color-one;
-	color: white;
-	font-weight: 400;
-	margin: 0 auto;
-}
-
+	.share_button {
+		background-color: $color-one;
+		color: white;
+		display: block;
+		font-weight: 400;
+		margin: 0 auto;
+		outline-color: $color-one;
+		width: 20%;
+	}
 
 }
 
@@ -74,15 +71,15 @@ $color-low-one: rgba(52, 165, 111, .2);
 	color: $color-one;
 }
 
-
-
 @media screen and (max-width: 600px) {
+
 	#experience_review {
 		border: 1px solid black;
 	}
 
 	.fillstar {
-		width: 50px;
 		height: 50px;
+		width: 50px;
 	}
+	
 }

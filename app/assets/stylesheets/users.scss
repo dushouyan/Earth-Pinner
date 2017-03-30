@@ -1,8 +1,6 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
 $color-one: rgb(52, 165, 111);
 
 .user_countries a {
@@ -14,9 +12,9 @@ $color-one: rgb(52, 165, 111);
 }
 
 .users_nav ul {
-	list-style-type: none;
-	float: right;
 	clear: both;
+	float: right;
+	list-style-type: none;
 }
 
 .users_nav li {
@@ -24,42 +22,43 @@ $color-one: rgb(52, 165, 111);
 	margin-left: 20px;
 }
 
-
-.x_dreams {
-	position: absolute;
+.delete-dreams {
+	background-color: transparent;
+	border: none;
+	color: white;
 	top: 0;
 	right: 0;
-	background-color: transparent;
-	color: white;
-	border: none;
+	position: absolute;
 }
 
 .user_experiencesheader {
 	text-align: center;
 }
-.user_experiences {
-	h4 {
-		text-align: center;
 
+.user_experiences {
+
+	h4 {
 		font-weight: 900;
+		text-align: center;
 	}
 
 	p {
-		float: left;
 		clear: left;
-		font-weight: 400;
 		display: inline-block;
+		font-weight: 400;
+		float: left;
+		margin-bottom: 0;
 		padding-left: 60px;
 		padding-right:60px;
-		margin-bottom: 0;
 	}
 
 	.place_buttons {
 		display: inline-block;
-		float: right;
 		font-weight: 400;
+		float: right;
 		margin-right: 60px;
 	}
+
 }
 
 .country_list {
@@ -68,23 +67,22 @@ $color-one: rgb(52, 165, 111);
 }
 
 .xcountry_button {
-	padding: 2px;
-	font-size: 0.5em;
-	margin: 5px;
+	background-color: $color-one;
 	border: 1px solid black;
 	color: white;
-	background-color: $color-one;
+	font-size: 0.5em;
+	margin: 5px;
+	padding: 2px;
 }
-
 
 .pinned_places {
 	text-align: center;
 }
 
 #showpins {
-	margin: 0 auto;
 	background-color: transparent;
 	border: none;
+	margin: 0 auto;
 }
 
 .dream_places {
@@ -105,7 +103,9 @@ $color-one: rgb(52, 165, 111);
 
 
 @media screen and (max-width: 600px) {
+
 	.user_countries {
 		text-align: center;
 	}
+
 }

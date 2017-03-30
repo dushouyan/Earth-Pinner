@@ -1,49 +1,40 @@
 <h1><%= @place.name %></h1>
-
-  <div class="place_image" style="background-image: url('<%= @place.avatar.url %>')">
-	   <h6><%= @place.created_by %></h6>
-  </div>
-
+    <div class="place_image" style="background-image: url('<%= @place.avatar.url %>')">
+        <h6><%= @place.created_by %></h6>
+    </div>
 
 <div class="row place_content_bar">
-<p class="place_flash"><%= flash[:dreamadded] if flash[:dreamadded] %></p>
-	<div class="col-xs-4 info">
-
-  	  <% if current_user %>
-
-		  <%= form_tag 'add_dreams' do %>
-
-		    <%= hidden_field_tag :user_id, current_user.id %>
-		    <%= hidden_field_tag :place_id, @place.id %>
-		    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-		    <%= button_tag "Add To Your Dream Places", type: 'submit', class: "place_buttons" %>
-		  <% end %>
-	   <% end %>
-	</div>
+    <p class="place_flash"><%= flash[:dreamadded] if flash[:dreamadded] %></p>
+        <div class="col-xs-4 info">
+            <% if current_user %>
+                <%= form_tag 'add_dreams' do %>
+                    <%= hidden_field_tag :user_id, current_user.id %>
+		              <%= hidden_field_tag :place_id, @place.id %>
+		              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+		              <%= button_tag "Add To Your Dream Places", type: 'submit', class: "place_buttons" %>
+		          <% end %>
+	       <% end %>
+	   </div>
 	<div class="col-xs-4 info">
 	     <%= button_to "Plan Your Trip", help_path, :method => "get", class: 'place_buttons' %>
 	</div>
-  <div class="col-xs-4 info">
-    <% if current_user %>
-         <%= button_to 'Share Your Experience', new_place_experience_path, :method => "get", class: 'place_buttons' %>
-    <% end %>
-  </div>
-
+    <div class="col-xs-4 info">
+        <% if current_user %>
+            <%= button_to 'Share Your Experience', new_place_experience_path, :method => "get", class: 'place_buttons' %>
+        <% end %>
+    </div>
 </div>
 
 <div class="row place_info_bar">
-
-	<div class="col-xs-6 info">
-     <h4>About <%= @place.name %></h4>
-         <%= link_to 'Website', @place.website %><br> 
-         <strong>Admission:</strong> <%= @place.admission %><br>
-         <u>Description</u><br> <%= @place.description %><br>
-         <u>Arrive</u><br> <%= @place.arrive %><br>
+    <div class="col-xs-6 info">
+        <h4>About <%= @place.name %></h4>
+        <%= link_to 'Website', @place.website %><br> 
+        <strong>Admission:</strong> <%= @place.admission %><br>
+        <u>Description</u><br> <%= @place.description %><br>
+        <u>Arrive</u><br> <%= @place.arrive %><br>
 	</div>
-
-
 	<div class="col-xs-6 info">
-		  <h4>About <%= link_to @place.country.name, country_path(@place.country.url) %></h4>
+		<h4>About <%= link_to @place.country.name, country_path(@place.country.url) %></h4>
         <strong>Capital:</strong> <%= @place.country.capital %><br>
         <strong>Currency:</strong> <%= @place.country.currency %><br>
         <%= @place.country.population %> pop<br>
@@ -53,25 +44,22 @@
 </div>
 
 <div class="experience_div">
-	 <h3>Latest Experiences At <%= @place.name %></h3>
+    <h3>Latest Experiences At <%= @place.name %></h3>
     <p>Average User Rating <span id="averagerating"><%= @averagerating.round(2) %></span></p>
-			 <% @place.experiences.reverse_each do |experience| %>
-          <div class="experiences">
-				    <%= experience.created_at.strftime("%b %d, %Y") %><br>
-				    <strong>By <%= experience.user_name %></strong><br><br>
-				    <%= experience.review %><br><br>
-				  </div>
-			 <% end %>
-   <div class="experiences_bar">
+	<% @place.experiences.reverse_each do |experience| %>
+        <div class="experiences">
+			<%= experience.created_at.strftime("%b %d, %Y") %><br>
+			<strong>By <%= experience.user_name %></strong><br><br>
+			<%= experience.review %><br><br>
+		</div>
+	<% end %>
+    <div class="experiences_bar">
         <span class="experience_page glyphicon glyphicon-arrow-left"></span>
         <span class="experience_page glyphicon glyphicon-arrow-right"></span>
-    </div>   
+    </div>
 </div>
 
-
-<div id="map">
-
-</div>
+<div id="map"></div>
 
 <script>
 

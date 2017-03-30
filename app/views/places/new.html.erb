@@ -1,30 +1,30 @@
 <h1>Pin Your Place</h1>
 	<%= form_for Place.new do |f| %>
-	<div class="places_form">
-		<p class="place_flash"><%= flash[:placesuccess] if flash[:placesuccess] %></p>
-		<p class="place_flash"><%= flash[:placeerror] if flash[:placeerror] %></p>
+		<div class="places_form">
+			<p class="place_flash"><%= flash[:placesuccess] if flash[:placesuccess] %></p>
+			<p class="place_flash"><%= flash[:placeerror] if flash[:placeerror] %></p>
 
-		<%= f.file_field :avatar, class: 'places_form_input' %>
-		<%= f.label "Add Photo", class: 'places_form_label' %>
+			<%= f.file_field :avatar, class: 'places_form_input' %>
+			<%= f.label "Add Photo", class: 'places_form_label' %>
 
-		<%= f.text_field :name, placeholder: 'Ex. Niagara Falls, Eiffel Tower, etc', class: 'places_form_input' %>
-		<%= f.label :name, value: 'Place', class: 'places_form_label' %>
+			<%= f.text_field :name, placeholder: 'Ex. Niagara Falls, Eiffel Tower, etc', class: 'places_form_input' %>
+			<%= f.label :name, value: 'Place', class: 'places_form_label' %>
 
-		<%= f.text_field :address, class: 'places_form_input' %>
-		<%= f.label :address, value: "Full Address", class: 'places_form_label' %>
+			<%= f.text_field :address, class: 'places_form_input' %>
+			<%= f.label :address, value: "Full Address", class: 'places_form_label' %>
 
-		<%= f.collection_select(:country_id, Country.all.sort_by(&:name), :id, :name, {}, {class: 'places_form_input'}) %>
-		<%= f.label :country_id, value: "Country", class: 'places_form_label' %>
+			<%= f.collection_select(:country_id, Country.all.sort_by(&:name), :id, :name, {}, {class: 'places_form_input'}) %>
+			<%= f.label :country_id, value: "Country", class: 'places_form_label' %>
 
-		<%= f.text_field :created_by, :value => current_user.name, :readonly => true, class: 'places_form_input' %>
-		<%= f.label "Shared By", class: 'places_form_label' %>
+			<%= f.text_field :created_by, :value => current_user.name, :readonly => true, class: 'places_form_input' %>
+			<%= f.label "Shared By", class: 'places_form_label' %>
 
-		<%= f.hidden_field :make_id, :value => current_user.make.id %>
+			<%= f.hidden_field :make_id, :value => current_user.make.id %>
 
-		<%= f.hidden_field :approved, :value => false %>
+			<%= f.hidden_field :approved, :value => false %>
 
-		<%= f.submit 'Pin', class: 'submit_button' %>
-	</div>
+			<%= f.submit 'Pin', class: 'submit_button' %>
+		</div>
 	<% end %>
 
 <div class="places_form_content">
@@ -33,5 +33,7 @@
 	<p>-A beautiful place can be anything. Submit your place, lets find out how many beautiful places there are.</p>
 	<h3>Submiting A Pin For Approval</h3>
 	<p>-Do Not Leave Any Forms Blank.</p>
-	<p>-If you cannot find an address. Use something like, "Eiffel Tower, Paris, France"</p><p>-Use a large horizontal photo. The image is meant to give an accurate represention of the place, please avoid using heavely altered images.</p><p>-Your name will be listed on the bottom right hand corner of the image when approved on our website.</p><p>-Our team will approve images within 24 hours of submission.</p>
+	<p>-If you cannot find an address. Use something like, "Eiffel Tower, Paris, France"</p><p>-Use a large horizontal photo. The image is meant to give an accurate represention of the place, please avoid using heavely altered images.</p>
+	<p>-Your name will be listed on the bottom right hand corner of the image when approved on our website.</p>
+	<p>-Our team will approve images within 24 hours of submission.</p>
 </div>

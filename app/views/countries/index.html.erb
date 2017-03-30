@@ -1,12 +1,12 @@
-
 <h1>Countries</h1>
 <% if current_user %>
-<div>
-	<span class="glyphicon glyphicon-flag"><%= current_user.countrylist.countries.length %>/<%= @countries.length %> Click <span class="glyphicon glyphicon-plane"></span> to Keep Track of Your Countries
-	Visited!</span>
-</div>
+	<div>
+		<span class="glyphicon glyphicon-flag"><%= current_user.countrylist.countries.length %>/<%= @countries.length %> Click 
+			<span class="glyphicon glyphicon-plane"></span>
+			to Keep Track of Your CountriesVisited!
+		</span>
+	</div>
 <% end %>
-
 
 <div class="countries_div">
 <% @countries.sort_by(&:id).each do |country| %>
@@ -29,14 +29,14 @@
 			</div>
 		<% end %>
 	</div>
-		<% if current_user.try(:admin?) %>
+	<% if current_user.try(:admin?) %>
 		<div>
-				<%= country.name %>
-				<%= form_for country, url: update_country_path(country.url), :method => 'patch' do |form| %>
+			<%= country.name %>
+			<%= form_for country, url: update_country_path(country.url), :method => 'patch' do |form| %>
   				<%= form.file_field :avatar %>
   				<%= form.submit %>
-  				<% end %>
+  			<% end %>
   		</div>		
-  		<% end %>
+  	<% end %>
 <% end %>
 </div>
