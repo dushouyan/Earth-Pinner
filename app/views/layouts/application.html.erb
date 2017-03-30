@@ -33,17 +33,13 @@
             <%= link_to(new_place_path) do %>
                 <li>Pin Your Place</li>
             <% end %>
-              <%= link_to(user_path(current_user), class: 're-wrap') do %>
-                <li>My Profile
-              <% end %>
-                  <ul class="menu-hidden">
+              <li>
+            <a href="/users/<%= current_user.id %>", class="re-wrap"><span id="wrap">My Profile</span></a>            <ul class="menu-hidden">
                     <% if current_user %>
-                      <%= link_to(signout_path, id: "sign_out") do %>
-                        <li>Sign out</li>
-                      <% end %>
-                   <% end %>
+                      <a href="/signout" id="sign_out"><li>Sign out</li></a>
+                    <% end %>
                   </ul>
-              </li>
+                </li>
       <% else %>
               <li><%= button_to "f" + " Log In With Facebook", "/auth/facebook", class: 'facebook'%> </li>
               <li class="instagram-logo">

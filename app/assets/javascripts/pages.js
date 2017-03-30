@@ -31,8 +31,9 @@ showNavBar()
 
 function removeList () {
 	if(detectWidth <= 600) {
-		$('.hidden-list-item').unwrap('<ul></ul>').unwrap('<li></li>');
-		$('.re-wrap').wrap('<li></li>');
+		$('#sign_out').unwrap('<ul></ul>');
+		$('#wrap').wrap('<li></li>');
+		$('.re-wrap').unwrap('<li></li>');
 		$('.instagram-link').html('Instagram');
 	}
 }
