@@ -20,26 +20,34 @@
         <% end %>
       </script>
           <ul class="menu-main">
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Places", places_path %></li>
-            <li><%= link_to "Countries", countries_path %></li>
+            <%= link_to(root_path) do %>
+                <li>Home</li>
+            <% end %>
+            <%= link_to(places_path) do %>
+                <li>Places</li>
+            <% end %>
+            <%= link_to(countries_path) do %>
+                <li>Countries</li>
+            <% end %>
       <% if current_user %>
-              <li><%= link_to 'Pin Your Place', new_place_path %></li>
-              <li><%= link_to "My Profile", user_path(current_user), class: 're-wrap' %>
-                <ul class="menu-hidden">
-                  <% if current_user %>
-                      <li class="hidden-list-item"><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
-                      <li class="hidden-list-item"> <%= form_for(current_user, :method => 'delete') do |f| %>
-                              <%= f.submit 'Delete Your Account', id: 'delete_account', data: { confirm: "Are you sure?" } %></li>
-                  <% end %>
-                </ul>
-      <% end %>
+            <%= link_to(new_place_path) do %>
+                <li>Pin Your Place</li>
+            <% end %>
+              <%= link_to(user_path(current_user), class: 're-wrap') do %>
+                <li>My Profile
+              <% end %>
+                  <ul class="menu-hidden">
+                    <% if current_user %>
+                      <%= link_to(signout_path, id: "sign_out") do %>
+                        <li>Sign out</li>
+                      <% end %>
+                   <% end %>
+                  </ul>
               </li>
       <% else %>
               <li><%= button_to "f" + " Log In With Facebook", "/auth/facebook", class: 'facebook'%> </li>
               <li class="instagram-logo">
               <a href="http://www.instagram.com/earthpinner" class='instagram-link'>
-
               <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -113,26 +121,23 @@ Created by potrace 1.12, written by Peter Selinger 2001-2015
        inkscape:connector-curvature="0" />
   </g>
 </svg>
-
         </a>
       </li>
     <% end %>
   </ul>
 </div>
-
-
   <%= yield %>
-
-
-
-
-
-
   </div>
   <div class="main_footer">
     <ul>
       <li><%= link_to "About", about_path %></li>
       <li><%= link_to "Plan Your Trip", help_path %></li>
+    <% if current_user %>
+      <li><%= form_for(current_user, :method => 'delete') do |f| %>
+              <%= f.submit 'Delete Your Account', id: 'delete_account', data: { confirm: "Are you sure?" } %>
+          <% end %>
+      </li>
+    <% end %>
     </ul>
   </div>
 </body>

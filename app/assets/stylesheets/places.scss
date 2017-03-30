@@ -189,6 +189,7 @@ h1 {
 	@extend .place_content_bar
 }
 
+
 .place_buttons {
 	background-color: $color-one;
 	color: white;
@@ -333,6 +334,7 @@ h1 {
 
 .place_image {
 	border: none;
+	height: 400px;
 }
 
 #map {
