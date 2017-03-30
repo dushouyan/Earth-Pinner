@@ -14,11 +14,6 @@
     <div class="menu-nav">
     <div class="menu-icon glyphicon glyphicon-list"></div>
     <div class='header'><ul><li><h1 class="logo">Earth Pinner</h1></ul></li></div>
-      <script>
-        <% if current_page?('/') %>
-          document.getElementsByClassName('logo')[0].classList.add('writelogo')
-        <% end %>
-      </script>
           <ul class="menu-main">
             <%= link_to(root_path) do %>
                 <li>Home</li>
@@ -34,12 +29,13 @@
                 <li>Pin Your Place</li>
             <% end %>
               <li>
-            <a href="/users/<%= current_user.id %>", class="re-wrap"><span id="wrap">My Profile</span></a>            <ul class="menu-hidden">
+            <a href="/users/<%= current_user.id %>", class="re-wrap"><span id="wrap">My Profile</span></a>            
+            <ul class="menu-hidden">
                     <% if current_user %>
                       <a href="/signout" id="sign_out"><li>Sign out</li></a>
                     <% end %>
                   </ul>
-                </li>
+              </li>
       <% else %>
               <li><%= button_to "f" + " Log In With Facebook", "/auth/facebook", class: 'facebook'%> </li>
               <li class="instagram-logo">
