@@ -9,7 +9,6 @@ $(document).ready(function () {
 
 var menuIcon = document.getElementsByClassName('menu-icon')[0];
 var menuMain = document.getElementsByClassName('menu-main')[0];
-var detectWidth = window.innerWidth;
 var currentPage = window.location.href;
 
 function showNavBar () {
@@ -28,19 +27,28 @@ function showNavBar () {
 showNavBar() 
 
 function mobileDisplay () {
-	if(detectWidth <= 600) {
-		$('#sign_out').unwrap('<ul></ul>');
-		$('#wrap').wrap('<li></li>');
-		$('.re-wrap').unwrap('<li></li>');
-		$('.instagram-link').html('Instagram');
-	}
+	$(window).load(function () {
+		detectWidthOne = window.innerWidth;
+		if (detectWidthOne <= 600) {
+			$('#sign_out').unwrap('<ul></ul>');
+			$('#wrap').wrap('<li></li>');
+			$('.re-wrap').unwrap('<li></li>');
+			$('.instagram-link').html('Instagram');
+		}
+	})
 
-	else if(detectWidth > 600 && currentPage === 'http://www.earthpinner.com') {
-		$('.logo').addClass('writelogo')
-	}
+	$(window).resize(function () {
+		detectWidthTwo = window.innerWidth;
+			if(detectWidthTwo <= 600) {
+				$('.menu-main').css('display', 'none');
+			}
+			else if (detectWidthTwo > 600) {
+				$('.menu-main').css('display', 'flex')
+			}
+	})
+
 }
 
 mobileDisplay()
-
 
 })
