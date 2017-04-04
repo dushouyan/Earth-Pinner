@@ -9,7 +9,7 @@ class Place < ApplicationRecord
 	validates :avatar, presence: true
 	has_attached_file :avatar, styles: { thumb: "200x200>" }
 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-	validates_attachment_size :avatar, :less_than => 3.megabytes
+	validates_attachment_size :avatar, :less_than => 3.megabytes 
 
 	before_validation :pretty_url, :name_title
 

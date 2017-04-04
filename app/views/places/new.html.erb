@@ -2,7 +2,12 @@
 	<%= form_for Place.new do |f| %>
 		<div class="places_form">
 			<p class="place_flash"><%= flash[:placesuccess] if flash[:placesuccess] %></p>
-			<p class="place_flash"><%= flash[:placeerror] if flash[:placeerror] %></p>
+				<% if @place.errors.any? %>
+    				 <% @place.errors.full_messages.each do |message| %>
+    				 	<% message.split %>
+       					<p class="place_flash"><%= message %></p>
+     				<% end %>
+				<% end %>
 
 			<%= f.file_field :avatar, class: 'places_form_input' %>
 			<%= f.label "Add Photo", class: 'places_form_label' %>
@@ -28,7 +33,6 @@
 	<% end %>
 
 <div class="places_form_content">
-	<p><strong>Thanks for submitting your place to Earth Pinner!</strong></p>
 	<h3>What is a place?</h3>
 	<p>-A beautiful place can be anything. Submit your place, lets find out how many beautiful places there are.</p>
 	<h3>Submiting A Pin For Approval</h3>

@@ -20,4 +20,29 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      place:
+        name: 'Name'
+        address: 'Address'
+        avatar: 'Image'
+        avatar_file_size: 'Image'
+    errors:
+      models:
+        place: 
+          attributes:
+            name:
+              blank: "Is Required."
+              taken: 'Is Already On Earth Pinner' 
+            address:
+              blank: 'Is Required'
+              taken: 'Is Already On Earth Pinner'
+            avatar:
+              blank: 'Is Required'
+              less_than: 'Must Be Less Than 3 MB'
+            avatar_file_size:
+              less_than: 'Is Too Large'
+
+
+           
+

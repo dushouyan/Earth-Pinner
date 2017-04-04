@@ -41,8 +41,7 @@ class PlacesController < ApplicationController
         redirect_back(fallback_location: new_place_path)
         flash[:placesuccess] = "Your Place Was Submitted! Thanks!"
       else
-          redirect_back(fallback_location: new_place_path)
-          flash[:placeerror] = "Place Already Exists Or Forms Were Blank" 
+        render :new
       end
   end
 
