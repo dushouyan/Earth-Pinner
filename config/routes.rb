@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
     root to: 'pages#home'
-    get '/about', to: 'pages#about'
+    get '/most-beautiful-places', to: 'pages#mostbeautiful'
     get '/plan-your-trip', to: 'pages#help', as: 'help'
 
     get 'auth/:provider/callback', to: 'sessions#create'
