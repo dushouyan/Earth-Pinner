@@ -8,19 +8,6 @@ $color-one: rgb(52, 165, 111);
 	flex-wrap: wrap;
 }
 
-.glyphicon.glyphicon-flag {
-	color: $color-one;
-	font-size: 1.5em;
-}
-
-.glyphicon.glyphicon-flag a {
-	color: black;
-}
-
-.glyphicon.glyphicon-flag a:hover {
-	color: $color-one;
-}
-
 .flag {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
