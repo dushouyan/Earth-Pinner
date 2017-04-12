@@ -53,6 +53,7 @@ function displayUnloadedImage () {
 			var reader = new FileReader(); //HTML 5 filereader API
 
 			reader.onload = function(file) {
+				fileDisplay.removeChild(fileDisplay.childNodes[0])
 				var img = new Image(); //Creates new image
 				img.src = reader.result;
 				img.style.width = '80%';
