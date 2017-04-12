@@ -10,7 +10,6 @@
 
 <body>
   <div class="container"> 
-
     <div class="menu-nav">
     <div class="menu-icon glyphicon glyphicon-list"></div>
     <div class='header'><ul><li><h1 class="logo">Earth Pinner</h1></ul></li></div>
@@ -126,7 +125,7 @@ Created by potrace 1.12, written by Peter Selinger 2001-2015
       <li><%= link_to "Plan Your Trip", help_path %></li>
     <% if current_user %>
       <li><%= form_for(current_user, :method => 'delete') do |f| %>
-              <%= f.submit 'Delete Your Account', id: 'delete_account', data: { confirm: "Are you sure?" } %>
+              <%= f.submit 'Delete Account', id: 'delete_account', data: { confirm: "Are you sure?" } %>
           <% end %>
       </li>
     <% end %>

@@ -143,11 +143,11 @@ var urlArray = <%= @url_array.to_json.to_s.html_safe %>
 function linkMarkers() {
   for (var i = 0; i < markers.length; i++) {
     (function (i) {
-  markers[i].addListener('click', function() {
-      window.location.href = '/places/' + urlArray[i]
-  }, false);
- })(i);
-}
+        markers[i].addListener('click', function() {
+          window.location.href = '/places/' + urlArray[i]
+          }, false);
+    })(i);
+  }
 }
 
 linkMarkers()
@@ -163,7 +163,7 @@ linkMarkers()
              var locations = [
       <% @places.each do |place| %>
       <% if place.latitude != nil && place.longitude != nil %>
-        {lat: <%= place.latitude %> , lng: <%= place.longitude %>, url: '<%= place.url %>' },
+        {lat: <%= place.latitude %> , lng: <%= place.longitude %>},
       <% end %>
       <% end %>  
       ]

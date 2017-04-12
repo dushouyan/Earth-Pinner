@@ -5,7 +5,7 @@ $color-one: rgb(52, 165, 111);
 $font-one: 'IM Fell Great Primer SC', serif;
 
 .front_page_container {
-	font-family: 'IM Fell Great Primer SC', serif;
+	font-family: $font-one;
 	padding-bottom: 40px;
 	text-align: center;
 
@@ -19,27 +19,6 @@ $font-one: 'IM Fell Great Primer SC', serif;
 		font-size: 1.2em;
 	}
 	
-}
- 
-.travel_plan {
-	margin: 0% 20% 0% 20%;
-    text-align: center;
-
-    h4 {
-    	color: red;
-    	margin-top: 40px;
-    }
-
-}
-
-.about {
-	margin: 0 auto;
-	width: 75%;
-
-	p {
-		line-height: 2;
-	}
-
 }
 
 .top_banner {
@@ -63,10 +42,110 @@ $font-one: 'IM Fell Great Primer SC', serif;
 }
 
 .top_photo {
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
 	height: 90vh;
 	width: 100%;
+}
+
+.full_page_wrapper {
+	font-family: $font-one;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	transition: transform .5s linear;
+}
+
+
+.main_menu_link {
+	position: fixed;
+	top: 20px;
+	left: 10px;
+	z-index: 2;
+
+	.glyphicon-arrow-left {
+		color: white;
+		font-size: 2em;
+	}
+
+}
+
+.travel_menu {
+	position: fixed;
+	right: 10px;
+	font-size: 2em;
+	z-index: 1;
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+
+		
+	.travel_link {
+			cursor: pointer;
+			margin-top: 20px;
+	}
+
+	.dot {
+		border: 2px solid white;
+		border-radius: 50px;
+		width: 10px;
+		height: 10px;
+	}
+}
+
+.full_page_section {
+	image-rendering:-webkit-optimize-contrast;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+.page_one {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-image: url('earth-map2.jpg');
+	color: white;
+	text-shadow: 2px 2px 4px black;
+
+	.plan_header {
+		font-size: 2em !important;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 20%;
+		margin: auto;
+
+		.glyphicon-plane {
+			transform: rotate(90deg);
+		}
+
+		.glyphicon-plane:hover {
+			color: $color-one;
+			cursor: pointer;
+		}
+
+		h1 {
+			font-family: 'Rouge Script', cursive;
+		}
+
+		p {
+			font-size: .5em;
+		}
+	}
+}
+
+.page_two {
+	display: flex;
+	justify-content: space-around;
+
+	.passport_section {
+		width: 50%;
+	}
 }
 
 
