@@ -28,18 +28,18 @@
 <div class="row place_info_bar">
     <div class="col-xs-6 info">
         <h4>About <%= @place.name %></h4>
-        <%= link_to 'Website', @place.website %><br> 
         <strong>Admission:</strong> <%= @place.admission %><br>
-        <u>Description</u><br> <%= @place.description %><br>
-        <u>Arrive</u><br> <%= @place.arrive %><br>
+        <strong>Description:</strong><br> <%= @place.description %><br>
+        <strong>Arrive:</strong><br> <%= @place.arrive %><br>
+        <strong><%= link_to 'Click Here For More Information', @place.website %><br></strong> 
 	</div>
 	<div class="col-xs-6 info">
 		<h4>About <%= link_to @place.country.name, country_path(@place.country.url) %></h4>
         <strong>Capital:</strong> <%= @place.country.capital %><br>
         <strong>Currency:</strong> <%= @place.country.currency %><br>
-        <%= @place.country.population %> pop<br>
-        <%= @place.country.language %><br>
-        <%= link_to 'Visa Requirements', @place.country.visa %><br>
+        <strong>Population:</strong> <%= @place.country.population %> pop<br>
+        <strong>Language:</strong> <%= @place.country.language %><br>
+        <strong><%= link_to 'Click Here For Visa Requirements', @place.country.visa %></strong><br>
 	</div>
 </div>
 
