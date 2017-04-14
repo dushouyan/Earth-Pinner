@@ -153,21 +153,27 @@ function linkMarkers() {
 linkMarkers()
 
 
-
         // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers, {
          imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
   });
 }
 
-             var locations = [
-      <% @places.each do |place| %>
-      <% if place.latitude != nil && place.longitude != nil %>
-        {lat: <%= place.latitude %> , lng: <%= place.longitude %>},
-      <% end %>
-      <% end %>  
-      ]
-   
+    var placeObject = <%= @places.to_json.html_safe %>
+    var locations = returnLocationArray()
+
+function returnLocationArray () {
+  var array = []
+  for(var index in placeObject) {
+    
+    if(placeObject[index].latitude != null && placeObject[index].longitude != null) {
+        
+        array.push({lat: placeObject[index].latitude, lng: placeObject[index].longitude})
+
+      } 
+  }  
+  return array
+}
 
        </script>
 

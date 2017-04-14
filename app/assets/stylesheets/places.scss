@@ -270,6 +270,22 @@ $color-one: rgb(52, 165, 111);
 }
 
 
+.near_places_bar {
+	margin-top: 20px;
+}
+
+#km_input {
+	padding: 0;
+	border-width: 1px;
+	margin-bottom: 20px;
+}
+
+
+#km_submit {
+	border-width: 1px;
+	background-color: $color-one;
+	color: white;
+}
 
 
 

@@ -40,8 +40,20 @@
         <strong>Population:</strong> <%= @place.country.population %> pop<br>
         <strong>Language:</strong> <%= @place.country.language %><br>
         <strong><%= link_to 'Click Here For Visa Requirements', @place.country.visa %></strong><br>
+        <div class="near_places_bar">
+            <h4>Places Near <%= @place.name %></h4>
+              <form>
+              <input id="km_input" type="number" min="0" max="500"> KM (500 Max)</input>
+              <button id="km_submit" type="button">Submit</button>
+              </form>
+            
+              <div class="near_places_added">
+              </div>
+        
+        </div>
 	</div>
 </div>
+
 
 <div class="experience_div">
     <h3>Latest Experiences At <%= @place.name %></h3>
@@ -62,9 +74,8 @@
 <div id="map"></div>
 
 <script>
-
+  var uluru = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
      function initMap () {
-        var uluru = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 13,
           center: uluru,
@@ -138,6 +149,60 @@
           map: map
         });
       }
+
+      var places = <%= @places.to_json.html_safe %>
+      var placeName = <%= @place.name.to_json.html_safe %>
+      var countryId = <%= @place.country.id.to_json.html_safe %>
+      var placesBar = document.getElementsByClassName('near_places_added')[0];
+      var km = document.getElementById("km_input");
+      var kmSubmit = document.getElementById("km_submit");
+
+function findDistance(limit) {
+        var array = []
+        var lat1 = uluru.lat * (Math.PI / 180);
+        var long1 = uluru.lng * (Math.PI / 180);
+    for(var index in places) {
+       
+      if(countryId === places[index].country_id && placeName != places[index].name) {
+        var lat2 = places[index].latitude * (Math.PI / 180);
+        var long2 = places[index].longitude * (Math.PI / 180);
+        var distance = Math.acos(Math.sin(lat1) * Math.sin(lat2) + Math.cos(lat1) * Math.cos(lat2) * Math.cos(long1 - long2));
+        distance = distance * 6371;
+
+            if(distance < limit) {
+              var obj = new Object()
+              obj.name = places[index].name
+              obj.url = places[index].url
+              array.push(obj)
+            }
+
+      }
+    }
+      return array
+}
+
+function findPlaces (limit) {
+  if(limit < 501) {
+  var closePlaces = findDistance(limit)
+    for(var index in closePlaces) {
+      var p = document.createElement("P")
+      placesBar.appendChild(p)
+      p.innerHTML = "<a href=" + closePlaces[index].url + ">" + closePlaces[index].name + "</a>"
+    }
+  }
+}
+
+findPlaces(200)
+
+kmSubmit.addEventListener("click", function () {
+  while (placesBar.firstChild) {
+    placesBar.removeChild(placesBar.firstChild);
+  }
+    findPlaces(km.value)
+    km.value = ""
+})
+
+
        
 </script>
 
