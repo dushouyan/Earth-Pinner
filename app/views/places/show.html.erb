@@ -12,8 +12,10 @@
 		              <%= hidden_field_tag :place_id, @place.id %>
 		              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 		              <%= button_tag "Add To Your Dream Places", type: 'submit', class: "place_buttons" %>
-		          <% end %>
-	       <% end %>
+		            <% end %>
+            <% else %>
+                  <%= button_tag "Add To Your Dream Places", type: 'button', class: "place_buttons" %>
+	         <% end %>
 	   </div>
 	<div class="col-xs-6 info">
 	     <%= button_to "Plan Your Trip", help_path, :method => "get", class: 'place_buttons' %>
