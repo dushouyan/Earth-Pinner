@@ -11,7 +11,7 @@ class PlacesController < ApplicationController
   end
 
   def show
-    @places = Place.order('name ASC')
+    @places = Place.all
     if current_user.try(:admin?)
       @place = Place.where(:approved => false).find_by_url(params[:url])
         @totalratings = 0
