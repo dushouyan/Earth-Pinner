@@ -163,7 +163,7 @@ function findDistance(limit) {
         var long1 = uluru.lng * (Math.PI / 180);
     for(var index in places) {
        
-      if(/*countryId === places[index].country_id && */placeName != places[index].name) {
+      if(countryId === places[index].country_id && placeName != places[index].name) {
         var lat2 = places[index].latitude * (Math.PI / 180);
         var long2 = places[index].longitude * (Math.PI / 180);
         var distance = Math.acos(Math.sin(lat1) * Math.sin(lat2) + Math.cos(lat1) * Math.cos(lat2) * Math.cos(long1 - long2));
