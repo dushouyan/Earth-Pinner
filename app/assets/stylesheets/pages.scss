@@ -21,6 +21,17 @@ $font-one: 'IM Fell Great Primer SC', serif;
 	
 }
 
+#email {
+	text-align: center;
+
+	a {
+		color: black;
+	}
+	a:hover {
+		color: $color-one;
+	}
+}
+
 .top_banner {
 	font-family: $font-one;
 	font-size: 4em;
