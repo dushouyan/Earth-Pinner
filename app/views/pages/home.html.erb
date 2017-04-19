@@ -12,10 +12,19 @@
 </div>
   <script>
 
+
+   navigator.geolocation.getCurrentPosition(function (position) {
+        ltitude = position.coords.latitude;
+        lngitude = position.coords.longitude;
+        altitude = position.coords.altitude;
+        console.log(altitude)
+   })
+    
+
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('amap'), {
           zoom: 2,
-          center: {lat: 40.5994, lng: 28.6731},
+          center: {lat: 40.7128, lng: 74.0059},
           mapTypeId: 'terrain',
           styles: [
             { 

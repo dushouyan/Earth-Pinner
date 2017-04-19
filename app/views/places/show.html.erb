@@ -24,20 +24,20 @@
 </div>
 
 <div class="row place_info_bar">
-    <div class="col-xs-6 info">
-        <h4>About <%= @place.name %></h4>
-        <strong>Admission:</strong> <%= @place.admission %><br>
-        <strong>Description:</strong><br> <%= @place.description %><br>
-        <strong>Arrive:</strong><br> <%= @place.arrive %><br>
-        <strong><%= link_to 'Click Here For More Information', @place.website %><br></strong> 
+    <div itemscope itemtype="http://www.earthpinner.com/Place" class="col-xs-6 info">
+        <h4 itemprop="name">About <%= @place.name %></h4>
+        <span><strong>Admission:</strong> <%= @place.admission %><br></span>
+        <span itemprop="description"><strong>Description:</strong><br> <%= @place.description %><br></span>
+        <span itemprop="directions"><strong>Arrive:</strong><br> <%= @place.arrive %><br></span>
+        <span><strong><%= link_to 'Click Here For More Information', @place.website %><br></strong></span> 
 	</div>
 	<div class="col-xs-6 info">
 		<h4>About <%= link_to @place.country.name, country_path(@place.country.url) %></h4>
-        <strong>Capital:</strong> <%= @place.country.capital %><br>
-        <strong>Currency:</strong> <%= @place.country.currency %><br>
-        <strong>Population:</strong> <%= @place.country.population %> pop<br>
-        <strong>Language:</strong> <%= @place.country.language %><br>
-        <strong><%= link_to 'Click Here For Visa Requirements', @place.country.visa %></strong><br>
+        <span><strong>Capital:</strong> <%= @place.country.capital %><br></span>
+        <span><strong>Currency:</strong> <%= @place.country.currency %><br></span>
+        <span><strong>Population:</strong> <%= @place.country.population %> pop<br></span>
+        <span><strong>Language:</strong> <%= @place.country.language %><br></span>
+        <span><strong><%= link_to 'Click Here For Visa Requirements', @place.country.visa %></strong><br></span>
         <div class="near_places_bar">
             <h4>Places Near <%= @place.name %></h4>
               <form>
