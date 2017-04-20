@@ -7,7 +7,7 @@ class Place < ApplicationRecord
 	validates :name, presence: true, uniqueness: true
 	validates :address, presence: true, uniqueness: true
 	validates :avatar, presence: true
-	has_attached_file :avatar, styles: { thumb: "200x200>" }
+	has_attached_file :avatar,  source_file_options: { all: '-auto-orient' }, styles: { thumb: "200x200>" }
 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 	validates_attachment_size :avatar, :less_than => 3.megabytes 
 

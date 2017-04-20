@@ -50,7 +50,7 @@ class PlacesController < ApplicationController
   end
 
   def update
-    @place.update(:approved => true)
+    @place.update(places_params)
     redirect_back(fallback_location: places_path)
   end
 
@@ -60,11 +60,17 @@ class PlacesController < ApplicationController
   end
 
   def add_dreams 
-  @place = Place.find(params[:place_id])
-  @user = User.find(params[:user_id])
-  @user.dream.places.push(@place)
-    flash[:dreamadded] = "Added!"
-    redirect_back(fallback_location: places_path)
+    @place = Place.find(params[:place_id])
+    @user = User.find(params[:user_id])
+    @user.dream.places.push(@place)
+      flash[:dreamadded] = "Added!"
+      redirect_back(fallback_location: places_path)
+  end
+
+  def update_photo
+    @place = Place.where(:approved => false).find_by_url(params[:url])
+    @place.update(places_params)
+    redirect_back(fallback_location: place_path)
   end
 
 end 
@@ -74,6 +80,7 @@ private
 def set_place 
     @place = Place.find_by_url(params[:url])
 end
+
 
 def places_params
     params.require(:place).permit(:name, :address, :country_id, :avatar, :created_by, :make_id, :approved)

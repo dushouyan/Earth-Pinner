@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     post '/users/delete_dreams', to: 'users#delete_dreams'
     post '/countries/add_countries', to: 'countries#add_countries'
     post '/users/delete_countries', to: 'users#delete_countries'
+    post '/places/update_photo', to: 'places#update_photo'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

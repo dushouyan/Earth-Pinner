@@ -58,7 +58,19 @@ function displayUnloadedImage () {
 				img.src = reader.result;
 				img.style.width = '80%';
 				img.style.height = '200px';
-				fileDisplay.appendChild(img)
+					img.onload = function() {
+    				var originalWidth = this.naturalWidth;
+    				var originalHeight = this.naturalHeight;
+    					if (originalHeight >= originalWidth) {
+    						var warning = document.createElement('span')
+    						warning.innerHTML = "Please Use Horizontal Image. Submission Will Be Deleted."
+    						fileDisplay.appendChild(warning)
+    					}
+
+    					else if (originalHeight < originalWidth) {
+    						fileDisplay.appendChild(img)
+    					}
+					}
 			}
 			reader.readAsDataURL(file) /*The readAsDataURL() method takes in a File or Blob and produces a data URL. This is basically a base64 encoded string of the file data. You can use this data URL for things like setting the src property for an image.*/
 		})

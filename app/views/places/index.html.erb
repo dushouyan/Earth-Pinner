@@ -10,7 +10,9 @@
         </div>
                <% if current_user.try(:admin?) %>
                     <%= form_for(place, url: update_place_path(place.url), :method => 'patch', confirm: "Are You Sure?") do |f| %>
-                         <%= f.submit 'Approve', data: { confirm: "Are you sure?" } %>
+                        <%= f.file_field :avatar %>
+                        <%= f.hidden_field :approved, :value => true %>
+                    <%= f.submit 'Approve', data: { confirm: "Are you sure?" } %>
                     <% end %>
 
                     <%= form_for(place, url: delete_place_path(place.url), :method => 'delete', confirm: "Are You Sure?") do |f| %>
