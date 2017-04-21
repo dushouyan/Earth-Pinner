@@ -1,13 +1,14 @@
-<h1>Pin Your Place</h1>
-	<%= form_for Place.new do |f| %>
-		<div class="places_form">
-			<p class="place_flash"><%= flash[:placesuccess] if flash[:placesuccess] %></p>
-				<% if @place.errors.any? %>
-    				 <% @place.errors.full_messages.each do |message| %>
-    				 	<% message.split %>
-       					<p class="place_flash"><%= message %></p>
-     				<% end %>
-				<% end %>
+<div class="places_new">
+	<h1>Pin Your Place</h1>
+		<%= form_for Place.new do |f| %>
+			<div class="places_form">
+				<p class="place_flash"><%= flash[:placesuccess] if flash[:placesuccess] %></p>
+					<% if @place.errors.any? %>
+    					<% @place.errors.full_messages.each do |message| %>
+    					 	<% message.split %>
+       						<p class="place_flash"><%= message %></p>
+     					<% end %>
+					<% end %>
 
 			<div id='file_display'>
 			</div>	
@@ -17,6 +18,9 @@
 
 			<%= f.text_field :name, placeholder: 'Ex. Niagara Falls, Eiffel Tower, etc', class: 'places_form_input' %>
 			<%= f.label :name, value: 'Place', class: 'places_form_label' %>
+
+			<%= check_box_tag 'current_location' %>
+			<%= label_tag 'Use Current Location' %>	
 
 			<%= f.text_field :address, class: 'places_form_input' %>
 			<%= f.label :address, value: "Full Address", class: 'places_form_label' %>
@@ -35,12 +39,13 @@
 		</div>
 	<% end %>
 
-<div class="places_form_content">
-	<h3>What is a place?</h3>
-	<p>-A beautiful place can be anything. Submit your place, lets find out how many beautiful places there are.</p>
-	<h3>Submiting A Pin For Approval</h3>
-	<p>-Do Not Leave Any Forms Blank.</p>
-	<p>-If you cannot find an address. Use something like, "Eiffel Tower, Paris, France"</p><p>-Use a large horizontal photo. File Size under 3MB. There are free apps for this. The image is meant to give an accurate represention of the place, please avoid using heavely altered images.</p>
-	<p>-Your name will be listed on the bottom right hand corner of the image when approved on our website.</p>
-	<p>-Our team will approve images within 24 hours of submission.</p>
+	<div class="places_form_content">
+		<h3>What is a place?</h3>
+		<p>-A beautiful place can be anything. Submit your place, lets find out how many beautiful places there are.</p>
+		<h3>Submiting A Pin For Approval</h3>
+		<p>-Do Not Leave Any Forms Blank.</p>
+		<p>-If you cannot find an address. Use something like, "Eiffel Tower, Paris, France"</p><p>-Use a large horizontal photo. File Size under 3MB. There are free apps for this. The image is meant to give an accurate represention of the place, please avoid using heavely altered images.</p>
+		<p>-Your name will be listed on the bottom right hand corner of the image when approved on our website.</p>
+		<p>-Our team will approve images within 24 hours of submission.</p>
+	</div>
 </div>

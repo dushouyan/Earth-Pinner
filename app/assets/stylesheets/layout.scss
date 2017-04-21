@@ -20,6 +20,32 @@ h1 {
 	height: 100%;
 }
 
+#loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid $color-one; /* Blue */
+    border-left: 16px solid #1C6BA0;
+    border-right: 16px solid #1C6BA0;
+    border-bottom: 16px solid $color-one; /* Blue */
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    opacity: 1 !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    animation: spin 1s linear infinite;
+    position: absolute;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+
+}
+
 .header {
 	display: flex;
 	justify-content: center;

@@ -81,6 +81,40 @@ function displayUnloadedImage () {
 
 displayUnloadedImage()
 
+
+//Validate Checkbox
+
+function validateCheckbox () {
+	var checkbox = document.getElementById('current_location');
+	var addressbox = document.getElementById('place_address');
+	var loader = document.getElementById('loader');
+	var body = document.getElementsByTagName('body')[0];
+
+	checkbox.addEventListener('change', function () {
+
+		if (checkbox.checked === true) {
+			loader.style.display = 'block';
+			body.style.color = 'rgba(0, 0, 0, .5)';
+			
+				navigator.geolocation.getCurrentPosition(function (position) {
+      				userLatitude = position.coords.latitude;
+      				userLongitude = position.coords.longitude;
+					addressbox.value = userLatitude + ', ' + userLongitude;
+					loader.style.display = 'none';
+					body.style.color = 'black'
+				})
+		}
+
+		else {
+			addressbox.value = "";
+		}
+
+	})
+
+}
+
+validateCheckbox()
+
 //Function for rating experiences/unfills stars then refills
 
 var stars = document.getElementsByClassName('fillstar');
