@@ -85,6 +85,9 @@ var showMorePins = document.getElementById('showpins');
 var showMoreDreams = document.getElementById('showdreams');
 var userExperiences = document.getElementsByClassName('user_experiences');
 var showMoreExperiences = document.getElementById('showexperiences');
+var makeLength = <%= @user.make.places.length.to_json.html_safe %>
+var dreamLength = <%= @user.dream.places.length.to_json.html_safe %>
+var experienceLength = <%= @user.experiences.length.to_json.html_safe %>
 
 function showElements (element, number) {
 	this.element = element;
@@ -99,43 +102,51 @@ function showElements (element, number) {
 	this.showTwelve = function () {
 		this.hideAll(this.element);
 			for (var x = 0; x < this.number; x++) {
+				if(this.element[x]) {
 					this.element[x].style.display = "initial";
+				}
+
+				else {
+					break
+				}
 			}
 	this.number += this.number;
 }
 	
 }
 
-<% if @user.dream.places.length > 0 %>
-
-var dreamPlaces = new showElements(dreams, 12);
-dreamPlaces.showTwelve();
-showMoreDreams.addEventListener('click', function () { 
-	dreamPlaces.showTwelve();
-})
-
-<% end %>
-
-<% if @user.make.places.length > 0 %>
-
-var pinnedPlaces = new showElements(pins, 12);
-pinnedPlaces.showTwelve();
-showMorePins.addEventListener('click', function () {
-	pinnedPlaces.showTwelve();
-})
-
-<% end %>
 
 
-<% if @user.experiences.length > 0 %>
+	if(dreamLength > 0) {
 
-var experiencePlaces = new showElements(userExperiences, 8);
-experiencePlaces.showTwelve();
-showMoreExperiences.addEventListener('click', function () {
-	experiencePlaces.showTwelve()
-})
+	var dreamPlaces = new showElements(dreams, 12);
+		dreamPlaces.showTwelve();
+		showMoreDreams.addEventListener('click', function () { 
+			dreamPlaces.showTwelve();
+		})
 
-<% end %>
+}
+
+	if(makeLength > 0) {
+
+	var pinnedPlaces = new showElements(pins, 12);
+		pinnedPlaces.showTwelve();
+		showMorePins.addEventListener('click', function () {
+			pinnedPlaces.showTwelve();
+		})
+ 
+}
+
+	if(experienceLength > 0) {
+
+	var experiencePlaces = new showElements(userExperiences, 8);
+		experiencePlaces.showTwelve();
+		showMoreExperiences.addEventListener('click', function () {
+				experiencePlaces.showTwelve()
+		})
+}
+
+
 
 </script>
 
