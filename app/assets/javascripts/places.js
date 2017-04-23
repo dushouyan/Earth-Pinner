@@ -95,7 +95,7 @@ function validateCheckbox () {
 		if (checkbox.checked === true) {
 			loader.style.display = 'block';
 			body.style.color = 'rgba(0, 0, 0, .5)';
-			
+
 				navigator.geolocation.getCurrentPosition(function (position) {
       				userLatitude = position.coords.latitude;
       				userLongitude = position.coords.longitude;

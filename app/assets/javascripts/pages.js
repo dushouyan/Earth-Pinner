@@ -43,6 +43,10 @@ function mobileDisplay () {
 				$('.re-wrap').unwrap('<li></li>');
 				$('.instagram-link').html('Instagram');
 			}
+
+			else {
+				$('.logo').addClass('writelogo')
+			}
 	})
 
 	$(window).resize(function () {
