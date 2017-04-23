@@ -107,6 +107,8 @@ function validateCheckbox () {
 
 		else {
 			addressbox.value = "";
+			loader.style.display = 'none'
+			body.style.color = 'black'
 		}
 
 	})

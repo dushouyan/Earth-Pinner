@@ -36,6 +36,7 @@ showNavBar()
 //Fix some changes for better looking display in Mobile
 function mobileDisplay () {
 	$(window).load(function () {
+		var path = window.location.pathname
 		var detectWidthOne = window.innerWidth;
 			if (detectWidthOne <= 600) {
 				$('#sign_out').unwrap('<ul></ul>');
@@ -44,7 +45,7 @@ function mobileDisplay () {
 				$('.instagram-link').html('Instagram');
 			}
 
-			else {
+			else if(path === '/' && detectWidthOne > 600) {
 				$('.logo').addClass('writelogo')
 			}
 	})
