@@ -15,6 +15,10 @@ $font-one: 'IM Fell Great Primer SC', serif;
 		padding-top: 20px;
 	}
 
+	h1 {
+		font-size: 1em;
+	}
+
 	p {
 		font-size: 1.2em;
 	}
@@ -163,7 +167,7 @@ $font-one: 'IM Fell Great Primer SC', serif;
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
 
 	.top_title {
 		padding: 10px;

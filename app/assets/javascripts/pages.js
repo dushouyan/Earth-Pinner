@@ -38,22 +38,21 @@ function mobileDisplay () {
 	$(window).load(function () {
 		var path = window.location.pathname
 		var detectWidthOne = window.innerWidth;
-			if (detectWidthOne <= 600) {
+			if (detectWidthOne <= 640) {
 				$('.instagram-link').html('Instagram');
-			}
-
-			else if(path === '/' && detectWidthOne > 600) {
-				$('.logo').addClass('writelogo')
+				$('.logo').eq(1).html('Home')
 			}
 	})
 
 	$(window).resize(function () {
 		var detectWidthTwo = window.innerWidth;
-			if(detectWidthTwo <= 600) {
+			if(detectWidthTwo <= 640) {
 				$('.menu-main').css('display', 'none');
+				$('.logo').eq(1).html('Home')
 			}
-			else if (detectWidthTwo > 600) {
+			else if (detectWidthTwo > 640) {
 				$('.menu-main').css('display', 'flex')
+				$('.logo').eq(1).html('Earth Pinner')
 			}
 	})
 

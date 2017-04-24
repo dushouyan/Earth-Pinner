@@ -15,6 +15,10 @@ h1 {
 	text-align: center;
 }
 
+.navlogo {
+	display: none;
+}
+
 .container {
 	min-height: 100vh;
 	height: 100%;
@@ -52,20 +56,6 @@ h1 {
 	color: $color-one !important;
 }
 
-/*
-.writelogo {
-	animation: write 3s steps(60, end); 
-	overflow: hidden;
-	white-space: nowrap;
-	width: 10%;
-}
-
-@keyframes write{
-  0%{width: 0;}
-  5%{width: 5;}
-  10%{ width: 10;} 
-} */
-
 .menu-main {
 	display: flex;
 	align-items: flex-end;
@@ -75,7 +65,7 @@ h1 {
 
 .menu-main li:nth-child(1) {
 	margin-left: 0 !important;
-    margin-right: auto
+    margin-right: auto;
 }
 
 .menu-main li {
@@ -88,14 +78,6 @@ h1 {
 
 .menu-main li a:hover {
 	color: $color-one;
-}
-
-.instagram-logo {
-	margin-top: 5px;
-}
-
-.instagram-logo:hover {
-	fill: $color-one;
 }
 
 .facebook {
@@ -159,7 +141,11 @@ h1 {
 	color: $color-one;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
+	.navlogo {
+		display: block;
+	}
+
 	.container {
 		margin: 0;
 		padding: 0 !important;
@@ -180,6 +166,7 @@ h1 {
 	}
 
 	.logo {
+		margin-top: 10px;
 		margin-right: 10px;
 	}
 
@@ -205,11 +192,17 @@ h1 {
 		z-index: 1030;
 	}
 
+	.menu-main li a:nth-child(1) {
+		font-family: 'Helvetica', 'serif' !important;
+		color: white !important;
+		font-size: 1.5em;
+	}
+
+
 	.menu-main li {
 		margin: 0;
 		padding-left: 10px;
 		border-bottom: 1px solid white;
-		font-size: 1.5em;
 	}
 
 	.menu-main li a {
@@ -219,7 +212,7 @@ h1 {
 	.menu-main li:hover {
 		background-color: white;
 		a {
-			color: $color-one;
+			color: $color-one !important;
 		}
 	}
 }
