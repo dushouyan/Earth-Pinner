@@ -14,29 +14,15 @@
   <div class="container"> 
     <div class="menu-nav">
     <div class="menu-icon glyphicon glyphicon-list"></div>
-    <div class='header'><ul><li><h1 class="logo">Earth Pinner</h1></ul></li></div>
+    <div class='header'>
           <ul class="menu-main">
-            <%= link_to(root_path) do %>
-                <li>Home</li>
-            <% end %>
-            <%= link_to(places_path) do %>
-                <li>Places</li>
-            <% end %>
-            <%= link_to(countries_path) do %>
-                <li>Countries</li>
-            <% end %>
+            <li><%= link_to 'Earth Pinner', root_path, class: 'logo' %></li>
+            <li><%= link_to 'Places', places_path %></li>
+            <li><%= link_to 'Countries', countries_path %></li>
       <% if current_user %>
-            <%= link_to(new_place_path) do %>
-                <li>Pin Your Place</li>
-            <% end %>
-              <li>
-            <a href="/users/<%= current_user.id %>", class="re-wrap"><span id="wrap">My Profile</span></a>            
-            <ul class="menu-hidden">
-                    <% if current_user %>
-                      <a href="/signout" id="sign_out"><li>Sign out</li></a>
-                    <% end %>
-                  </ul>
-              </li>
+                <li><%= link_to 'Pin Your Place', new_place_path %></li>
+                <li><a href="/users/<%= current_user.id %>", class="re-wrap"><span id="wrap">My Profile</span></a> </li>
+                <li><a href="/signout" id="sign_out">Sign out</a></li>
       <% else %>
               <li><%= button_to "f" + " Log In With Facebook", "/auth/facebook", class: 'facebook'%> </li>
               <li class="instagram-logo">

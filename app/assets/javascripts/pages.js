@@ -39,9 +39,6 @@ function mobileDisplay () {
 		var path = window.location.pathname
 		var detectWidthOne = window.innerWidth;
 			if (detectWidthOne <= 600) {
-				$('#sign_out').unwrap('<ul></ul>');
-				$('#wrap').wrap('<li></li>');
-				$('.re-wrap').unwrap('<li></li>');
 				$('.instagram-link').html('Instagram');
 			}
 
