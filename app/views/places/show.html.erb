@@ -27,9 +27,9 @@
 <div class="row place_info_bar">
     <div itemscope itemtype="http://www.earthpinner.com/Place" class="col-xs-6 info">
         <h4 itemprop="name">About <%= @place.name %></h4>
-        <span><strong>Admission:</strong> <%= @place.admission %><br></span>
-        <span itemprop="description"><strong>Description:</strong><br> <%= @place.description %><br></span>
-        <span itemprop="directions"><strong>Arrive:</strong><br> <%= @place.arrive %><br></span>
+        <strong>Admission:</strong><span><%= @place.admission %><br></span>
+        <strong>Description:</strong><br><span itemprop="description"><%= @place.description %><br></span>
+        <strong>Arrive:</strong><br><span itemprop="directions"><%= @place.arrive %><br></span>
         <span><strong><%= link_to 'Click Here For More Information', @place.website %><br></strong></span> 
 	</div>
 	<div class="col-xs-6 info">
