@@ -141,6 +141,13 @@ h1 {
 	color: $color-one;
 }
 
+
+@media screen and (max-width: 768px) {
+	.front_page_container {
+		display: none;
+	}
+}
+
 @media screen and (max-width: 640px) {
 	.navlogo {
 		display: block;
@@ -150,10 +157,6 @@ h1 {
 		margin: 0;
 		padding: 0 !important;
 		width: 100% !important;
-	}
-
-	.front_page_container {
-		display: none;
 	}
 
 	.facebook {
