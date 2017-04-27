@@ -21,8 +21,21 @@ class Place < ApplicationRecord
 		self.name = self.name.titleize
 	end 
 
+	def waterfall 
+		testwaterfall = nil
+			["Falls", "Waterfall", "Waterfalls"].any? { |waterfall| 
+				if self.name.include? waterfall
+			 		testwaterfall = true
+				else 
+					testwaterfall = false
+				end
+			}	
+
+		self.waterfall = testwaterfall
+	end
+
 	geocoded_by :address	
-	after_validation :geocode  
+	after_validation :geocode, :waterfall  
  
 
 end
