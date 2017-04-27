@@ -49,3 +49,28 @@
 		<p>-Our team will approve images within 24 hours of submission.</p>
 	</div>
 </div>
+
+
+<script>
+
+	$('#current_location').change(function () {
+
+	if($('#current_location').is(':checked')) {
+
+		$.ajax({
+			type: 'POST',
+			url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=<%= GEOLOCATION_KEY %>',
+			datatype: 'json',
+			success: function (response) {
+				$('#place_address').val(response.location.lat + ", " + response.location.lng)
+			}
+		});
+
+	}
+
+	else {
+		$('#current_location').val('')
+	}
+
+});	
+</script>

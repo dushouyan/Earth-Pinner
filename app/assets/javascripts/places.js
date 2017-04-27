@@ -81,26 +81,6 @@ function displayUnloadedImage () {
 
 displayUnloadedImage()
 
-$('#current_location').change(function () {
-
-	if($('#current_location').is(':checked')) {
-
-		$.ajax({
-			type: 'POST',
-			url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=GEOLOCATION_KEY',
-			datatype: 'json',
-			success: function (response) {
-				$('#place_address').val(response.location.lat + ", " + response.location.lng)
-			}
-		});
-
-	}
-
-	else {
-		$('#current_location').val('')
-	}
-
-});
 
 //Function for rating experiences/unfills stars then refills
 
