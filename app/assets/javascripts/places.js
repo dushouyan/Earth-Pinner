@@ -81,41 +81,26 @@ function displayUnloadedImage () {
 
 displayUnloadedImage()
 
+$('#current_location').change(function () {
 
-//Validate Checkbox
+	if($('#current_location').is(':checked')) {
 
-function validateCheckbox () {
-	var checkbox = document.getElementById('current_location');
-	var addressbox = document.getElementById('place_address');
-	var loader = document.getElementById('loader');
-	var body = document.getElementsByTagName('body')[0];
+		$.ajax({
+			type: 'POST',
+			url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=GEOLOCATION_KEY',
+			datatype: 'json',
+			success: function (response) {
+				$('#place_address').val(response.location.lat + ", " + response.location.lng)
+			}
+		});
 
-	checkbox.addEventListener('change', function () {
+	}
 
-		if (checkbox.checked === true) {
-			loader.style.display = 'block';
-			body.style.color = 'rgba(0, 0, 0, .5)';
+	else {
+		$('#current_location').val('')
+	}
 
-				navigator.geolocation.getCurrentPosition(function (position) {
-      				userLatitude = position.coords.latitude;
-      				userLongitude = position.coords.longitude;
-					addressbox.value = userLatitude + ', ' + userLongitude;
-					loader.style.display = 'none';
-					body.style.color = 'black'
-				})
-		}
-
-		else {
-			addressbox.value = "";
-			loader.style.display = 'none'
-			body.style.color = 'black'
-		}
-
-	})
-
-}
-
-validateCheckbox()
+});
 
 //Function for rating experiences/unfills stars then refills
 
@@ -217,5 +202,37 @@ goForward()
 })
 
 
+/*
+function validateCheckbox () {
+	var checkbox = document.getElementById('current_location');
+	var addressbox = document.getElementById('place_address');
+	var loader = document.getElementById('loader');
+	var body = document.getElementsByTagName('body')[0];
+
+	checkbox.addEventListener('change', function () {
+
+		if (checkbox.checked === true) {
+			loader.style.display = 'block';
+			body.style.color = 'rgba(0, 0, 0, .5)';
+
+				navigator.geolocation.getCurrentPosition(function (position) {
+      				userLatitude = position.coords.latitude;
+      				userLongitude = position.coords.longitude;
+					addressbox.value = userLatitude + ', ' + userLongitude;
+					loader.style.display = 'none';
+					body.style.color = 'black'
+				})
+		}
+
+		else {
+			addressbox.value = "";
+			loader.style.display = 'none'
+			body.style.color = 'black'
+		}
+
+	})
+
+}
+*/
 
 

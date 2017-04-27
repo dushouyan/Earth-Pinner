@@ -156,7 +156,6 @@
 
       var places = <%= @places.to_json.html_safe %>
       var placeName = <%= @place.name.to_json.html_safe %>
-      var countryId = <%= @place.country.id.to_json.html_safe %>
       var placesBar = document.getElementsByClassName('near_places_added')[0];
       var km = document.getElementById("km_input");
       var kmSubmit = document.getElementById("km_submit");
@@ -167,7 +166,7 @@ function findDistance(limit) {
         var long1 = uluru.lng * (Math.PI / 180);
     for(var index in places) {
        
-      if(countryId === places[index].country_id && placeName != places[index].name) {
+      if(placeName != places[index].name) {
         var lat2 = places[index].latitude * (Math.PI / 180);
         var long2 = places[index].longitude * (Math.PI / 180);
         var distance = Math.acos(Math.sin(lat1) * Math.sin(lat2) + Math.cos(lat1) * Math.cos(lat2) * Math.cos(long1 - long2));
