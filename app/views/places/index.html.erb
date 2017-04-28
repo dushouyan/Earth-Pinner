@@ -1,7 +1,7 @@
 
 <div class="place_flex">
     <% @places.sample(180).each do |place| %>
-	    <div class="place_display" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
+	    <div class="place_display fade_in_place" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
             <%= link_to place_path(place.url) do %>
 				<div class="place_color">
 					<p><%= place.name %></p>
@@ -22,12 +22,3 @@
     <% end %>
 </div>
 
-<script>
-
-counter = 500
-    $('.place_display').each(function() {
-        counter = counter + 200;
-        $( this ).fadeIn(counter);
-    });
-    
-</script>

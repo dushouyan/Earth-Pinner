@@ -23,6 +23,13 @@ function changeColor() {
 
 changeColor()
 
+fadeCounter = 500
+
+$('.fade_in_place').each(function() {
+    $( this ).fadeIn(fadeCounter);
+    fadeCounter = fadeCounter + 100;
+});
+
 //Change Color of Input forms on Focus
 $('.places_form_input').each(function(index) {
 	$('.places_form_input').eq(index).focus(function () {
@@ -53,6 +60,7 @@ function displayUnloadedImage () {
 			var reader = new FileReader(); //HTML 5 filereader API
 
 			reader.onload = function(file) {
+				console.log(file)
 				fileDisplay.removeChild(fileDisplay.childNodes[0])
 				var img = new Image(); //Creates new image
 				img.src = reader.result;
@@ -120,8 +128,10 @@ var pageBack = document.getElementsByClassName('experience_page')[0];
 var pageForward = document.getElementsByClassName('experience_page')[1];
 var reviewIndex = 0
 var byFive = 5
-pageForward.addEventListener('click', goForward)
-pageBack.addEventListener('click', goBack)
+pageForward.addEventListener('click', goForward);
+pageBack.addEventListener('click', goBack);
+
+
 
 
 function hideExperiences() {
