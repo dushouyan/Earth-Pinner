@@ -170,6 +170,7 @@ function findDistance(limit) {
         var lat2 = places[index].latitude * (Math.PI / 180);
         var long2 = places[index].longitude * (Math.PI / 180);
         var distance = Math.acos(Math.sin(lat1) * Math.sin(lat2) + Math.cos(lat1) * Math.cos(lat2) * Math.cos(long1 - long2));
+        console.log(distance)
         distance = distance * 6371;
 
             if(distance < limit) {
@@ -183,9 +184,9 @@ function findDistance(limit) {
       }
     }
       array.sort(function(a, b) {
-        return a.distance > b.distance
+        return a.distance - b.distance
       })
-      return array
+    return array      
 }
 
 

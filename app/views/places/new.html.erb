@@ -23,7 +23,7 @@
 			<%= label_tag 'Use Current Location' %>	
 
 			<%= f.text_field :address, class: 'places_form_input' %>
-			<%= f.label :address, value: "Full Address", class: 'places_form_label' %>
+			<%= f.label :address, "Full Address(or GPS)", class: 'places_form_label' %>
 
 			<%= f.collection_select(:country_id, Country.all.sort_by(&:name), :id, :name, {}, {class: 'places_form_input'}) %>
 			<%= f.label :country_id, value: "Country", class: 'places_form_label' %>
