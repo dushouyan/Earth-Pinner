@@ -1,10 +1,11 @@
-
 <div class="place_flex">
     <% @places.sample(180).each do |place| %>
-	    <div class="place_display fade_in_place" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
+    <div class="place_preview" style="display: none; background-image: url('<%= place.avatar.url %>') "></div>
+
+        <div class="place_display fade_in_place" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
             <%= link_to place_path(place.url) do %>
 				<div class="place_color">
-					<p><%= place.name %></p>
+					<p class="place_title"><%= place.name %></p>
 				</div>  
             <% end %>  
         </div>
@@ -12,7 +13,7 @@
                     <%= form_for(place, url: update_place_path(place.url), :method => 'patch', confirm: "Are You Sure?") do |f| %>
                         <%= f.file_field :avatar %>
                         <%= f.hidden_field :approved, :value => true %>
-                    <%= f.submit 'Approve', data: { confirm: "Are you sure?" } %>
+                        <%= f.submit 'Approve', data: { confirm: "Are you sure?" } %>
                     <% end %>
 
                     <%= form_for(place, url: delete_place_path(place.url), :method => 'delete', confirm: "Are You Sure?") do |f| %>
@@ -21,4 +22,3 @@
                <% end %> 
     <% end %>
 </div>
-

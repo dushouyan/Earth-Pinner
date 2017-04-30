@@ -17,4 +17,8 @@ class PagesController < ApplicationController
     render :layout => false 
   end
 
+  def waterfalls
+    @places = Place.where(:waterfall => true)
+  end
+
 end

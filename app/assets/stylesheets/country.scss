@@ -4,8 +4,12 @@
 $color-one: rgb(52, 165, 111);
 
 .countries_div {
+	display: -webkit-flex;
 	display: flex;
+    display: -ms-flexbox;
+    -webkit-flex-wrap: flex-wrap;
 	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
 }
 
 .flag {

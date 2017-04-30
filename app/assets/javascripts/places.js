@@ -5,6 +5,7 @@ $(document).ready(function () {
 
 var colorsArray = ["rgba(236, 43, 43, .5)", "rgba(28, 28, 241, .5)", "rgba(245, 249, 5, .5)", "rgba(255, 69, 0, .5)", "rgba(50, 205, 50, .5)", "rgba(102, 51, 153, .5)", "rgba(173, 216, 230, .5)",]
 
+
 //Changes Overlay Color of Places to random color while hovering
 
 function changeColor() {
@@ -23,11 +24,43 @@ function changeColor() {
 
 changeColor()
 
-fadeCounter = 500
 
+//Click on place name displays larger photo
+var placePreview = document.getElementsByClassName('place_preview');
+var placeTitle = document.getElementsByClassName('place_title');
+var overlay = document.getElementById('overlay');
+
+function previewPlace () {
+    for(let i = 0; i < placeTitle.length; i++) {
+
+            placeTitle[i].addEventListener('click', function (event) {
+                event.preventDefault()
+            	placePreview[i].style.display = 'block';
+            	overlay.style.display = 'block';
+
+
+            		placePreview[i].addEventListener('click', function () {
+            			placePreview[i].style.display = "none"
+            			overlay.style.display = 'none'
+            			placePreview[i].removeEventListener('click', function () {})
+            		})
+       	 	})
+    }
+}
+
+previewPlace()
+
+
+//Fade In Places
+fadeCounter = 500
 $('.fade_in_place').each(function() {
+
     $( this ).fadeIn(fadeCounter);
-    fadeCounter = fadeCounter + 100;
+
+   		if(fadeCounter < 4100) {
+   			fadeCounter = fadeCounter + 100;
+   		}
+
 });
 
 //Change Color of Input forms on Focus
@@ -128,9 +161,12 @@ var pageBack = document.getElementsByClassName('experience_page')[0];
 var pageForward = document.getElementsByClassName('experience_page')[1];
 var reviewIndex = 0
 var byFive = 5
-pageForward.addEventListener('click', goForward);
-pageBack.addEventListener('click', goBack);
 
+
+if(pageForward) {
+
+	pageForward.addEventListener('click', goForward);
+	pageBack.addEventListener('click', goBack);
 
 
 
@@ -189,7 +225,11 @@ function goBack() {
 
 goForward()
 
+}
+
 })
+
+
 
 
 /*

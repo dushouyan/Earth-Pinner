@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     root to: 'pages#home'
     get '/most-beautiful-places', to: 'pages#mostbeautiful'
     get '/plan-your-trip', to: 'pages#help', as: 'help'
+    get '/waterfalls', to: 'pages#waterfalls', as: 'waterfalls'
 
     get 'auth/:provider/callback', to: 'sessions#create'
     get 'auth/failure', to: redirect('/')

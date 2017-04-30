@@ -60,6 +60,24 @@ function mobileDisplay () {
 
 mobileDisplay()
 
+
+$(window).on('scroll', function () {
+	var pageY = window.pageYOffset;
+		if(pageY > 500) {
+			$('.glyphicon-hand-up').css('display', 'inline-block')
+		}
+
+		else if (pageY < 500) {
+			$('.glyphicon-hand-up').css('display', 'none') 
+		}
+});
+
+
+$('.glyphicon-hand-up').on('click', function () {
+	 $("html, body").animate({ scrollTop: 0 }, 600);
+    	return false;
+}) 
+
 /*
 function setfullPageHeight() {
 	return function () {

@@ -9,8 +9,12 @@ $color-low-one: rgba(52, 165, 111, .2);
 }
 
 .ratings {
+	display: -ms-flexbox;
+  	display: -webkit-flex;
 	display: flex;
 	justify-content: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: justify;
 }
 
 .ratings label {
