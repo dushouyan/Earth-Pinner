@@ -31,7 +31,8 @@ var placeTitle = document.getElementsByClassName('place_title');
 var overlay = document.getElementById('overlay');
 
 function previewPlace () {
-    for(let i = 0; i < placeTitle.length; i++) {
+    for(var i = 0; i < placeTitle.length; i++) {
+    	(function(i) {
 
             placeTitle[i].addEventListener('click', function (event) {
                 event.preventDefault()
@@ -44,7 +45,8 @@ function previewPlace () {
             			overlay.style.display = 'none'
             			placePreview[i].removeEventListener('click', function () {})
             		})
-       	 	})
+       	 	}, false);
+       	})(i);
     }
 }
 
