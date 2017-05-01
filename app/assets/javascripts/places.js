@@ -31,6 +31,10 @@ var placeTitle = document.getElementsByClassName('place_title');
 var overlay = document.getElementById('overlay');
 
 function previewPlace () {
+	var detectWidth = window.innerWidth //Only Use for Desktop version
+	if(detectWidth > 640) {
+
+
     for(var i = 0; i < placeTitle.length; i++) {
     	(function(i) {
 
@@ -48,6 +52,9 @@ function previewPlace () {
        	 	}, false);
        	})(i);
     }
+
+	}
+
 }
 
 previewPlace()
