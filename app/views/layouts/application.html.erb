@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Rouge+Script|IM+Fell+Great+Primer+SC|Seaweed+Script" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 <body>
   <div id="overlay"></div>
@@ -21,11 +20,11 @@
             <li><%= link_to 'Earth Pinner', root_path, class: 'logo' %></li>
             <li class="menu-places"><%= link_to 'Places', places_path %>
               <ul>
+              <li class="menu-places-item"><%= link_to 'By Country', countries_path %></li>
                  <li class="menu-places-item"><%= link_to "The Most Beautiful Places", most_beautiful_places_path %></li>
                   <li class="menu-places-item"><%= link_to "The Waterfall Collection", waterfalls_path %></li>
               </ul>
             </li>
-            <li><%= link_to 'Countries', countries_path %></li>
       <% if current_user %>
                 <li><%= link_to 'Pin Your Place', new_place_path %></li>
                 <li><a href="/users/<%= current_user.id %>", class="re-wrap"><span id="wrap">My Profile</span></a> </li>
@@ -43,7 +42,6 @@
 
 
 
-
   </div>
   <div class="main_footer">
     <ul>
@@ -56,6 +54,6 @@
     <% end %>
     </ul>
   </div>
-
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </body>
 </html>

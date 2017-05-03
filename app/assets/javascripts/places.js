@@ -12,7 +12,7 @@ function changeColor() {
   var thumbsGet = document.getElementsByClassName('place_color');
       for (var i = 0; i < thumbsGet.length; i++) {
         thumbsGet[i].addEventListener('mouseenter', function () {
-          colorNumber = [Math.floor(Math.random() * colorsArray.length)];
+        var colorNumber = [Math.floor(Math.random() * colorsArray.length)];
             this.style.backgroundColor = colorsArray[colorNumber];
 })
 
@@ -61,7 +61,7 @@ previewPlace()
 
 
 //Fade In Places
-fadeCounter = 500
+var fadeCounter = 500
 $('.fade_in_place').each(function() {
 
     $( this ).fadeIn(fadeCounter);
@@ -102,7 +102,6 @@ function displayUnloadedImage () {
 			var reader = new FileReader(); //HTML 5 filereader API
 
 			reader.onload = function(file) {
-				console.log(file)
 				fileDisplay.removeChild(fileDisplay.childNodes[0])
 				var img = new Image(); //Creates new image
 				img.src = reader.result;
@@ -130,7 +129,7 @@ function displayUnloadedImage () {
 }
 
 displayUnloadedImage()
-
+	
 
 //Function for rating experiences/unfills stars then refills
 

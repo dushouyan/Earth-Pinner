@@ -52,25 +52,41 @@
 
 <script>
 
-	$('#current_location').change(function () {
+function ajaxCurrentLocation () {
+	var currentLocation = document.getElementById('current_location');
+	var placeAddress = document.getElementById('place_address');
 
-	if($('#current_location').is(':checked')) {
+	currentLocation.addEventListener('change', function () {
 
-		$.ajax({
-			type: 'POST',
-			url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=<%= GEOLOCATION_KEY %>',
-			datatype: 'json',
-			success: function (response) {
-				$('#place_address').val(response.location.lat + ", " + response.location.lng)
-			}
-		});
+		if(currentLocation.checked) {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+   				if (this.readyState == 4 && this.status == 200) {
+   					var parseLocation = JSON.parse(this.response);
+   					placeAddress.value = parseLocation.location.lat + ", " + parseLocation.location.lng 
+    			}
 
-	}
+    			else {
+    				placeAddress.value = "Location Not Found";
+    			}
+  			};
 
-	else {
-		$('#place_address').val("");
-	}
-	
 
-});	
+ 		 	xhttp.open("POST", "https://www.googleapis.com/geolocation/v1/geolocate?key=<%= GEOLOCATION_KEY %>", true);
+	  		xhttp.send();
+		}
+
+
+		else {
+			placeAddress.value = "";
+		}
+
+
+	});
+
+
+}
+
+ajaxCurrentLocation()
+
 </script>

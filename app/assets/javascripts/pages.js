@@ -36,7 +36,6 @@ showNavBar()
 //Fix some changes for better looking display in Mobile
 function mobileDisplay () {
 	$(window).load(function () {
-		var path = window.location.pathname
 		var detectWidthOne = window.innerWidth;
 			if (detectWidthOne <= 640) {
 				$('.instagram-link').html('Instagram');

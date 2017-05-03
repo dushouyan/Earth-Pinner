@@ -52,8 +52,8 @@ h1 {
 
 .glyphicon-hand-up:hover {
 	background-color: $color-one;
-	color: white;
 	border: 1px solid white;
+	color: white;
 }
 
 /*
@@ -85,9 +85,9 @@ h1 {
 */
 
 .logo {
+	color: $color-one !important;
 	font-family: 'Rouge Script', 'cursive';
 	font-size: 36px;
-	color: $color-one !important;
 }
 
 .menu-main {
@@ -125,15 +125,15 @@ h1 {
 	display: none;
 	list-style-type: none;
 	margin-left: 0 !important;
-	z-index: 1030;
-	position: absolute;
 	padding: 0;
+	position: absolute;
+	z-index: 1030;
 }
 .menu-places ul li {
-	margin-left: 0;
 	border-left: 1px solid black;
 	border-top: 1px solid black;
 	border-right: 1px solid black;
+	margin-left: 0;
 }
 
 .menu-places ul li:last-child {
@@ -272,16 +272,16 @@ h1 {
 	}
 
 	.menu-main li a:nth-child(1) {
-		font-family: 'Helvetica', 'serif' !important;
 		color: white !important;
+		font-family: 'Helvetica', 'serif' !important;
 		font-size: 1.5em;
 	}
 
 
 	.menu-main li {
+		border-bottom: 1px solid white;
 		margin: 0;
 		padding-left: 10px;
-		border-bottom: 1px solid white;
 	}
 
 	.menu-main li a {
@@ -296,8 +296,8 @@ h1 {
 	}
 
 	.menu-places ul {
-		left: 125px;
 		border: 1px solid $color-one;
+		left: 125px;
 	}
 }
 
