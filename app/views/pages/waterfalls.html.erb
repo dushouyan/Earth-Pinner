@@ -1,6 +1,7 @@
 <div class="place_flex">
     <% @places.sample(180).each do |place| %>
-    <div class="place_preview" style="display: none; background-image: url('<%= place.avatar.url %>') "></div>
+    <!--
+    <div class="place_preview" style="display: none; background-image: url('<%= place.avatar.url %>') "></div> -->
 
         <div class="place_display fade_in_place" style="background-image: url('<%= place.avatar.url(:thumb) %>')">
             <%= link_to place_path(place.url) do %>
