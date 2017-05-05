@@ -24,7 +24,7 @@ function changeColor() {
 
 changeColor()
 
-
+/*
 //Click on place name displays larger photo
 var placePreview = document.getElementsByClassName('place_preview');
 var placeTitle = document.getElementsByClassName('place_title');
@@ -58,7 +58,7 @@ function previewPlace () {
 }
 
 previewPlace()
-
+*/
 
 //Fade In Places
 var fadeCounter = 500

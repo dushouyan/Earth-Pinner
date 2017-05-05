@@ -93,6 +93,8 @@ $color-one: rgb(52, 165, 111);
 	-ms-flex-wrap: wrap;
 }
 
+/*
+
 .place_preview {
 	background-color: white;
 	background-size: 100% 100%;
@@ -109,7 +111,7 @@ $color-one: rgb(52, 165, 111);
 	width: 70%;
 	z-index: 2;
 }
-
+*/
 .place_flex_title {
 	text-align: center;
 }
@@ -146,7 +148,6 @@ $color-one: rgb(52, 165, 111);
 }
 
 .place_title {
-	cursor: zoom-in;
 	left: 0;
 	right: 0;
 	margin-top: 50px;
