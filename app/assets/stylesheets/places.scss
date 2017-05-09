@@ -112,13 +112,13 @@ $color-one: rgb(52, 165, 111);
 */
 
 .place_buttons {
-	background: $color-one;
-	background: linear-gradient(to bottom, rgb(29, 189, 111), $color-one);
+	background-color: $color-one;
+	background: $color-one linear-gradient(hsla(0, 0%, 10%, .5), transparent);
 	border: 1px solid $color-one;
 	border-radius: 2px;
 	box-shadow: 1px 2px 6px black;
 	color: white;
-	text-shadow: 0 -1px 1px #2B684A;
+	text-shadow: 0 -.05em .05em black;
 	outline-color: $color-one;
 }
 
