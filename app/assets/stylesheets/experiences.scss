@@ -44,6 +44,13 @@ $color-low-one: rgba(52, 165, 111, .2);
 }
 
 .review_box {
+ 
+	.share_button {
+		display: block;
+		font-weight: 400;
+		margin: 0 auto;
+		width: 20%;
+	}
 
 	#experience_review {
 		display: block;
@@ -52,16 +59,6 @@ $color-low-one: rgba(52, 165, 111, .2);
 		outline-color: $color-one;
 		height: 300px;
 		width: 80%;
-	}
-
-	.share_button {
-		background-color: $color-one;
-		color: white;
-		display: block;
-		font-weight: 400;
-		margin: 0 auto;
-		outline-color: $color-one;
-		width: 20%;
 	}
 
 }

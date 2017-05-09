@@ -3,8 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $color-one: rgb(52, 165, 111); 
 
-
-
 #amap {
 	height: 500px;
 	margin-bottom: 30px;
@@ -112,6 +110,18 @@ $color-one: rgb(52, 165, 111);
 	z-index: 2;
 }
 */
+
+.place_buttons {
+	background: $color-one;
+	background: linear-gradient(to bottom, rgb(29, 189, 111), $color-one);
+	border: 1px solid $color-one;
+	border-radius: 2px;
+	box-shadow: 1px 2px 6px black;
+	color: white;
+	text-shadow: 0 -1px 1px #2B684A;
+	outline-color: $color-one;
+}
+
 .place_flex_title {
 	text-align: center;
 }
@@ -223,14 +233,18 @@ $color-one: rgb(52, 165, 111);
 
 .experience_div {
 	@extend .place_content_bar
+
 }
 
+.experiences_bar {
 
-.place_buttons {
-	background-color: $color-one;
-	color: white;
-	outline-color: $color-one;
+	.glyphicon {
+		font-size: 1.25em;
+		margin: 5px;
+		text-shadow: 1px 1px 0 black;
+	}
 }
+
 
 #map {
 	border: 1px solid black;
@@ -298,21 +312,16 @@ $color-one: rgb(52, 165, 111);
 }
 
 .submit_button {
-	border: 1px outset black !important;
-	border-radius: 2px;
-	background-color: $color-one;
-	color: white;
+	@extend .place_buttons;
 	font-weight: 400;
 	width: 30% !important;
 }
 
 .places_form_content {
 	float: right;
-	font-weight: 400;
 	padding: 0px 30px 30px 30px;
 	width: 45%;
 }
-
 
 .near_places_bar {
 	margin-top: 20px;
@@ -326,9 +335,7 @@ $color-one: rgb(52, 165, 111);
 
 
 #km_submit {
-	border-width: 1px;
-	background-color: $color-one;
-	color: white;
+	@extend .place_buttons;
 }
 
 

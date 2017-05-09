@@ -39,7 +39,7 @@
 				<%= f.hidden_field :place_id, :value => @place.id %>
 				<%= f.hidden_field :user_name, :value => current_user.name %>
 				<%= f.text_area :review, size:"40x50" %>
-				<%= submit_tag "Share", class: "share_button" %>
+				<%= submit_tag "Share", class: "share_button place_buttons" %>
 			</div>
 	<% end %>			
 <% end %>

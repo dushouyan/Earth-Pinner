@@ -2,7 +2,7 @@
 	<% if current_user %>
 		<%= form_for(@experience, url: update_place_experience_path, method: :patch) do |f| %>
 	 		<%= f.text_area :review, size:"40x50" %>
-     		<%= f.submit 'Update', class: "share_button" %>
+     		<%= f.submit 'Update', class: "share_button place_buttons" %>
      	<% end %>
 	<% end %>
 </div>
