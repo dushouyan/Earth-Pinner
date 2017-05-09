@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $color-one: rgb(52, 165, 111); 
+$input-border-color: rgb(169, 169, 174);
 
 #amap {
 	height: 500px;
@@ -33,7 +34,7 @@ $color-one: rgb(52, 165, 111);
         -moz-box-sizing: border-box;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         background-color: #fff;
-        //font-family: Roboto;
+        font-family: Roboto;
         margin: 10px 10px 0 0;
         outline: none;
       }
@@ -49,14 +50,14 @@ $color-one: rgb(52, 165, 111);
       }
 
       .pac-controls label {
-        //font-family: Roboto;
+        font-family: Roboto;
         font-size: 13px;
         font-weight: 300;
       }
 
       #pac-input {
         background-color: #fff;
-       // font-family: Roboto;
+       	font-family: Roboto;
         font-size: 15px;
         font-weight: 300;
         margin-left: 12px;
@@ -278,9 +279,15 @@ $color-one: rgb(52, 165, 111);
 	margin-bottom: 30px;
 }
 
+.submit_button {
+	@extend .place_buttons;
+	font-weight: 400;
+	width: 30%;
+}
+
 .places_form_input {
 	border: none;
-	border-bottom: 1px solid rgb(169, 169, 174);
+	border-bottom: 1px solid $input-border-color;
 	display: block;
 	margin: 0 auto;
 	outline: none;
@@ -297,7 +304,7 @@ $color-one: rgb(52, 165, 111);
 }
 
 #place_created_by {
-	color: rgb(169, 169, 174);
+	color: $input-border-color;
 }
 
 .places_form input:focus {
@@ -311,16 +318,23 @@ $color-one: rgb(52, 165, 111);
 	width: 80%;
 }
 
-.submit_button {
-	@extend .place_buttons;
-	font-weight: 400;
-	width: 30% !important;
-}
-
 .places_form_content {
+	background-color: $color-one;
+	background: $color-one linear-gradient(hsla(0, 0%, 10%, .5), transparent);
+	background-clip: padding-box;
+	border: 5px outset rgba(52, 165, 111, .5);
+	box-shadow: 1px 1px 5px black;
+	color: white;
+	line-height: 1.5em;
 	float: right;
-	padding: 0px 30px 30px 30px;
 	width: 45%;
+		.places_content {
+			padding: 30px;
+		}
+
+		h3 {
+			margin-top: 0;
+		}
 }
 
 .near_places_bar {
@@ -418,14 +432,12 @@ $color-one: rgb(52, 165, 111);
 }
 
 .places_form_content {
+	border: none;
 	float: none;
 	margin-top: 30px;
 	width: 100%;
 }
 
-.place_buttons {
-	margin: 20px;
-}
 
 .col-xs-4 {
 	margin-top: 10px;

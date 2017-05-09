@@ -87,7 +87,7 @@ h1 {
 .logo {
 	color: $color-one !important;
 	font-family: 'Rouge Script', 'cursive';
-	font-size: 36px;
+	font-size: 2.5em;
 }
 
 .menu-main {
@@ -101,9 +101,8 @@ h1 {
 	padding-left: 0;
 }
 
-
 .menu-main li:nth-child(1) {
-	margin-left: 0 !important;
+	margin-left: 0;
     margin-right: auto;
 }
 
@@ -124,20 +123,22 @@ h1 {
 	background-color: #F0FFF0;
 	display: none;
 	list-style-type: none;
-	margin-left: 0 !important;
+	margin-left: 0;
 	padding: 0;
 	position: absolute;
 	z-index: 1030;
 }
+
+.menu-places ul li:last-child {
+	border: 1px solid black;
+}
+
+
 .menu-places ul li {
 	border-left: 1px solid black;
 	border-top: 1px solid black;
 	border-right: 1px solid black;
 	margin-left: 0;
-}
-
-.menu-places ul li:last-child {
-	border: 1px solid black;
 }
 
 .menu-places:hover {
@@ -239,7 +240,7 @@ h1 {
 		background-color: #4267B2;
 		border: none;
 		border-radius: 5px;
-		font-family: 'Helvetica', 'serif';
+		font-family: inherit;
 		font-weight: 400;
 		padding: 5px 10px 5px 10px;
 	}
@@ -273,7 +274,7 @@ h1 {
 
 	.menu-main li a:nth-child(1) {
 		color: white !important;
-		font-family: 'Helvetica', 'serif' !important;
+		font-family: inherit;
 		font-size: 1.5em;
 	}
 
