@@ -9,15 +9,15 @@ var colorsArray = ["rgba(236, 43, 43, .5)", "rgba(28, 28, 241, .5)", "rgba(245, 
 //Changes Overlay Color of Places to random color while hovering
 
 function changeColor() {
-  var thumbsGet = document.getElementsByClassName('place_color');
+  var thumbsGet = document.getElementsByClassName("place_color");
       for (var i = 0; i < thumbsGet.length; i++) {
-        thumbsGet[i].addEventListener('mouseenter', function () {
+        thumbsGet[i].addEventListener("mouseenter", function () {
         var colorNumber = [Math.floor(Math.random() * colorsArray.length)];
             this.style.backgroundColor = colorsArray[colorNumber];
 })
 
-        thumbsGet[i].addEventListener('mouseleave', function () {
-            this.style.backgroundColor = 'transparent';
+        thumbsGet[i].addEventListener("mouseleave", function () {
+            this.style.backgroundColor = "transparent";
 })
 }
 }
@@ -112,13 +112,13 @@ function displayUnloadedImage () {
     				var originalWidth = this.naturalWidth;
     				var originalHeight = this.naturalHeight;
     					if (originalHeight >= originalWidth) {
-    						var warning = document.createElement('span')
+    						var warning = document.createElement("span");
     						warning.innerHTML = "Please Use Horizontal Image. Submission Will Be Deleted."
-    						fileDisplay.appendChild(warning)
+    						fileDisplay.appendChild(warning);
     					}
 
     					else if (originalHeight < originalWidth) {
-    						fileDisplay.appendChild(img)
+    						fileDisplay.appendChild(img);
     					}
 					}
 					

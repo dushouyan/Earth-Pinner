@@ -352,6 +352,9 @@ $input-border-color: rgb(169, 169, 174);
 	@extend .place_buttons;
 }
 
+#current_location {
+	cursor: crosshair;
+}
 
 
 
