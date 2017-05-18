@@ -98,6 +98,7 @@ h1 {
 	-ms-flex-align: end;
   	-webkit-align-items: center;
 	list-style-type: none;
+	transition: none;
 	padding-left: 0;
 }
 
@@ -265,9 +266,10 @@ h1 {
 
 	.menu-main {
 		background-color: $color-one;
-		display: none;
-		height: 100vh;
-		max-width: 100%;
+		display: block;
+		height: 0px;
+		overflow: hidden;
+		transition: .5s height;
 		width: 100%;
 		z-index: 1030;
 	}
