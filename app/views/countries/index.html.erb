@@ -1,6 +1,6 @@
 <% if current_user %>
 	<div> Click 
-			<span class="glyphicon glyphicon-plane"></span>
+			<span style="fill: black;" class="plane"><%= render 'svgs/airplane' %></span>
 			to Keep Track of Your Countries Visited!
 	</div>
 <% end %>
@@ -19,7 +19,7 @@
 										<%= hidden_field_tag :country_id, country.id %>
 										<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 										<%= button_tag(type: 'submit', class: "country_button") do %>
-							  				<span class="glyphicon glyphicon-plane"></span>
+							  				<span class="plane"><%= render 'svgs/airplane' %></span>
 							  			<% end %>
 									<% end %>
 								</div>

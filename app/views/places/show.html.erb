@@ -6,7 +6,7 @@
   
 <div class="row place_content_bar">
     <p class="place_flash"><%= flash[:dreamadded] if flash[:dreamadded] %></p>
-        <div class="col-xs-6 info">
+        <div class="col-half info">
             <% if current_user %>
                 <%= form_tag 'add_dreams' do %>
                   <%= hidden_field_tag :user_id, current_user.id %>
@@ -18,7 +18,7 @@
                   <%= button_tag "Add To Your Dream Places", type: 'button', class: "place_buttons" %>
 	         <% end %>
 	   </div>
-	<div class="col-xs-6 info">
+	<div class="col-half info">
     <!--
 	     <%= button_to "Plan Your Trip", help_path, :method => "get", class: 'place_buttons' %>
       -->
@@ -27,14 +27,14 @@
 </div>
 
 <div class="row place_info_bar">
-    <div itemscope itemtype="http://www.earthpinner.com/Place" class="col-xs-6 info">
+    <div itemscope itemtype="http://www.earthpinner.com/Place" class="col-half info">
         <h4 itemprop="name">About <%= @place.name %></h4>
         <strong>Admission:</strong><span><%= @place.admission %><br></span>
         <strong>Description:</strong><br><span itemprop="description"><%= @place.description %><br></span>
         <strong>Arrive:</strong><br><span itemprop="directions"><%= @place.arrive %><br></span>
         <span><strong><%= link_to 'Click Here For More Information', @place.website %><br></strong></span> 
 	</div>
-	<div class="col-xs-6 info">
+	<div class="col-half info">
 		<h4>About <%= link_to @place.country.name, country_path(@place.country.url) %></h4>
         <span><strong>Capital:</strong> <%= @place.country.capital %><br></span>
         <span><strong>Currency:</strong> <%= @place.country.currency %><br></span>
@@ -61,9 +61,10 @@
         <% if current_user %>
             <%= button_to 'Share Your Experience', new_place_experience_path, :method => "get", class: 'place_buttons' %>
         <% end %>
+         <h3>Latest Experiences At <%= @place.name %></h3>
+         <p>Average User Rating <span id="averagerating"><%= @averagerating.round(2) %></span></p>
     </div>
-    <h3>Latest Experiences At <%= @place.name %></h3>
-    <p>Average User Rating <span id="averagerating"><%= @averagerating.round(2) %></span></p>
+  
 	<% @place.experiences.reverse_each do |experience| %>
         <div class="experiences">
 			<%= experience.created_at.strftime("%b %d, %Y") %><br>
@@ -72,8 +73,8 @@
 		</div>
 	<% end %>
     <div class="experiences_bar">
-        <span class="experience_page glyphicon glyphicon-arrow-left"></span>
-        <span class="experience_page glyphicon glyphicon-arrow-right"></span>
+        <span class="experience_page"><%= render '/svgs/leftarrow' %></a></span>
+        <span class="experience_page"><%= render '/svgs/rightarrow' %></a></span>
     </div>
 </div>
 

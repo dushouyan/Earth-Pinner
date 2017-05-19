@@ -36,8 +36,11 @@ $color-one: rgb(52, 165, 111);
 }
 
 .user_experiences {
+	margin-left: -15px;
+	margin-right: -15px;
 
 	h4 {
+		font-size: 18px;
 		font-weight: 900;
 		text-align: center;
 	}
@@ -59,7 +62,6 @@ $color-one: rgb(52, 165, 111);
 	}
 
 }
-
 
 .place_buttons {
 	margin-top: 20px;

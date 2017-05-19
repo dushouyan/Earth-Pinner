@@ -12,9 +12,9 @@
   <div id="overlay"></div>
   <div class="container" itemscope itemtype="http://schema.org/"> 
 
-  <div class="glyphicon glyphicon-hand-up" style="display: none;"></div>
+  <div class="up"><%= render '/svgs/arrowup' %></div>
 
-    <div class="menu-icon glyphicon glyphicon-list"></div>
+    <div class="menu-icon"><%= render '/svgs/menu' %></div>
     <div class='header'>
           <h1 class="logo navlogo" itemprop="name">Earth Pinner</h1>
           <ul class="menu-main">
@@ -34,7 +34,7 @@
               <li><%= button_to "f" + " Log In With Facebook", "/auth/facebook", class: 'facebook'%> </li>
               <li class="instagram-logo">
                 <a href="http://www.instagram.com/earthpinner" class='instagram-link'>
-                 <%= render '/layouts/instagram' %></a>
+                 <%= render '/svgs/instagram' %></a>
              </li>
       <% end %>
           </ul>

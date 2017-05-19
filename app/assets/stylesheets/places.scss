@@ -176,15 +176,6 @@ $input-border-color: rgb(169, 169, 174);
 
 }
 
-.glyphicon-plus-sign {
-	background-color: transparent;
-	border: none;
-}
-
-.glyphicon-plus-sign:hover {
-	color: $color-one;
-}
-
 .place_image {
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -208,9 +199,18 @@ $input-border-color: rgb(169, 169, 174);
 	font-weight: 900;
 	font-size: 1.7em;
 }
+.col-half {
+	float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 50%;
+}
 
 .place_content_bar {
 	font-weight: 400;
+	margin: 0 -15px 0 -15px;
 	padding: 30px 0px 30px 0px;
 	text-align: center;
 }
@@ -228,13 +228,8 @@ $input-border-color: rgb(169, 169, 174);
 	color: $color-one;
 }
 
-.row {
-	margin: 0 !important;
-}
-
 .experience_div {
 	@extend .place_content_bar
-
 }
 
 .experiences_bar {
@@ -245,7 +240,6 @@ $input-border-color: rgb(169, 169, 174);
 		text-shadow: 1px 1px 0 black;
 	}
 }
-
 
 #map {
 	border: 1px solid black;
@@ -271,6 +265,10 @@ $input-border-color: rgb(169, 169, 174);
 	float: left;
 	text-align: center;
 	width: 55%;
+}
+
+#current_location {
+	cursor: crosshair;
 }
 
 .places_form_label {
@@ -352,8 +350,13 @@ $input-border-color: rgb(169, 169, 174);
 	@extend .place_buttons;
 }
 
-#current_location {
-	cursor: crosshair;
+.experiences {
+	display: none;
+}
+
+.experience_page {
+	cursor: pointer;
+	fill: $color-one;
 }
 
 
@@ -441,14 +444,12 @@ $input-border-color: rgb(169, 169, 174);
 	width: 100%;
 }
 
-
-.col-xs-4 {
-	margin-top: 10px;
-	width: 100% !important;
+.experience_div {
+	margin: 15px;
 }
 
 .info {
-	width: 100% !important;
+	width: 100%;
 }
 
 }

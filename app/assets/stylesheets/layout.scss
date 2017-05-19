@@ -1,18 +1,95 @@
 $color-one: rgb(52, 165, 111); 
 
+html {
+	-webkit-tap-highlight-color: transparent;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:before *:after {
+	box-sizing: border-box;
+}
+
 body {
-	font-size: 1.7em;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #fff;
 	font-weight: 900;
 	margin: 0;
 }
 
 a {
-	text-decoration: none !important;
+	text-decoration: none;
+	color: black;
 }
 
 h1 {
-	font-size: 3em !important;
+	font-size: 3em;
 	text-align: center;
+	margin-bottom: 5px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h2, h4, h5, h6 {
+	margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+button {
+	-webkit-appearance: button;
+    cursor: pointer;
+    overflow: visible;
+    font: inherit;
+    margin: 0;
+    text-transform: none;
+}
+
+input {
+	-webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+}
+
+input[type="file"] {
+    display: block;
+}
+
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-rendering: auto;
+    text-indent: 0px;
+    text-shadow: none;
+    -webkit-writing-mode: horizontal-tb;
 }
 
 .navlogo {
@@ -29,31 +106,56 @@ h1 {
 	z-index: 1;
 }
 
+.row {
+	margin-left: -15px;
+	margin-right: -15px;
+}
 
-.container {
-	min-height: 100vh;
-	height: 100%;
+.row:before, .row:after {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+	clear: both;
 }
 
 
-.glyphicon-hand-up {
+.container {
+	margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+	min-height: 100vh;
+	height: 100%;
+	width: 1170px;
+}
+
+.container:before,.container:after {
+	content: " ";
+    display: table;
+}
+
+.container:after {
+	clear: both;
+}
+
+
+.up {
 	background-color: transparent;
-	border-radius: 50px;
-	border: 1px solid black;
 	color: black;
 	cursor: pointer;
+	display: none;
 	font-size: 2em;
 	padding: 5px;
-	top: 80% !important;
+	top: 80%;
 	right: 2.5%;
-	position: fixed !important;
+	position: fixed;
 	z-index: 3;
 }
 
-.glyphicon-hand-up:hover {
-	background-color: $color-one;
-	border: 1px solid white;
-	color: white;
+.up:hover {
+	fill: $color-one;
 }
 
 /*
@@ -85,7 +187,7 @@ h1 {
 */
 
 .logo {
-	color: $color-one !important;
+	color: $color-one;
 	font-family: 'Rouge Script', 'cursive';
 	font-size: 2.5em;
 }
@@ -97,9 +199,8 @@ h1 {
 	align-items: flex-end;
 	-ms-flex-align: end;
   	-webkit-align-items: center;
-	list-style-type: none;
 	transition: none;
-	padding-left: 0;
+	margin: 0;
 }
 
 .menu-main li:nth-child(1) {
@@ -110,10 +211,6 @@ h1 {
 .menu-main li {
 	margin-left: 40px;
 	padding: 10px;
-}
-
-.menu-main li a {
-	color: black;
 }
 
 .menu-main li a:hover {
@@ -169,8 +266,8 @@ h1 {
 }
 
 .menu-icon {
-	color: $color-one;
-	display: none !important;
+	fill: $color-one;
+	display: none;
 	font-size: 2em;
 	margin-left: 10px;
 }
@@ -181,44 +278,29 @@ h1 {
 	display: block;
     margin-bottom: -15px;
     min-height: 40px;
+    padding: 0;
     position: relative;
-    width: 100%;
+    text-align: center;
+
+    input {
+    	background-color: inherit;
+    	border: none;
+    	cursor: pointer;
+    }
 }
 
-.main_footer ul {
-  	display: -ms-flexbox;
-  	display: -webkit-flex;
-  	display: flex;
-  	-ms-flex-align: end;
-  	-webkit-align-items: flex-end;
-	align-items: flex-end;
-  	-webkit-justify-content: space-around;
-	-ms-flex-pack: justify;
-	justify-content: space-around;
-	height: 40px;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+
+@media screen and (max-width: 1200px) {
+	.container {
+		width: 970px;
+	}
 }
 
-.main_footer li a {
-	color: black;
+@media screen and (max-width: 992px) {
+	.container {
+		width: 750px;
+	}
 }
-
-.main_footer li a:hover {
-	color: $color-one;
-}
-
-#delete_account {
-	background-color: transparent;
-	border: none;
-	padding: 0;
-}
-
-#delete_account:hover {
-	color: $color-one;
-}
-
 
 @media screen and (max-width: 768px) {
 	.front_page_container {
@@ -233,8 +315,8 @@ h1 {
 
 	.container {
 		margin: 0;
-		padding: 0 !important;
-		width: 100% !important;
+		padding: 0;
+		width: 100%;
 	}
 
 	.facebook {
@@ -254,7 +336,7 @@ h1 {
 	.menu-icon {
 		clear: right;
 		cursor: pointer;
-		display: block !important;
+		display: block;
 		float: left;
 		padding-top: 10px;
 		padding-bottom: 10px
