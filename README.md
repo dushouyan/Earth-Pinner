@@ -25,7 +25,7 @@ What happens when a user logs in?
 			- A small preview is shown of the image when added.
 	-Name
 			- A method is used to create a "URL" datatype for SEO purposes
-		  - If certain keywords are used, a place is automatically added to a "waterfall collection"
+		  	- If certain keywords are used, a place is automatically added to a "waterfall collection"
 	-Address OR GPS
 			-The User may enter a GPS or an Address. This is geocoded by the gem geocoder. The coordinates are used to map the places. The user can alternatively use their current location as the address. This data comes from Google's Geolocation API.
 	-Country
