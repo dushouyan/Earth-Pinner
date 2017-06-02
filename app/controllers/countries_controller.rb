@@ -3,7 +3,7 @@ class CountriesController < ApplicationController
   before_action :set_country, only: [:update]
 
   def index
-  	@countries = Country.all
+  	@countries = Country.all.sort_by{|country| -country.places.length}
   end
 
   def show
