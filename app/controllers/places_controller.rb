@@ -14,20 +14,8 @@ class PlacesController < ApplicationController
     @places = Place.all
     if current_user.try(:admin?)
       @place = Place.where(:approved => false).find_by_url(params[:url])
-        @totalratings = 0
-        @averagerating = 0
-        @place.experiences.each do |experience|
-          @totalratings += experience.rating
-          @averagerating = @totalratings.to_f / @place.experiences.length.to_f
-        end 
     else 
       @place = Place.where(:approved => true).find_by_url(params[:url])
-        @totalratings = 0
-        @averagerating = 0
-        @place.experiences.each do |experience|
-          @totalratings += experience.rating
-          @averagerating = @totalratings.to_f / @place.experiences.length.to_f
-        end
     end
   end
 

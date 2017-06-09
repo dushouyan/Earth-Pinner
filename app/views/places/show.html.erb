@@ -62,7 +62,7 @@
             <%= button_to 'Share Your Experience', new_place_experience_path, :method => "get", class: 'place_buttons' %>
         <% end %>
          <h3>Latest Experiences At <%= @place.name %></h3>
-         <p>Average User Rating <span id="averagerating"><%= @averagerating.round(2) %></span></p>
+         <p>Average User Rating <span id="averagerating"><%= @place.average_rating %></span></p>
     </div>
   
 	<% @place.experiences.reverse_each do |experience| %>

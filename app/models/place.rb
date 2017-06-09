@@ -34,6 +34,20 @@ class Place < ApplicationRecord
 		self.waterfall = testwaterfall
 	end
 
+	def average_rating
+		total_ratings = 0.0
+		if self.experiences.length > 0
+			self.experiences.each do |experience|
+				total_ratings += experience.rating
+			end
+
+			return (total_ratings / self.experiences.length).round(2)
+
+		else 
+			return 0
+		end 
+	end
+
 	geocoded_by :address	
 	after_validation :geocode, :waterfall  
  
