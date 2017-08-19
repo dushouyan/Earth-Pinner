@@ -30,8 +30,8 @@
     <div itemscope itemtype="http://www.earthpinner.com/Place" class="col-half info">
         <h4 itemprop="name">About <%= @place.name %></h4>
         <strong>Admission:</strong><span><%= @place.admission %><br></span>
-        <strong>Description:</strong><br><span itemprop="description"><%= @place.description %><br></span>
-        <strong>Arrive:</strong><br><span itemprop="directions"><%= @place.arrive %><br></span>
+        <strong>Description:</strong><br><span itemprop="description"><%=raw @place.description %><br></span>
+        <strong>Arrive:</strong><br><span itemprop="directions"><%=raw @place.arrive %><br></span>
         <span><strong><%= link_to 'Click Here For More Information', @place.website %><br></strong></span> 
 	</div>
 	<div class="col-half info">

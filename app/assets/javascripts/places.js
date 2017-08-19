@@ -74,10 +74,10 @@ $('.fade_in_place').each(function() {
 
 //Change Color of Input forms on Focus
 $('.places_form_input').each(function(index) {
-	$('.places_form_input').eq(index).focus(function () {
-		$('.places_form_label').eq(index).css('color', 'rgb(52, 165, 111)')
-	})
-})
+	$('.places_form_input').eq(index).addClass("active");
+}, function () {
+		$('.places_form_label').eq(index).removeClass('active');	
+});
 
 $('.places_form_input').each(function(index) {
 	$('.places_form_input').eq(index).blur(function () {
